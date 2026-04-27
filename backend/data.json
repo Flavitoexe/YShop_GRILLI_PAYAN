@@ -1,0 +1,36 @@
+[
+    {
+        "name": "item1",
+        "id": 1,
+        "desc": "blablalba 1111",
+        "quantity": 10
+    },
+    {
+        "name": "item2",
+        "id": 2,
+        "desc": "blablalba 2222",
+        "quantity": 20
+    },
+    {
+        "name": "item3",
+        "id": 3,
+        "desc": "blablalba 1111",
+        "quantity": 10
+    },
+    {
+        "name": "item1",
+        "id": 4,
+        "desc": "blablalba 1111",
+        "quantity": 10
+    },
+    {
+        "nom": "Mon produit",
+        "prix": 10,
+        "id": 5
+    },
+    {
+        "nom": "Mon produit 2",
+        "prix": 20,
+        "id": 6
+    }
+]
