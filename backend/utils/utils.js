@@ -61,4 +61,5 @@ const formatDate = (time) => {
 
 }
 
+
 module.exports = {writeInFile, readInFile, strToObject, formatDate}
