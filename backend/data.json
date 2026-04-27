@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1234,
+        "name": "exemple name",
+        "desc": "exemple descblablabla",
+        "quantity": 5,
+        "price": 500.99,
+        "devise": "€?",
+        "images": [
+            "url1", "url2", "url3"
+        ],
+        "tags": [
+            "tag1", "tag2", "tag3"
+        ]
+    }
+]
