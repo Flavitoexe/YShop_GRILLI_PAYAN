@@ -1,16 +1,20 @@
 [
     {
-        "id": 1234,
-        "name": "exemple name",
-        "desc": "exemple descblablabla",
-        "quantity": 5,
-        "price": 500.99,
-        "devise": "€?",
-        "images": [
-            "url1", "url2", "url3"
-        ],
-        "tags": [
-            "tag1", "tag2", "tag3"
-        ]
+        "name": "item1",
+        "id": 1,
+        "desc": "test desc 1",
+        "quantity": 10
+    },
+    {
+        "name": "item2",
+        "id": 2,
+        "desc": "test desc 2",
+        "quantity": 20
+    },
+    {
+        "name": "item3",
+        "id": 3,
+        "desc": "test desc3",
+        "quantity": 30
     }
 ]
