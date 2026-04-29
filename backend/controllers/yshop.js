@@ -26,7 +26,9 @@ const getProductById = (req, res) => {
     }
     // On transforme le contenu du fichier récupéré (string) pour créer un tableau d'objets JSON, ce qui permet de le manipuler en JavaScript,
     const currentProducts = utils.strToObject(productsFile)
-    const product = currentProducts.find( product => product.id === idToGet)
+    console.log('currentProducts.keys : ', currentProducts.Guitares[1])
+    const product = currentProducts.find( product => product.ID === idToGet)
+
     if (!product) {
         res.status(404).json({
             message: 'Product not found.'
