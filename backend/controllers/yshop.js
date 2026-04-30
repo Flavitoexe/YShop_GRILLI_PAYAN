@@ -26,7 +26,10 @@ const getProductById = (req, res) => {
     }
     // On transforme le contenu du fichier récupéré (string) pour créer un tableau d'objets JSON, ce qui permet de le manipuler en JavaScript,
     const currentProducts = utils.strToObject(productsFile)
-    const product = currentProducts.find( product => product.id === idToGet)
+    // On cherche l'instrument en fonction de son id,
+    const product = currentProducts.find( product => product.ID === idToGet)
+
+    // Enfin, on vérifie si l'instrument existe et on gestionne l'erreur en fonction.
     if (!product) {
         res.status(404).json({
             message: 'Product not found.'
@@ -89,7 +92,7 @@ const updateProduct = (req, res) => {
 
     // On cherche, dans le fichier data.json, le produit avec l'id correspondant,
     const currentProducts = utils.strToObject(productsFile)
-    let product = currentProducts.find( product => product.id === idToUpdate )
+    let product = currentProducts.find( product => product.ID === idToUpdate )
     if (product === undefined) {
         res.status(404).json({
             message: 'Product not found'
@@ -100,13 +103,13 @@ const updateProduct = (req, res) => {
     // On récupère les nouvelles données et on modifie le produit,
     const newValues = req.body
     if (newValues.id) { product.id = newValues.id }   // A voir si on garde
-    if (newValues.name) { product.name = newValues.name }
-    if (newValues.desc) { product.desc = newValues.desc }
-    if (newValues.quantity) { product.quantity = newValues.quantity }
-    if (newValues.price) { product.price = newValues.price }
-    if (newValues.devise) { product.devise = newValues.devise }
-    if (newValues.images) { product.images = newValues.images }
-    if (newValues.tags) { product.tags = newValues.tags }
+    if (newValues.Name) { product.Name = newValues.Name }
+    if (newValues.Description) { product.Description = newValues.Description }
+    if (newValues.Quantity) { product.Quantity = newValues.Quantity }
+    if (newValues.Prix) { product.Prix = newValues.Prix }
+    if (newValues.Devise) { product.Devise = newValues.Devise }
+    if (newValues.Images) { product.Images = newValues.Images }
+    if (newValues.Caracs) { product.Caracs = newValues.Caracs }
 
     // On réécrit dans le fichier data.json avec les nouvelles données.
     const error = utils.writeInFile(productsFile, currentProducts)
