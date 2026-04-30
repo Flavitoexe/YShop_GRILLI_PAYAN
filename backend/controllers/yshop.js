@@ -26,9 +26,10 @@ const getProductById = (req, res) => {
     }
     // On transforme le contenu du fichier récupéré (string) pour créer un tableau d'objets JSON, ce qui permet de le manipuler en JavaScript,
     const currentProducts = utils.strToObject(productsFile)
-    console.log('currentProducts.keys : ', currentProducts.Guitares[1])
+    // On cherche l'instrument en fonction de son id,
     const product = currentProducts.find( product => product.ID === idToGet)
 
+    // Enfin, on vérifie si l'instrument existe et on gestionne l'erreur en fonction.
     if (!product) {
         res.status(404).json({
             message: 'Product not found.'
