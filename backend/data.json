@@ -1,768 +1,834 @@
-[
-    {
-        "ID": 0,
-        "Name": "Guitare sèche 1/4",
-        "Description": "4 à 6 ans, < 110 cm, pour l'éveil musical, très petite caisse.",
-        "Quantity": 6,
-        "Prix": 149,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_4_marron_1.jpg",
-            "/guitare s/1_4_marron_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Yamaha",
-            "type": "acoustique"
+{
+    "Guitares": [
+        {
+            "ID": 0,
+            "Name": "Guitare sèche 1/4",
+            "Description": "4 à 6 ans, < 110 cm, pour l'éveil musical, très petite caisse.",
+            "Quantity": 6,
+            "Prix": 149,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_4_marron_1.jpg", "/guitares s/1_4_marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Yamaha"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 1,
-        "Name": "Guitare sèche 1/4",
-        "Description": "4 à 6 ans, < 110 cm, pour l'éveil musical, très petite caisse.",
-        "Quantity": 4,
-        "Prix": 549,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_4_rouge_1.jpg",
-            "/guitare s/1_4_rouge_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Lag",
-            "type": "acoustique"
+        {
+            "ID": 1,
+            "Name": "Guitare sèche 1/4",
+            "Description": "4 à 6 ans, < 110 cm, pour l'éveil musical, très petite caisse.",
+            "Quantity": 4,
+            "Prix": 549,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_4_rouge_1.jpg", "/guitares s/1_4_rouge_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Lag"
+            } 
+        },  
+        {
+            "ID": 2,
+            "Name": "Guitare sèche 1/2",
+            "Description": "6 à 8 ans, 110 - 130 cm, Le standard pour débuter en primaire.",
+            "Quantity": 2,
+            "Prix": 52,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_2_bleue_1.jpg", "/guitares s/1_2_bleue_2.jpg", "/guitares s/1_2_bleue_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gear4music"
+            }
+        },     
+        {
+            "ID": 3,
+            "Name": "Guitare sèche 1/2",
+            "Description": "6 à 8 ans, 110 - 130 cm, Le standard pour débuter en primaire.",
+            "Quantity": 2,
+            "Prix": 229,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_2_rouge_1.jpg", "/guitares s/1_2_rouge_2.jpg", "/guitares s/1_2_rouge_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Ortega"
+            }
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 2,
-        "Name": "Guitare sèche 1/2",
-        "Description": "6 à 8 ans, 110 - 130 cm, Le standard pour débuter en primaire.",
-        "Quantity": 2,
-        "Prix": 52,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_2_bleue_1.jpg",
-            "/guitare s/1_2_bleue_2.jpg",
-            "/guitare s/1_2_bleue_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Gear4music",
-            "type": "acoustique"
+        {
+            "ID": 4,
+            "Name": "Guitare sèche 3/4",
+            "Description": "8 à 11 ans, 130 - 150 cm, Très populaire, souvent appelée 'guitare d'étude'.",
+            "Quantity": 7,
+            "Prix": 234,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/3_4_blanche_1.jpg", "/guitares s/3_4_blanche_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Ortega"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 3,
-        "Name": "Guitare sèche 1/2",
-        "Description": "6 à 8 ans, 110 - 130 cm, Le standard pour débuter en primaire.",
-        "Quantity": 2,
-        "Prix": 229,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_2_rouge_1.jpg",
-            "/guitare s/1_2_rouge_2.jpg",
-            "/guitare s/1_2_rouge_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Ortega",
-            "type": "acoustique"
+        {
+            "ID": 5,
+            "Name": "Guitare sèche 3/4",
+            "Description": "8 à 11 ans, 130 - 150 cm, Très populaire, souvent appelée 'guitare d'étude'.",
+            "Quantity": 0,
+            "Prix": 0,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/3_4_noire_1.jpg", "/guitares s/3_4_noire_2.jpg", "/guitares s/3_4_noire_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gear4music"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 4,
-        "Name": "Guitare sèche 3/4",
-        "Description": "8 à 11 ans, 130 - 150 cm, Très populaire, souvent appelée 'guitare d'étude'.",
-        "Quantity": 7,
-        "Prix": 234,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/3_4_blanche_1.jpg",
-            "/guitare s/3_4_blanche_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Ortega",
-            "type": "acoustique"
+        {
+            "ID": 6,
+            "Name": "Guitare sèche 7/8",
+            "Description": "11 à 13 ans, 150 - 160 cm, Idéale pour les ados ou les adultes aux petites mains",
+            "Quantity": 2,
+            "Prix": 1599,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/7_8_bleue_1.jpg", "/guitares s/7_8_bleue_2.jpg"],
+            "Caracs":{
+                "famille": "cordes",
+                "marque": "Taylor"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 5,
-        "Name": "Guitare sèche 3/4",
-        "Description": "8 à 11 ans, 130 - 150 cm, Très populaire, souvent appelée 'guitare d'étude'.",
-        "Quantity": 0,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/3_4_noire_1.jpg",
-            "/guitare s/3_4_noire_2.jpg",
-            "/guitare s/3_4_noire_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Gear4music",
-            "type": "acoustique"
+        {
+            "ID": 7,
+            "Name": "Guitare sèche 7/8",
+            "Description": "11 à 13 ans, 150 - 160 cm, Idéale pour les ados ou les adultes aux petites mains",
+            "Quantity": 4,
+            "Prix": 699,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/7_8_prune_1.jpg", "/guitares s/7_8_prune_2.jpg", "/guitares s/7_8_prune_3.jpg"],
+            "Caracs":{
+                "famille": "cordes",
+                "marque": "Takamine"
+            } 
+        },       
+        {
+            "ID": 8,
+            "Name": "Guitare sèche 4/4 (adulte)",
+            "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
+            "Quantity": 2,
+            "Prix": 949,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_4_gold_1.jpg", "/guitares s/1_4_gold_2.jpg", "/guitares s/1_4_gold_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Cort"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 6,
-        "Name": "Guitare sèche 7/8",
-        "Description": "11 à 13 ans, 150 - 160 cm, Idéale pour les ados ou les adultes aux petites mains",
-        "Quantity": 2,
-        "Prix": 1599,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/7_8_bleue_1.jpg",
-            "/guitare s/7_8_bleue_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Taylor",
-            "type": "acoustique"
+        {
+            "ID": 9,
+            "Name": "Guitare sèche 4/4 (adulte)",
+            "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
+            "Quantity": 8,
+            "Prix": 199,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_4_marron_1.jpg", "/guitares s/1_4_marron_2.jpg", "/guitares s/1_4_marron_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Fender"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 7,
-        "Name": "Guitare sèche 7/8",
-        "Description": "11 à 13 ans, 150 - 160 cm, Idéale pour les ados ou les adultes aux petites mains",
-        "Quantity": 4,
-        "Prix": 699,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/7_8_prune_1.jpg",
-            "/guitare s/7_8_prune_2.jpg",
-            "/guitare s/7_8_prune_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Takamine",
-            "type": "acoustique"
+        {
+            "ID": 10,
+            "Name": "Guitare sèche 4/4 (adulte)",
+            "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
+            "Quantity": 2,
+            "Prix": 2900,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares s/1_4_verte_1.jpg", "/guitares s/1_4_verte_2.jpg", "/guitares s/1_4_verte_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Takamine"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 8,
-        "Name": "Guitare sèche 4/4 (adulte)",
-        "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
-        "Quantity": 2,
-        "Prix": 949,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_4_gold_1.jpg",
-            "/guitare s/1_4_gold_2.jpg",
-            "/guitare s/1_4_gold_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Cort",
-            "type": "acoustique"
+        {
+            "ID": 11,
+            "Name": "Guitare électrique",
+            "Description": "",
+            "Quantity": 3,
+            "Prix": 3099,
+            "Devise": "EUR (€)",
+            "Images": ["/guitare e/bleue_1.jpg", "/guitare e/bleue_2.jpg", "/guitare e/bleue_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Ibanez"
+            } 
+        },   
+        {
+            "ID": 12,
+            "Name": "Guitare électrique",
+            "Description": "",
+            "Quantity": 3,
+            "Prix": 129,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares e/noire_1.jpg", "/guitares e/noire_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Harley Benton"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 9,
-        "Name": "Guitare sèche 4/4 (adulte)",
-        "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
-        "Quantity": 8,
-        "Prix": 199,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_4_marron_1.jpg",
-            "/guitare s/1_4_marron_2.jpg",
-            "/guitare s/1_4_marron_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Fender",
-            "type": "acoustique"
+        {
+            "ID": 13,
+            "Name": "Guitare électrique",
+            "Description": "",
+            "Quantity": 2,
+            "Prix": 239,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares e/rouge_1.jpg", "/guitares e/rouge_2.jpg", "/guitares e/rouge_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Eko"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 10,
-        "Name": "Guitare sèche 4/4 (adulte)",
-        "Description": "C'est la taille standard (entière). Elle convient généralement à toute personne mesurant plus de 1m60.",
-        "Quantity": 2,
-        "Prix": 2900,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare s/1_4_verte_1.jpg",
-            "/guitare s/1_4_verte_2.jpg",
-            "/guitare s/1_4_verte_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Takamine",
-            "type": "acoustique"
+        {
+            "ID": 14,
+            "Name": "Guitare électrique",
+            "Description": "",
+            "Quantity": 5,
+            "Prix": 999,
+            "Devise": "EUR (€)",
+            "Images": ["/guitares e/verte_1.jpg", "/guitares e/verte_2.jpg", "/guitares e/verte_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Fender"
+            } 
+        }
+    ],
+    "Basses": [
+        {
+            "ID": 15,
+            "Name": "Basse électrique",
+            "Description": "",
+            "Quantity": 2,
+            "Prix": 319,
+            "Devise": "EUR (€)",
+            "Images": ["/basses/noire_1.jpg", "/basses/noire_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Cort"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 11,
-        "Name": "Guitare électrique",
-        "Description": "",
-        "Quantity": 3,
-        "Prix": 3099,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare e/bleue_1.jpg",
-            "/guitare e/bleue_2.jpg",
-            "/guitare e/bleue_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Ibanez",
-            "type": "éléctrique"
+        {
+            "ID": 16,
+            "Name": "Basse électrique",
+            "Description": "",
+            "Quantity": 2,
+            "Prix": 289,
+            "Devise": "EUR (€)",
+            "Images": ["/basses/rouge_1.jpg", "/basses/rouge_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Cort"
+            } 
+        }
+    ],
+    "Violons" : [
+        {
+            "ID": 17,
+            "Name": "Violon 3/4",
+            "Description": "Enfants d'environ 9-12 ans",
+            "Quantity": 5,
+            "Prix": 138,
+            "Devise": "EUR (€)",
+            "Images": ["/violons/3_4_blanc_1.jpg", "/violons/3_4_blanc_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Harley Benton"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 12,
-        "Name": "Guitare électrique",
-        "Description": "",
-        "Quantity": 3,
-        "Prix": 129,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare e/noire_1.jpg",
-            "/guitare e/noire_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Harley Benton",
-            "type": "éléctrique"
+        {
+            "ID": 18,
+            "Name": "Violon 3/4",
+            "Description": "Enfants d'environ 9-12 ans",
+            "Quantity": 5,
+            "Prix": 138,
+            "Devise": "EUR (€)",
+            "Images": ["/violons/3_4_noir_1.jpg", "/violons/3_4_noir_2.jpg", "/violons/3_4_noir_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Harley Benton"
+            } 
+        },      
+        {
+            "ID": 19,
+            "Name": "Violon 4/4",
+            "Description": "Violon standard pour adultes et ados (≈ à partir de 12 ans)",
+            "Quantity": 2,
+            "Prix": 446,
+            "Devise": "EUR (€)",
+            "Images": ["/violons/4_4_marron_1.jpg", "/violons/4_4_marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Yamaha"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 13,
-        "Name": "Guitare électrique",
-        "Description": "",
-        "Quantity": 2,
-        "Prix": 239,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare e/rouge_1.jpg",
-            "/guitare e/rouge_2.jpg",
-            "/guitare e/rouge_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Eko",
-            "type": "éléctrique"
+        {
+            "ID": 20,
+            "Name": "Violon 4/4",
+            "Description": "Violon standard pour adultes et ados (≈ à partir de 12 ans)",
+            "Quantity": 2,
+            "Prix": 15690,
+            "Devise": "EUR (€)",
+            "Images": ["/violons/4_4_marron2_1.jpg", "/violons/4_4_marron2_2.jpg", "/violons/4_4_marron2_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Andrea Varazzani"
+            } 
+        }
+    ],
+    "Contrebasses": [
+        {
+            "ID": 21,
+            "Name": "Contrebasse 1/2",
+            "Description": "Pour ados ou adultes de petit gabarit, Plus facile à transporter et à jouer",
+            "Quantity": 2,
+            "Prix": 1176,
+            "Devise": "EUR (€)",
+            "Images": ["/contrebasses/1_2_marron_1.jpg", "/contrebasses/1_2_marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Laminé"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 14,
-        "Name": "Guitare électrique",
-        "Description": "",
-        "Quantity": 5,
-        "Prix": 999,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/guitare e/verte_1.jpg",
-            "/guitare e/verte_2.jpg",
-            "/guitare e/verte_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Fender",
-            "type": "éléctrique"
+        {
+            "ID": 22,
+            "Name": "Contrebasse 1/2",
+            "Description": "Pour ados ou adultes de petit gabarit, Plus facile à transporter et à jouer",
+            "Quantity": 2,
+            "Prix": 849,
+            "Devise": "EUR (€)",
+            "Images": ["/contrebasses/1_2_noire_1.jpg", "/contrebasses/1_2_noire_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gewa Rockabilly"
+            } 
         },
-        "Category": "guitares"
-    },
-    {
-        "ID": 15,
-        "Name": "Basse électrique",
-        "Description": "",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/basse/verte_1.jpg",
-            "/basse/verte_2.jpg",
-            "/basse/verte_3.jpg"
-        ],
-        "Caracs": {
-            "famille": "cordes",
-            "marque": "Fender",
-            "type": "éléctrique"
+        {
+            "ID": 23,
+            "Name": "Contrebasse 3/4",
+            "Description": "Taille standard pour adultes, Bon équilibre entre confort et puissance sonore",
+            "Quantity": 3,
+            "Prix": 849,
+            "Devise": "EUR (€)",
+            "Images": ["/contrebasses/3_4_blanche_1.jpg", "/contrebasses/3_4_blanche_2.jpg", "/contrebasses/3_4_blanche_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Master Bucur"
+            } 
         },
-        "Category": "basses"
-    },
-    {
-        "ID": 7,
-        "Name": "Violon 1/4",
-        "Description": "Enfants de 5-7 ans",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 24,
+            "Name": "Contrebasse 3/4",
+            "Description": "Taille standard pour adultes, Bon équilibre entre confort et puissance sonore",
+            "Quantity": 3,
+            "Prix": 21590,
+            "Devise": "EUR (€)",
+            "Images": ["/contrebasses/3_4_marron_1.jpg", "/contrebasses/3_4_marron_2.jpg", "/contrebasses/3_4_marron_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Master Bucur"
+            } 
+        }
+    ],
+    "Mandolines": [
+        {
+            "ID": 25,
+            "Name": "Mandoline standard",
+            "Description": "Convient à la majorité des adultes et des ados, Instrument compact, facile à transporter (Longueur totale : environ 60–70 cm Mensur (longueur des cordes) : ~33–35 cm)",
+            "Quantity": 5,
+            "Prix": 219,
+            "Devise": "EUR (€)",
+            "Images": ["/mandolines/beige_1.jpg", "/mandolines/beige_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Thomann"
+            } 
         },
-        "Category": "violons"
-    },
-    {
-        "ID": 8,
-        "Name": "Violon 1/2",
-        "Description": "Enfants de 7-9 ans",
-        "Quantity": 5,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 26,
+            "Name": "Mandoline standard",
+            "Description": "Convient à la majorité des adultes et des ados, Instrument compact, facile à transporter (Longueur totale : environ 60–70 cm Mensur (longueur des cordes) : ~33–35 cm)",
+            "Quantity": 4,
+            "Prix": 382,
+            "Devise": "EUR (€)",
+            "Images": ["/mandolines/marron_1.jpg", "/mandolines/marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Fender"
+            } 
+        } 
+    ],
+    "Harpes": [
+        {
+            "ID": 27,
+            "Name": "Grande harpe",
+            "Description": "Harpe à pédales, 40 à 47 cordes, Environ 1,70 m à 1,85 m de haut, Utilisée en musique classique et orchestre, Très lourde (30-40 kg), destinée aux musiciens avancés",
+            "Quantity": 2,
+            "Prix": 999,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/grande_beige_1.jpg", "/harpes/grande_beige_2.jpg", "/harpes/grande_beige_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gear4music"
+            } 
         },
-        "Category": "violons"
-    },
-    {
-        "ID": 9,
-        "Name": "Violon 3/4",
-        "Description": "Enfants d'environ 9-12 ans",
-        "Quantity": 4,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 28,
+            "Name": "Grande harpe",
+            "Description": "Harpe à pédales, 40 à 47 cordes, Environ 1,70 m à 1,85 m de haut, Utilisée en musique classique et orchestre, Très lourde (30-40 kg), destinée aux musiciens avancés",
+            "Quantity": 2,
+            "Prix": 1039,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/grande_noire_1.jpg", "/harpes/grande_noire_2.jpg", "/harpes/grande_noire_3.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gear4music"
+            } 
         },
-        "Category": "violons"
-    },
-    {
-        "ID": 10,
-        "Name": "Violon 4/4",
-        "Description": "Violon standard pour adultes et ados (≈ à partir de 12 ans)",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 28,
+            "Name": "Harpe celtique",
+            "Description": "32 à 38 cordes, Environ 1,20 m à 1,50 m, Bon compromis pour débutants et intermédiaires",
+            "Quantity": 1,
+            "Prix": 520,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/celtique_marron_1.jpg", "/harpes/celtique_marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Thomann"
+            } 
         },
-        "Category": "violons"
-    },
-    {
-        "ID": 11,
-        "Name": "Contrebasse 1/2",
-        "Description": "Pour ados ou adultes de petit gabarit, Plus facile à transporter et à jouer",
-        "Quantity": 8,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 29,
+            "Name": "Harpe celtique",
+            "Description": "32 à 38 cordes, Environ 1,20 m à 1,50 m, Bon compromis pour débutants et intermédiaires",
+            "Quantity": 1,
+            "Prix": 2800,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/celtique_rouge_1.jpg", "/harpes/celtique_rouge_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Muzikkon"
+            } 
+        }, 
+        {
+            "ID": 30,
+            "Name": "Petite harpe",
+            "Description": "15 à 27 cordes, Se posent sur les genoux ou une table, Idéal pour débuter ou pour enfants",
+            "Quantity": 3,
+            "Prix": 125,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/petite_marron_1.jpg", "/harpes/petite_marron_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "LANGLIE"
+            } 
         },
-        "Category": "contrebasses"
-    },
-    {
-        "ID": 12,
-        "Name": "Contrebasse 3/4",
-        "Description": "Taille standard pour adultes, Bon équilibre entre confort et puissance sonore",
-        "Quantity": 9,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 31,
+            "Name": "Petite harpe",
+            "Description": "15 à 27 cordes, Se posent sur les genoux ou une table, Idéal pour débuter ou pour enfants",
+            "Quantity": 3,
+            "Prix": 95,
+            "Devise": "EUR (€)",
+            "Images": ["/harpes/petite_marron2_1.jpg", "/harpes/petite_marron2_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Uzman"
+            } 
+        } 
+    ],
+    "Banjos": [
+        {
+            "ID": 32,
+            "Name": "Banjo 5 cordes",
+            "Description": "Manche standard, Utilisé en folk, bluegrass, Taille adulte classique",
+            "Quantity": 2,
+            "Prix": 515,
+            "Devise": "EUR (€)",
+            "Images": ["/banjos/5_blanc_1.jpg", "/banjos/5_blanc_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Ibanez"
+            } 
         },
-        "Category": "contrebasses"
-    },
-    {
-        "ID": 13,
-        "Name": "Mandoline standard",
-        "Description": "Convient à la majorité des adultes et des ados, Instrument compact, facile à transporter (Longueur totale : environ 60–70 cm Mensur (longueur des cordes) : ~33–35 cm)",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 33,
+            "Name": "Banjo 5 cordes",
+            "Description": "Manche standard, Utilisé en folk, bluegrass, Taille adulte classique",
+            "Quantity": 7,
+            "Prix": 489,
+            "Devise": "EUR (€)",
+            "Images": ["/banjos/5_noir_1.jpg", "/banjos/5_noir_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Ortega"
+            } 
         },
-        "Category": "mandolines"
-    },
-    {
-        "ID": 14,
-        "Name": "Grande harpe",
-        "Description": "Harpe à pédales, 40 à 47 cordes, Environ 1,70 m à 1,85 m de haut, Utilisée en musique classique et orchestre, Très lourde (30-40 kg), destinée aux musiciens avancés",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 34,
+            "Name": "Banjo plectrum (4 cordes)",
+            "Description": "Manche standard, Style jazz traditionnel, Taille adulte classique",
+            "Quantity": 4,
+            "Prix": 555,
+            "Devise": "EUR (€)",
+            "Images": ["/banjos/4_beige_1.jpg", "/banjos/4_beige_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Thomann"
+            } 
         },
-        "Category": "harpes"
-    },
-    {
-        "ID": 15,
-        "Name": "Harpe celtique",
-        "Description": "32 à 38 cordes, Environ 1,20 m à 1,50 m, Bon compromis pour débutants et intermédiaires",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 35,
+            "Name": "Banjo plectrum (4 cordes)",
+            "Description": "Manche standard, Style jazz traditionnel, Taille adulte classique",
+            "Quantity": 3,
+            "Prix": 779,
+            "Devise": "EUR (€)",
+            "Images": ["/banjos/4_noir_1.jpg", "/banjos/4_noir_2.jpg"],
+            "Caracs": {
+                "famille": "cordes",
+                "marque": "Gold Tone"
+            } 
+        }        
+    ],
+    "Saxophones": [
+       
+        {
+            "ID": 36,
+            "Name": "Saxophone alto",
+            "Description": "Taille moyenne, Idéal pour débuter, Son équilibré, ~60-70 cm (courbé)",
+            "Quantity": 5,
+            "Prix": 998,
+            "Devise": "EUR (€)",
+            "Images": ["/saxophones/alto_cuivre_1.jpg", "/saxophones/alto_cuivre_1.jpg"],
+            "Caracs":  {
+                "famille": "vent",
+                "marque": "Yamaha"
+            }
         },
-        "Category": "harpes"
-    },
-    {
-        "ID": 16,
-        "Name": "Petite harpe",
-        "Description": "15 à 27 cordes, Se posent sur les genoux ou une table, Idéal pour débuter ou pour enfants",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 37,
+            "Name": "Saxophone alto",
+            "Description": "Taille moyenne, Idéal pour débuter, Son équilibré, ~60-70 cm (courbé)",
+            "Quantity": 2,
+            "Prix": 9220,
+            "Devise": "EUR (€)",
+            "Images": ["/saxophones/alto_noir_1.jpg", "/saxophones/alto_noir_1.jpg"],
+            "Caracs":  {
+                "famille": "vent",
+                "marque": "Selmer"
+            }
         },
-        "Category": "harpes"
-    },
-    {
-        "ID": 17,
-        "Name": "Banjo 5 cordes",
-        "Description": "Manche standard, Utilisé en folk, bluegrass, Taille adulte classique",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 38,
+            "Name": "Saxophone ténor",
+            "Description": "Son plus grave et plus puissant, ~75-85 cm",
+            "Quantity": 4,
+            "Prix": 469,
+            "Devise": "EUR (€)",
+            "Images": ["/saxophones/tenor_cuivre_1.jpg", "/saxophones/tenor_cuivre_2.jpg"],
+            "Caracs":  {
+                "famille": "vent",
+                "marque": "Selmer"
+            }
         },
-        "Category": "banjos"
-    },
-    {
-        "ID": 18,
-        "Name": "Banjo plectrum (4 cordes)",
-        "Description": "Manche standard, Style jazz traditionnel, Taille adulte classique",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "cordes",
-            "type": "acoustique"
+        {
+            "ID": 39,
+            "Name": "Saxophone ténor",
+            "Description": "Son plus grave et plus puissant, ~75-85 cm",
+            "Quantity": 3,
+            "Prix": 1012,
+            "Devise": "EUR (€)",
+            "Images": ["/saxophones/tenor_noir_1.jpg", "/saxophones/tenor_noir_2.jpg"],
+            "Caracs":  {
+                "famille": "vent",
+                "marque": "CHEWYZ"
+            }
+        }
+    ],
+    "Clarinettes": [
+        {
+            "ID": 40,
+            "Name": "Clarinette en Sib (Bb)",
+            "Description": "~65 cm, la plus courante, Taille standard pour débutants et professionnels",
+            "Quantity": 1,
+            "Prix": 5498,
+            "Devise": "EUR (€)",
+            "Images": ["/clarinettes/sib_marron_1.jpg", "/clarinettes/sib_marron_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": " F.A. Uebel"
+            }
         },
-        "Category": "banjos"
-    },
-    {
-        "ID": 19,
-        "Name": "Saxophone soprano",
-        "Description": "Souvent droit (comme une clarinette),  Son aigu, ~ 65 cm",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 41,
+            "Name": "Clarinette en Sib (Bb)",
+            "Description": "~65 cm, la plus courante, Taille standard pour débutants et professionnels",
+            "Quantity": 4,
+            "Prix": 3700,
+            "Devise": "EUR (€)",
+            "Images": ["/clarinettes/sib_noire_1.jpg", "/clarinettes/sib_noire_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Yamaha"
+            }
         },
-        "Category": "saxophones"
-    },
-    {
-        "ID": 20,
-        "Name": "Saxophone alto",
-        "Description": "Taille moyenne, Idéal pour débuter, Son équilibré, ~60-70 cm (courbé)",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 42,
+            "Name": "Clarinette en La (A)",
+            "Description": "~67 cm, Utilisée surtout en musique classique",
+            "Quantity": 3,
+            "Prix": 953,
+            "Devise": "EUR (€)",
+            "Images": ["/clarinettes/sib_noire_1.jpg", "/clarinettes/sib_noire_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "ZMTV"
+            }
         },
-        "Category": "saxophones"
-    },
-    {
-        "ID": 21,
-        "Name": "Saxophone ténor",
-        "Description": "Son plus grave et plus puissant, ~75-85 cm",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 43,
+            "Name": "Clarinette en La (A)",
+            "Description": "~67 cm, Utilisée surtout en musique classique",
+            "Quantity": 3,
+            "Prix": 109,
+            "Devise": "EUR (€)",
+            "Images": ["/clarinettes/sib_rouge_1.jpg", "/clarinettes/sib_rouge_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Gear4music"
+            }
+        }
+    ],
+    
+    "Trompettes": [
+        
+        {
+            "ID": 44,
+            "Name": "Trompette en Sib (Bb)",
+            "Description": "la plus utilisée (débutants, orchestre, jazz), Longueur du tube : environ 1,40 m (enroulé), Son équilibré, polyvalent",
+            "Quantity": 2,
+            "Prix": 906,
+            "Devise": "EUR (€)",
+            "Images": ["/trompettes/sib_cuivre_1.jpg", "/trompettes/sib_cuivre_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Yamaha"
+            }
         },
-        "Category": "saxophones"
-    },
-    {
-        "ID": 22,
-        "Name": "Saxophone baryton",
-        "Description": "Très grand et lourd, Son très grave, ~1 m ou plus",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 45,
+            "Name": "Trompette en Sib (Bb)",
+            "Description": "la plus utilisée (débutants, orchestre, jazz), Longueur du tube : environ 1,40 m (enroulé), Son équilibré, polyvalent",
+            "Quantity": 2,
+            "Prix": 249,
+            "Devise": "EUR (€)",
+            "Images": ["/trompettes/sib_noire_1.jpg", "/trompettes/sib_noire_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
         },
-        "Category": "saxophones"
-    },
-    {
-        "ID": 23,
-        "Name": "Clarinette en Sib (Bb)",
-        "Description": "~65 cm, la plus courante, Taille standard pour débutants et professionnels",
-        "Quantity": 4,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 46,
+            "Name": "Trompette en Ut (C)",
+            "Description": "Très utilisée en musique classique et orchestre, Un peu plus courte que la Sib, Son plus brillant et direct",
+            "Quantity": 3,
+            "Prix": 2898,
+            "Devise": "EUR (€)",
+            "Images": ["/trompettes/ut_arent_1.jpg", "/trompettes/ut_arent_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Yamaha"
+            }
         },
-        "Category": "clarinettes"
-    },
-    {
-        "ID": 24,
-        "Name": "Clarinette en La (A)",
-        "Description": "~67 cm, Utilisée surtout en musique classique",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 47,
+            "Name": "Trompette en Ut (C)",
+            "Description": "Très utilisée en musique classique et orchestre, Un peu plus courte que la Sib, Son plus brillant et direct",
+            "Quantity": 3,
+            "Prix": 179,
+            "Devise": "EUR (€)",
+            "Images": ["/trompettes/ut_cuivre_1.jpg", "/trompettes/ut_cuivre_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
+        }
+    ],
+    "Batteries": [
+        {
+            "ID": 35,
+            "Name": "Batterie",
+            "Description": "",
+            "Quantity": 0,
+            "Prix": 0,
+            "Devise": "EUR (€)",
+            "Images": [],
+            "Caracs": {
+                "famille": "percussions"
+            }
+        }
+    ],
+    "Djembes": [
+        {
+            "ID": 40,
+            "Name": "Petit djembe",
+            "Description": "(enfants / débutants), 20 à 25 cm de diamètre de peau, Hauteur : ~35 à 45 cm, Son plus aigu, moins puissant, Léger et facile à porte",
+            "Quantity": 9,
+            "Prix": 19,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/petit_marron_1.jpg", "/djembes/petit_marron_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
         },
-        "Category": "clarinettes"
-    },
-    {
-        "ID": 25,
-        "Name": "Petite clarinette en Mib (Eb)",
-        "Description": "~45-50 cm, Son très aigu et brillant",
-        "Quantity": 5,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 40,
+            "Name": "Petit djembe",
+            "Description": "(enfants / débutants), 20 à 25 cm de diamètre de peau, Hauteur : ~35 à 45 cm, Son plus aigu, moins puissant, Léger et facile à porte",
+            "Quantity": 9,
+            "Prix": 45,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/petit_marron2_1.jpg", "/djembes/petit_marron2_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Djoliba"
+            }
         },
-        "Category": "clarinettes"
-    },
-    {
-        "ID": 26,
-        "Name": "Clarinette basse",
-        "Description": "~1 m ou plus (avec pavillon courbé), Son grave, profond",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 41,
+            "Name": "Djembe moyen",
+            "Description": "la plus courante,8 à 32 cm de diamètre, Hauteur : ~50 à 60 cm, Son équilibré (basses + aigus), Le choix standard pour débutants et amateurs",
+            "Quantity": 5,
+            "Prix": 85,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/moyen_clair_1.jpg", "/djembes/moyen_clair_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
         },
-        "Category": "clarinettes"
-    },
-    {
-        "ID": 27,
-        "Name": "Flûte traversière en Ut (C)",
-        "Description": "Taille standard pour débutants et pros",
-        "Quantity": 4,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 41,
+            "Name": "Djembe moyen",
+            "Description": "la plus courante,8 à 32 cm de diamètre, Hauteur : ~50 à 60 cm, Son équilibré (basses + aigus), Le choix standard pour débutants et amateurs",
+            "Quantity": 4,
+            "Prix": 100,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/moyen_marron_1.jpg", "/djembes/moyen_marron_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Shiver"
+            }
         },
-        "Category": "flutes"
-    },
-    {
-        "ID": 28,
-        "Name": "Petite flûte / piccolo",
-        "Description": "Son très aigu",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 42,
+            "Name": "Grand djembe",
+            "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
+            "Quantity": 3,
+            "Prix": 359,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/grand_marron_1.jpg", "/djembes/grand_marron_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
         },
-        "Category": "flutes"
-    },
-    {
-        "ID": 29,
-        "Name": "Flûte alto",
-        "Description": "Son plus grave et doux",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 42,
+            "Name": "Grand djembe",
+            "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
+            "Quantity": 3,
+            "Prix": 0,
+            "Devise": "EUR (€)",
+            "Images": [],
+            "Caracs": {
+                "famille": "percussions"
+            }
         },
-        "Category": "flutes"
-    },
-    {
-        "ID": 30,
-        "Name": "Flûte basse",
-        "Description": "Son très grave",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 42,
+            "Name": "Grand djembe",
+            "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
+            "Quantity": 5,
+            "Prix": 415,
+            "Devise": "EUR (€)",
+            "Images": ["/djembes/grand_marron2_1.jpg", "/djembes/grand_marron2_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Afroton"
+            }
+        }         
+    ],
+    "Maracas": [
+        {
+            "ID": 44,
+            "Name": "Maracas moyennes",
+            "Description": "Environ 15 à 25 cm, Son équilibré (aigus + un peu de basses), Utilisation la plus courant, Parfait pour danse, musique latine, école",
+            "Quantity": 6,
+            "Prix": 30,
+            "Devise": "EUR (€)",
+            "Images": ["/maracas/moyen_jaune_1.jpg", "/maracas/moyen_jaune_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "Thomann"
+            }
         },
-        "Category": "flutes"
-    },
-    {
-        "ID": 31,
-        "Name": "Trompette en Sib (Bb)",
-        "Description": "la plus utilisée (débutants, orchestre, jazz), Longueur du tube : environ 1,40 m (enroulé), Son équilibré, polyvalent",
-        "Quantity": 2,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 44,
+            "Name": "Maracas moyennes",
+            "Description": "Environ 15 à 25 cm, Son équilibré (aigus + un peu de basses), Utilisation la plus courant, Parfait pour danse, musique latine, école",
+            "Quantity": 6,
+            "Prix": 30,
+            "Devise": "EUR (€)",
+            "Images": ["/maracas/moyen_noir_1.jpg", "/maracas/moyen_noir_2.jpg"],
+            "Caracs": {
+                "famille": "vent",
+                "marque": "MEINL"
+            }
         },
-        "Category": "trompettes"
-    },
-    {
-        "ID": 32,
-        "Name": "Trompette en Ut (C)",
-        "Description": "Très utilisée en musique classique et orchestre, Un peu plus courte que la Sib, Son plus brillant et direct",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 44,
+            "Name": "Maracas moyennes",
+            "Description": "Environ 15 à 25 cm, Son équilibré (aigus + un peu de basses), Utilisation la plus courant, Parfait pour danse, musique latine, école",
+            "Quantity": 6,
+            "Prix": 0,
+            "Devise": "EUR (€)",
+            "Images": [],
+            "Caracs": {
+                "famille": "percussions"
+            }
         },
-        "Category": "trompettes"
-    },
-    {
-        "ID": 33,
-        "Name": "Trompette piccolo",
-        "Description": "Beaucoup plus petite (tube plus court), Son très aigu et brillant, Utilisée en musique baroque ou pièces virtuoses",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
+        {
+            "ID": 45,
+            "Name": "Grandes maracas",
+            "Description": "25 cm et plus, Son plus fort, plus grave et puissant, Utilisées en scène ou orchestre latins Demandent un peu plus de force au poignet",
+            "Quantity": 4,
+            "Prix": 50,
+            "Devise": "EUR (€)",
+            "Images": ["/maracas/grand_marron_1.jpg", "/maracas/grand_marron_2.jpg"],
+            "Caracs": {
+                "famille": "percussions",
+                "marque": "Coco Papaya"
+            }
         },
-        "Category": "trompettes"
-    },
-    {
-        "ID": 34,
-        "Name": "Trompette de poche",
-        "Description": "Même longueur de tube qu'une trompette normale… mais très compacte, Son similaire à la trompette standard, Pratique pour voyager, mais moins confortable pour certains",
-        "Quantity": 1,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "vent"
-        },
-        "Category": "trompettes"
-    },
-    {
-        "ID": 35,
-        "Name": "Batterie",
-        "Description": "",
-        "Quantity": 0,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "batteries"
-    },
-    {
-        "ID": 40,
-        "Name": "Petit djembe",
-        "Description": "(enfants / débutants), 20 à 25 cm de diamètre de peau, Hauteur : ~35 à 45 cm, Son plus aigu, moins puissant, Léger et facile à porte",
-        "Quantity": 5,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "djembes"
-    },
-    {
-        "ID": 41,
-        "Name": "Djembe moyen",
-        "Description": "la plus courante,8 à 32 cm de diamètre, Hauteur : ~50 à 60 cm, Son équilibré (basses + aigus), Le choix standard pour débutants et amateurs",
-        "Quantity": 5,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "djembes"
-    },
-    {
-        "ID": 42,
-        "Name": "Grand djembe",
-        "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
-        "Quantity": 3,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "djembes"
-    },
-    {
-        "ID": 43,
-        "Name": "Petites maracas",
-        "Description": "Environ 10 à 15 cm de longueur, Son léger, aigu et discret, Idéal pour enfants ou initiation Faciles à tenir et à secouer",
-        "Quantity": 4,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "maracas"
-    },
-    {
-        "ID": 44,
-        "Name": "Maracas moyennes",
-        "Description": "Environ 15 à 25 cm, Son équilibré (aigus + un peu de basses), Utilisation la plus courant, Parfait pour danse, musique latine, école",
-        "Quantity": 6,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "maracas"
-    },
-    {
-        "ID": 45,
-        "Name": "Grandes maracas",
-        "Description": "25 cm et plus, Son plus fort, plus grave et puissant, Utilisées en scène ou orchestre latins Demandent un peu plus de force au poignet",
-        "Quantity": 4,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
-        },
-        "Category": "maracas"
-    }
-]
+        {
+            "ID": 45,
+            "Name": "Grandes maracas",
+            "Description": "25 cm et plus, Son plus fort, plus grave et puissant, Utilisées en scène ou orchestre latins Demandent un peu plus de force au poignet",
+            "Quantity": 4,
+            "Prix": 20,
+            "Devise": "EUR (€)",
+           "Images": ["/maracas/grand_noir_1.jpg", "/maracas/grand_noir_2.jpg"],
+            "Caracs": {
+                "famille": "percussions",
+                "marque": "Stagg"
+            }
+        }
+    ]      
+}
