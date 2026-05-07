@@ -6,6 +6,10 @@
     /* background-color: oldlace; */
 }
 
+/* header {
+    position: fixed;
+} */
+
 .logo {
     height: 45px;
 }
@@ -43,13 +47,15 @@
     border: 1px solid gray;
     height: 12vh;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    justify-content: space-evenly;
+    justify-items: center;
 }
 
-.left-lower-header:hover {
+.products-btn:hover {
     color: violet;
+    border-bottom: 5px solid violet;
     cursor: pointer;
 }
 
@@ -58,4 +64,29 @@
     border: 2px solid darkgray;
     border-radius: 20px;
     width: 20vw;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+/* #search-query input::placeholder {
+    color: red;
+    font-size: 16px;
+} */
+
+.shrink-0 {
+    height: 50px;
+    padding: 7px;
+}
+
+.shrink-0:hover {
+    cursor: pointer;
+    background-color: #FFE4B5;
+    border-radius: 50%;
+}
+
+.right-lower-header {
+    width: 15vw;
+    gap: 15px;
+
+    display: flex;
+    justify-content: flex-end;
 }

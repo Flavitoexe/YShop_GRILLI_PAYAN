@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./components/head'); %>
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
-    <title>YShop</title>
 </head>
 <body>
-    <header>
-        <div class="upper-header">
-            <div class="logo-title">
-                <img class="logo" src="../img/misc/logo.png">
-                <h3>Music'shop</h3>
-            </div>
-        </div>
-        <div class="lower-header">
-            <div class="left-lower-header">
-                <h2>Produits</h2>
-            </div>
-
-            <div>
-                <form method="GET" class="search-bar">
-                    <input type="text" placeholder="Que recherchez-vous ?" name="search-query" id="search-query"/>
-                </form>
-            </div>
-            
-        </div>
-    </header>
-
+    <%- include('./components/header'); %>
     <script src="./script.js"></script>
 </body>
 </html>

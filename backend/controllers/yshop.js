@@ -1,8 +1,13 @@
 const utils = require('../utils/utils')
-const productsFile = './data.json'
+const productsFile = './backend/data.json'
 
 
-// getAllProducts est la fonction backend qui lit tous les produits dans le fichier data.json, et qui renvoie tout au format JSON.
+/**
+ * getAllProducts est la fonction backend qui lit tous les produits dans le fichier data.json, et qui renvoie tout au format JSON.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Tous les produits contenus dans le fichier 'data.json'.
+ */
 const getAllProducts = (req, res) => {
     console.log('Entrée dans getAllProducts : ')
     const productsList = utils.strToObject(productsFile)
@@ -13,7 +18,13 @@ const getAllProducts = (req, res) => {
     })
 }
 
-// getProductById est la fonction backend qui permet d'obtenir un produit grâce à son id.
+
+/**
+ * getProductById est la fonction backend qui permet d'obtenir un produit grâce à son id.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Le produit correspondant à l'id passé en paramètre.
+ */
 const getProductById = (req, res) => {
     console.log('Entrée dans getProductById : ')
     // On récupère l'id du produit à chercher dans l'url.
@@ -44,10 +55,36 @@ const getProductById = (req, res) => {
 
 }
 
-// addProduct est la fonction backend qui permet d'ajouter un produit dans le fichier data.json.
+
+/**
+ * getProductsbyCategory est la fonction backend qui permet d'obtenir tous les produits d'une catégorie.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Les produits correspondant à la catégorie passée en paramètre.
+ */
+const getProductsByCategory = (req, res) => {
+    console.log('Entrée dans getproductsByCategory :')
+    // On récupère la catégorie dans l'url
+    const category = req.params.category
+    if (category === undefined) {
+        res.status(500).json({
+            message: "Error with category."
+        })
+    }
+
+    const instrumentsList = utils.strToObject(productsFile)
+    console.log('instrumentsList : ', instrumentsList)
+}
+
+
+/**
+ * addProduct est la fonction backend qui permet d'ajouter un produit dans le fichier data.json.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Le statut de l'opération (500 si l'ajout a échoué, 200 si il a réussi...).
+ */
 const addProduct = (req, res) => {
     console.log('Entrée dans addProduct :')
-    // const currentProducts = utils.readInFile(productsFile)
 
     let products = utils.strToObject(productsFile)
     // On crée un id unique à chaque produit en fonction de la date,
@@ -69,7 +106,13 @@ const addProduct = (req, res) => {
     }
 }
 
-// updateProduct est la fonction backend qui permet modifie un produit dans le fichier data.json.
+
+/**
+ * updateProduct est la fonction backend qui permet modifie un produit dans le fichier data.json.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Le statut de l'opération (500 si la modification a échoué, 200 si elle a réussi...).
+ */
 const updateProduct = (req, res) => {
     console.log('Entrée dans updateProduct :')
 
@@ -126,7 +169,13 @@ const updateProduct = (req, res) => {
     }
 }
 
-// deleteProduct est la fonction backend qui permet de supprimer un produit.
+
+/**
+ * deleteProduct est la fonction backend qui permet de supprimer un produit.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns Le statut de l'opération (500 si la suppression a échoué, 200 si elle a réussi...).
+ */
 const deleteProduct = (req, res) => {
     console.log('Entrée dans deleteTask :')
     const idToDelete = parseInt(req.params.id)

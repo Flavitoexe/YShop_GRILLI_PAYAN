@@ -2,11 +2,6 @@ const express = require('express')
 const router = express.Router()
 const path = require('path')
 
-// pathJoin permet de relier le chemin absolu (__dirname) et le chemin relatif (filePath) pour faciliter l'écriture des chemins pour les routes.
-// function pathJoin(filePath) {
-//     return path.join(__dirname, filePath)
-// }
-
 // La route '/' affiche le fichier index.ejs, qui est la page principale d'accueil du site
 router.get('/', (req, res) => res.render('index'))
 
