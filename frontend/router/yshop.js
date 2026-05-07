@@ -9,6 +9,7 @@ const path = require('path')
 
 // La route '/' affiche le fichier index.ejs, qui est la page principale d'accueil du site
 router.get('/', (req, res) => res.render('index'))
+router.get('/getAllProducts', (req, res) => res.render('catalogue'))
 
 let message = 'ca marche trop bien'
 router.get('/test', (req, res) => res.render('test2', {message : message}))

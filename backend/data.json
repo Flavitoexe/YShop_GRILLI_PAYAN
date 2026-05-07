@@ -7,8 +7,8 @@
         "Prix": 149,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_4_marron_1.jpg",
-            "/guitares s/1_4_marron_2.jpg"
+            "/img/guitares-s/1_4_marron_1.jpg",
+            "/img/guitares-s/1_4_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -24,8 +24,8 @@
         "Prix": 549,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_4_rouge_1.jpg",
-            "/guitares s/1_4_rouge_2.jpg"
+            "/img/guitares-s/1_4_rouge_1.jpg",
+            "/img/guitares-s/1_4_rouge_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -41,9 +41,9 @@
         "Prix": 52,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_2_bleue_1.jpg",
-            "/guitares s/1_2_bleue_2.jpg",
-            "/guitares s/1_2_bleue_3.jpg"
+            "/img/guitares-s/1_2_bleue_1.jpg",
+            "/img/guitares-s/1_2_bleue_2.jpg",
+            "/img/guitares-s/1_2_bleue_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -59,9 +59,9 @@
         "Prix": 229,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_2_rouge_1.jpg",
-            "/guitares s/1_2_rouge_2.jpg",
-            "/guitares s/1_2_rouge_3.jpg"
+            "/img/guitares-s/1_2_rouge_1.jpg",
+            "/img/guitares-s/1_2_rouge_2.jpg",
+            "/img/guitares-s/1_2_rouge_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -77,8 +77,8 @@
         "Prix": 234,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/3_4_blanche_1.jpg",
-            "/guitares s/3_4_blanche_2.jpg"
+            "/img/guitares-s/3_4_blanche_1.jpg",
+            "/img/guitares-s/3_4_blanche_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -90,13 +90,13 @@
         "ID": 5,
         "Name": "Guitare sèche 3/4",
         "Description": "8 à 11 ans, 130 - 150 cm, Très populaire, souvent appelée 'guitare d'étude'.",
-        "Quantity": 0,
-        "Prix": 0,
+        "Quantity": 6,
+        "Prix": 156,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/3_4_noire_1.jpg",
-            "/guitares s/3_4_noire_2.jpg",
-            "/guitares s/3_4_noire_3.jpg"
+            "/img/guitares-s/3_4_noire_1.jpg",
+            "/img/guitares-s/3_4_noire_2.jpg",
+            "/img/guitares-s/3_4_noire_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -112,8 +112,8 @@
         "Prix": 1599,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/7_8_bleue_1.jpg",
-            "/guitares s/7_8_bleue_2.jpg"
+            "/img/guitares-s/7_8_bleue_1.jpg",
+            "/img/guitares-s/7_8_bleue_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -129,9 +129,9 @@
         "Prix": 699,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/7_8_prune_1.jpg",
-            "/guitares s/7_8_prune_2.jpg",
-            "/guitares s/7_8_prune_3.jpg"
+            "/img/guitares-s/7_8_prune_1.jpg",
+            "/img/guitares-s/7_8_prune_2.jpg",
+            "/img/guitares-s/7_8_prune_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -147,9 +147,9 @@
         "Prix": 949,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_4_gold_1.jpg",
-            "/guitares s/1_4_gold_2.jpg",
-            "/guitares s/1_4_gold_3.jpg"
+            "/img/guitares-s/4_4_gold_1.jpg",
+            "/img/guitares-s/4_4_gold_2.jpg",
+            "/img/guitares-s/4_4_gold_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -165,9 +165,9 @@
         "Prix": 199,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_4_marron_1.jpg",
-            "/guitares s/1_4_marron_2.jpg",
-            "/guitares s/1_4_marron_3.jpg"
+            "/img/guitares-s/4_4_marron_1.jpg",
+            "/img/guitares-s/4_4_marron_2.jpg",
+            "/img/guitares-s/4_4_marron_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -183,9 +183,9 @@
         "Prix": 2900,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares s/1_4_verte_1.jpg",
-            "/guitares s/1_4_verte_2.jpg",
-            "/guitares s/1_4_verte_3.jpg"
+            "/img/guitares-s/4_4_verte_1.jpg",
+            "/img/guitares-s/4_4_verte_2.jpg",
+            "/img/guitares-s/4_4_verte_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -201,9 +201,9 @@
         "Prix": 3099,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitare e/bleue_1.jpg",
-            "/guitare e/bleue_2.jpg",
-            "/guitare e/bleue_3.jpg"
+            "/img/guitares-e/bleue_1.jpg",
+            "/img/guitares-e/bleue_2.jpg",
+            "/img/guitares-e/bleue_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -219,8 +219,8 @@
         "Prix": 129,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares e/noire_1.jpg",
-            "/guitares e/noire_2.jpg"
+            "/img/guitares-e/noire_1.jpg",
+            "/img/guitares-e/noire_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -236,9 +236,9 @@
         "Prix": 239,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares e/rouge_1.jpg",
-            "/guitares e/rouge_2.jpg",
-            "/guitares e/rouge_3.jpg"
+            "/img/guitares-e/rouge_1.jpg",
+            "/img/guitares-e/rouge_2.jpg",
+            "/img/guitares-e/rouge_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -254,9 +254,9 @@
         "Prix": 999,
         "Devise": "EUR (€)",
         "Images": [
-            "/guitares e/verte_1.jpg",
-            "/guitares e/verte_2.jpg",
-            "/guitares e/verte_3.jpg"
+            "/img/guitares-e/verte_1.jpg",
+            "/img/guitares-e/verte_2.jpg",
+            "/img/guitares-e/verte_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -272,8 +272,8 @@
         "Prix": 319,
         "Devise": "EUR (€)",
         "Images": [
-            "/basses/noire_1.jpg",
-            "/basses/noire_2.jpg"
+            "/img/basses/noire_1.jpg",
+            "/img/basses/noire_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -289,8 +289,8 @@
         "Prix": 289,
         "Devise": "EUR (€)",
         "Images": [
-            "/basses/rouge_1.jpg",
-            "/basses/rouge_2.jpg"
+            "/img/basses/rouge_1.jpg",
+            "/img/basses/rouge_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -306,8 +306,8 @@
         "Prix": 138,
         "Devise": "EUR (€)",
         "Images": [
-            "/violons/3_4_blanc_1.jpg",
-            "/violons/3_4_blanc_2.jpg"
+            "/img/violons/3_4_blanc_1.jpg",
+            "/img/violons/3_4_blanc_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -323,9 +323,9 @@
         "Prix": 138,
         "Devise": "EUR (€)",
         "Images": [
-            "/violons/3_4_noir_1.jpg",
-            "/violons/3_4_noir_2.jpg",
-            "/violons/3_4_noir_3.jpg"
+            "/img/violons/3_4_noir_1.jpg",
+            "/img/violons/3_4_noir_2.jpg",
+            "/img/violons/3_4_noir_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -341,8 +341,8 @@
         "Prix": 446,
         "Devise": "EUR (€)",
         "Images": [
-            "/violons/4_4_marron_1.jpg",
-            "/violons/4_4_marron_2.jpg"
+            "/img/violons/4_4_marron_1.jpg",
+            "/img/violons/4_4_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -358,9 +358,9 @@
         "Prix": 15690,
         "Devise": "EUR (€)",
         "Images": [
-            "/violons/4_4_marron2_1.jpg",
-            "/violons/4_4_marron2_2.jpg",
-            "/violons/4_4_marron2_3.jpg"
+            "/img/violons/4_4_marron2_1.jpg",
+            "/img/violons/4_4_marron2_2.jpg",
+            "/img/violons/4_4_marron2_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -376,8 +376,8 @@
         "Prix": 1176,
         "Devise": "EUR (€)",
         "Images": [
-            "/contrebasses/1_2_marron_1.jpg",
-            "/contrebasses/1_2_marron_2.jpg"
+            "/img/contrebasses/1_2_marron_1.jpg",
+            "/img/contrebasses/1_2_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -393,8 +393,8 @@
         "Prix": 849,
         "Devise": "EUR (€)",
         "Images": [
-            "/contrebasses/1_2_noire_1.jpg",
-            "/contrebasses/1_2_noire_2.jpg"
+            "/img/contrebasses/1_2_noire_1.jpg",
+            "/img/contrebasses/1_2_noire_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -410,9 +410,9 @@
         "Prix": 849,
         "Devise": "EUR (€)",
         "Images": [
-            "/contrebasses/3_4_blanche_1.jpg",
-            "/contrebasses/3_4_blanche_2.jpg",
-            "/contrebasses/3_4_blanche_3.jpg"
+            "/img/contrebasses/3_4_blanche_1.jpg",
+            "/img/contrebasses/3_4_blanche_2.jpg",
+            "/img/contrebasses/3_4_blanche_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -428,9 +428,9 @@
         "Prix": 21590,
         "Devise": "EUR (€)",
         "Images": [
-            "/contrebasses/3_4_marron_1.jpg",
-            "/contrebasses/3_4_marron_2.jpg",
-            "/contrebasses/3_4_marron_3.jpg"
+            "/img/contrebasses/3_4_marron_1.jpg",
+            "/img/contrebasses/3_4_marron_2.jpg",
+            "/img/contrebasses/3_4_marron_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -446,8 +446,8 @@
         "Prix": 219,
         "Devise": "EUR (€)",
         "Images": [
-            "/mandolines/beige_1.jpg",
-            "/mandolines/beige_2.jpg"
+            "/img/mandolines/beige_1.jpg",
+            "/img/mandolines/beige_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -463,8 +463,8 @@
         "Prix": 382,
         "Devise": "EUR (€)",
         "Images": [
-            "/mandolines/marron_1.jpg",
-            "/mandolines/marron_2.jpg"
+            "/img/mandolines/marron_1.jpg",
+            "/img/mandolines/marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -480,9 +480,9 @@
         "Prix": 999,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/grande_beige_1.jpg",
-            "/harpes/grande_beige_2.jpg",
-            "/harpes/grande_beige_2.jpg"
+            "/img/harpes/grande_beige_1.jpg",
+            "/img/harpes/grande_beige_2.jpg",
+            "/img/harpes/grande_beige_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -498,9 +498,9 @@
         "Prix": 1039,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/grande_noire_1.jpg",
-            "/harpes/grande_noire_2.jpg",
-            "/harpes/grande_noire_3.jpg"
+            "/img/harpes/grande_noire_1.jpg",
+            "/img/harpes/grande_noire_2.jpg",
+            "/img/harpes/grande_noire_3.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -516,8 +516,8 @@
         "Prix": 520,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/celtique_marron_1.jpg",
-            "/harpes/celtique_marron_2.jpg"
+            "/img/harpes/celtique_marron_1.jpg",
+            "/img/harpes/celtique_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -533,8 +533,8 @@
         "Prix": 2800,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/celtique_rouge_1.jpg",
-            "/harpes/celtique_rouge_2.jpg"
+            "/img/harpes/celtique_rouge_1.jpg",
+            "/img/harpes/celtique_rouge_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -550,8 +550,8 @@
         "Prix": 125,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/petite_marron_1.jpg",
-            "/harpes/petite_marron_2.jpg"
+            "/img/harpes/petite_marron_1.jpg",
+            "/img/harpes/petite_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -567,8 +567,8 @@
         "Prix": 95,
         "Devise": "EUR (€)",
         "Images": [
-            "/harpes/petite_marron2_1.jpg",
-            "/harpes/petite_marron2_2.jpg"
+            "/img/harpes/petite_marron2_1.jpg",
+            "/img/harpes/petite_marron2_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -584,8 +584,8 @@
         "Prix": 515,
         "Devise": "EUR (€)",
         "Images": [
-            "/banjos/5_blanc_1.jpg",
-            "/banjos/5_blanc_2.jpg"
+            "/img/banjos/5_blanc_1.jpg",
+            "/img/banjos/5_blanc_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -601,8 +601,8 @@
         "Prix": 489,
         "Devise": "EUR (€)",
         "Images": [
-            "/banjos/5_noir_1.jpg",
-            "/banjos/5_noir_2.jpg"
+            "/img/banjos/5_noir_1.jpg",
+            "/img/banjos/5_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -618,8 +618,8 @@
         "Prix": 555,
         "Devise": "EUR (€)",
         "Images": [
-            "/banjos/4_beige_1.jpg",
-            "/banjos/4_beige_2.jpg"
+            "/img/banjos/4_beige_1.jpg",
+            "/img/banjos/4_beige_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -635,8 +635,8 @@
         "Prix": 779,
         "Devise": "EUR (€)",
         "Images": [
-            "/banjos/4_noir_1.jpg",
-            "/banjos/4_noir_2.jpg"
+            "/img/banjos/4_noir_1.jpg",
+            "/img/banjos/4_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",
@@ -652,8 +652,8 @@
         "Prix": 998,
         "Devise": "EUR (€)",
         "Images": [
-            "/saxophones/alto_cuivre_1.jpg",
-            "/saxophones/alto_cuivre_1.jpg"
+            "/img/saxophones/alto_cuivre_1.jpg",
+            "/img/saxophones/alto_cuivre_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -669,8 +669,8 @@
         "Prix": 9220,
         "Devise": "EUR (€)",
         "Images": [
-            "/saxophones/alto_noir_1.jpg",
-            "/saxophones/alto_noir_1.jpg"
+            "/img/saxophones/alto_noir_1.jpg",
+            "/img/saxophones/alto_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -686,8 +686,8 @@
         "Prix": 469,
         "Devise": "EUR (€)",
         "Images": [
-            "/saxophones/tenor_cuivre_1.jpg",
-            "/saxophones/tenor_cuivre_2.jpg"
+            "/img/saxophones/tenor_cuivre_1.jpg",
+            "/img/saxophones/tenor_cuivre_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -703,8 +703,8 @@
         "Prix": 1012,
         "Devise": "EUR (€)",
         "Images": [
-            "/saxophones/tenor_noir_1.jpg",
-            "/saxophones/tenor_noir_2.jpg"
+            "/img/saxophones/tenor_noir_1.jpg",
+            "/img/saxophones/tenor_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -720,8 +720,8 @@
         "Prix": 5498,
         "Devise": "EUR (€)",
         "Images": [
-            "/clarinettes/sib_marron_1.jpg",
-            "/clarinettes/sib_marron_2.jpg"
+            "/img/clarinettes/sib_marron_1.jpg",
+            "/img/clarinettes/sib_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -737,8 +737,8 @@
         "Prix": 3700,
         "Devise": "EUR (€)",
         "Images": [
-            "/clarinettes/sib_noire_1.jpg",
-            "/clarinettes/sib_noire_2.jpg"
+            "/img/clarinettes/sib_noire_1.jpg",
+            "/img/clarinettes/sib_noire_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -754,8 +754,8 @@
         "Prix": 953,
         "Devise": "EUR (€)",
         "Images": [
-            "/clarinettes/sib_noire_1.jpg",
-            "/clarinettes/sib_noire_2.jpg"
+            "/img/clarinettes/la_noire_1.jpg",
+            "/img/clarinettes/la_noire_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -771,8 +771,8 @@
         "Prix": 109,
         "Devise": "EUR (€)",
         "Images": [
-            "/clarinettes/sib_rouge_1.jpg",
-            "/clarinettes/sib_rouge_2.jpg"
+            "/img/clarinettes/la_rouge_1.jpg",
+            "/img/clarinettes/la_rouge_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -788,8 +788,8 @@
         "Prix": 906,
         "Devise": "EUR (€)",
         "Images": [
-            "/trompettes/sib_cuivre_1.jpg",
-            "/trompettes/sib_cuivre_2.jpg"
+            "/img/trompettes/sib_cuivre_1.jpg",
+            "/img/trompettes/sib_cuivre_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -805,8 +805,8 @@
         "Prix": 249,
         "Devise": "EUR (€)",
         "Images": [
-            "/trompettes/sib_noire_1.jpg",
-            "/trompettes/sib_noire_2.jpg"
+            "/img/trompettes/sib_noire_1.jpg",
+            "/img/trompettes/sib_noire_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -822,8 +822,8 @@
         "Prix": 2898,
         "Devise": "EUR (€)",
         "Images": [
-            "/trompettes/ut_arent_1.jpg",
-            "/trompettes/ut_arent_2.jpg"
+            "/img/trompettes/ut_argent_1.jpg",
+            "/img/trompettes/ut_argent_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -839,8 +839,8 @@
         "Prix": 179,
         "Devise": "EUR (€)",
         "Images": [
-            "/trompettes/ut_cuivre_1.jpg",
-            "/trompettes/ut_cuivre_2.jpg"
+            "/img/trompettes/ut_cuivre_1.jpg",
+            "/img/trompettes/ut_cuivre_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -869,8 +869,8 @@
         "Prix": 19,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/petit_marron_1.jpg",
-            "/djembes/petit_marron_2.jpg"
+            "/img/djembes/petit_marron_1.jpg",
+            "/img/djembes/petit_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -886,8 +886,8 @@
         "Prix": 45,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/petit_marron2_1.jpg",
-            "/djembes/petit_marron2_2.jpg"
+            "/img/djembes/petit_marron2_1.jpg",
+            "/img/djembes/petit_marron2_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -903,8 +903,8 @@
         "Prix": 85,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/moyen_clair_1.jpg",
-            "/djembes/moyen_clair_2.jpg"
+            "/img/djembes/moyen_clair_1.jpg",
+            "/img/djembes/moyen_clair_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -920,8 +920,8 @@
         "Prix": 100,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/moyen_marron_1.jpg",
-            "/djembes/moyen_marron_2.jpg"
+            "/img/djembes/moyen_marron_1.jpg",
+            "/img/djembes/moyen_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -934,28 +934,11 @@
         "Name": "Grand djembe",
         "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
         "Quantity": 3,
-        "Prix": 359,
-        "Devise": "EUR (€)",
-        "Images": [
-            "/djembes/grand_marron_1.jpg",
-            "/djembes/grand_marron_2.jpg"
-        ],
-        "Caracs": {
-            "famille": "vent",
-            "marque": "Thomann"
-        },
-        "Categorie": "djembes"
-    },
-    {
-        "ID": 42,
-        "Name": "Grand djembe",
-        "Description": "(professionnel / scène) 33 à 40+ cm de diamètre, Hauteur : ~60 à 70+ cm, Basses très profondes, son puissant, Utilisé en scène ou musique traditionnelle",
-        "Quantity": 3,
         "Prix": 819,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/grand_marron_1.jpg",
-            "/djembes/grand_marron_2.jpg"
+            "/img/djembes/grand_marron_1.jpg",
+            "/img/djembes/grand_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -971,8 +954,8 @@
         "Prix": 415,
         "Devise": "EUR (€)",
         "Images": [
-            "/djembes/grand_marron2_1.jpg",
-            "/djembes/grand_marron2_2.jpg"
+            "/img/djembes/grand_marron2_1.jpg",
+            "/img/djembes/grand_marron2_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -988,8 +971,8 @@
         "Prix": 30,
         "Devise": "EUR (€)",
         "Images": [
-            "/maracas/moyen_jaune_1.jpg",
-            "/maracas/moyen_jaune_2.jpg"
+            "/img/maracas/moyen_jaune_1.jpg",
+            "/img/maracas/moyen_jaune_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
@@ -1005,25 +988,12 @@
         "Prix": 30,
         "Devise": "EUR (€)",
         "Images": [
-            "/maracas/moyen_noir_1.jpg",
-            "/maracas/moyen_noir_2.jpg"
+            "/img/maracas/moyen_noir_1.jpg",
+            "/img/maracas/moyen_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "vent",
             "marque": "MEINL"
-        },
-        "Categorie": "maracas"
-    },
-    {
-        "ID": 44,
-        "Name": "Maracas moyennes",
-        "Description": "Environ 15 à 25 cm, Son équilibré (aigus + un peu de basses), Utilisation la plus courant, Parfait pour danse, musique latine, école",
-        "Quantity": 6,
-        "Prix": 0,
-        "Devise": "EUR (€)",
-        "Images": [],
-        "Caracs": {
-            "famille": "percussions"
         },
         "Categorie": "maracas"
     },
@@ -1035,8 +1005,8 @@
         "Prix": 50,
         "Devise": "EUR (€)",
         "Images": [
-            "/maracas/grand_marron_1.jpg",
-            "/maracas/grand_marron_2.jpg"
+            "/img/maracas/grand_marron_1.jpg",
+            "/img/maracas/grand_marron_2.jpg"
         ],
         "Caracs": {
             "famille": "percussions",
@@ -1052,8 +1022,8 @@
         "Prix": 20,
         "Devise": "EUR (€)",
         "Images": [
-            "/maracas/grand_noir_1.jpg",
-            "/maracas/grand_noir_2.jpg"
+            "/img/maracas/grand_noir_1.jpg",
+            "/img/maracas/grand_noir_2.jpg"
         ],
         "Caracs": {
             "famille": "percussions",

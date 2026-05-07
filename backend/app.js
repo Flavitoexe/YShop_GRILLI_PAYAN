@@ -6,6 +6,8 @@ const port = 3000
 
 app.use(cors({origin: '*'}))
 app.use(express.json())
+app.use('/img', express.static('img'))
+
 
 app.use(router)
 

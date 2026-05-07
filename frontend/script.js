@@ -1,3 +1,5 @@
+const urlAPI = "http://localhost:3000/"
+
 // addFavorite est la fonction qui permet d'ajouter un instrument dans sa liste de favoris en appuyant sur un bouton, grâce au localstorage. 
 function addFavorite(instrument) {
     console.log('Entrée dans addFavorite : ')
@@ -96,3 +98,56 @@ function getBasket() {
         return currentBasket
     }
 }
+
+function getAllProducts() {
+    fetch(urlAPI + "getAllProducts")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.productsList)
+            displayProduct(data.productsList)
+        })
+        .catch(error => console.error('Error fetching data : ', error))
+}
+
+function displayProduct(products) {
+    const div_cat = document.querySelector('.div_cat')
+    div_cat.innerHTML = ""
+
+    products.forEach(product => {
+        const div_prod = document.createElement('div')
+        div_prod.className = "div_prod"
+
+        const div_img = document.createElement('div')
+        div_img.className = "div_img"
+
+        const img = document.createElement('img')
+        img.src = product.Images[0]
+        img.alt = product.Name
+        div_img.appendChild(img)
+        img.addEventListener("mouseenter", () => {
+            img.src = product.Images[1]
+            
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.src = product.Images[0] 
+        });
+
+        const div_carac = document.createElement('div')
+        div_carac.className = "div_carac"
+        const div_nom = document.createElement('div')
+        const nom = document.createElement('h3')
+        nom.textContent = `${product.Name}`
+        const prix = document.createElement('div')
+        prix.textContent = `${product.Prix} €`
+        const btn = document.createElement('button')
+        btn.textContent = `Voir`
+        btn.className = "btn"
+
+        div_cat.append(div_prod)
+        div_prod.append(div_img, div_carac)
+        div_carac.append(div_nom, prix, btn)
+        div_nom.append(nom)
+    });
+}
+
