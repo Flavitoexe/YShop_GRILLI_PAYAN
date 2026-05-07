@@ -676,14 +676,86 @@
     },
     {
         "ID": 35,
-        "Name": "Batterie",
-        "Description": "",
-        "Quantity": 0,
-        "Prix": 0,
+        "Name": "Batterie Pearl Export",
+        "Description": "Batterie Pearl Export 5 fûts avec caisse claire de 14 pouces, toms de 10, 12 et 16 et grosse caisse de 22. Hardware et cymbales inclues. Parfait pour débuter. Faite pour tout type de jeu.",
+        "Quantity": 6,
+        "Prix": 1100,
         "Devise": "EUR (€)",
-        "Images": [],
+        "Images": [
+            "/batteries/pearl_export_noire_1.png",
+            "/batteries/pearl_export_noire_2.png"
+        ],
         "Caracs": {
-            "famille": "percussions"
+            "famille": "percussions",
+            "type": "acoustique"
+        },
+        "Category": "batteries"
+    },
+    {
+        "ID": 36,
+        "Name": "Batterie Tama SuperStar Classic",
+        "Description": "Batterie Tama SuperStar Classic 7 fûts avec caisse claire de 14 pouces, toms de 8, 10, 12, 14 et 16 et grosse caisse de 22. Hardware et cymbales non inclues. Bien pour tous niveaux. Idéal pour du rock.",
+        "Quantity": 4,
+        "Prix": 1500,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/batteries/tama_superstar_classic_1.png",
+            "/batteries/tama_superstar_classic_2.png"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "acoustique"
+        },
+        "Category": "batteries"
+    },
+    {
+        "ID": 37,
+        "Name": "Batterie Mapex Comet",
+        "Description": "Batterie Mapex Comet 5 fûts avec caisse claire de 14 pouces, toms de 10, 12 et 14 et grosse caisse de 18. Hardware, siège et cymbales inclues. Parfait pour faire découvrir un bel instrumment à ses enfants.",
+        "Quantity": 10,
+        "Prix": 700,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/batteries/mapex_comet_noire_1.png",
+            "/batteries/mapex_comet_noire_2.png"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "acoustique"
+        },
+        "Category": "batteries"
+    },
+    {
+        "ID": 38,
+        "Name": "Batterie Alesis Strata Prime",
+        "Description": "Batterie éléctrique Alesis Strata Prime 6 fûts avec caisse claire de 14 pouces, toms de 8, 10, 12 et 14 et grosse caisse de 20. Cymbales inclues mais pas  hardware. Très bon compromis pour une batterie éléctrique haut de gamme.",
+        "Quantity": 6,
+        "Prix": 1100,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/batteries/alessia_strata_prime_1.png",
+            "/batteries/alessia_strata_prime_2.png"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "electrique"
+        },
+        "Category": "batteries"
+    },
+    {
+        "ID": 39,
+        "Name": "Batterie Roland TD-02K V-Drums",
+        "Description": "Batterie Roland TD-02K V-Drums 4 pads PD-4 pour caisse claire et toms et pédale grosse caisse KT-1. Hardware et cymbales inclues. Parfait pour débuter et faire moins de bruit.",
+        "Quantity": 12,
+        "Prix": 400,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/batteries/roland_td02k_1.png",
+            "/batteries/roland_td02k_2.png"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "electrique"
         },
         "Category": "batteries"
     },

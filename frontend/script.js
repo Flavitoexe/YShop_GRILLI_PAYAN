@@ -125,13 +125,33 @@ document.querySelector('.search-bar').addEventListener('submit', (event) => {
  * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
  * @returns 
  */
-function getSearchQuery() {
+async function getSearchQuery() {
     console.log('Entrée dans getSearchQuery : ')
     // On récupère la valeur de la recherche.
-    const query = document.getElementById('search-query').value
+    const query = document.getElementById('search-query').value.toLowerCase()
 
     if (query.length < 1) return
 
-    console.log('query : ', query)
+    const data = await getAllInstruments()
+    const instruments = data.productsList
+    // console.log(instruments)
+    const filteredArr = instruments.filter( elt => 
+        elt.Name.toLowerCase().includes(query) ||
+        elt.Category.toLowerCase().includes(query)
+    )
 
+    return filteredArr
+}
+
+async function getAllInstruments() {
+
+    try {
+        const response = await fetch("http://localhost:3000/getAllProducts")
+        if (!response.ok) throw new Error(`Error in getAllInstruments : ${response.status}`)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error(error)
+    }
+    
 }

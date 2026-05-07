@@ -1,5 +1,5 @@
 const utils = require('../utils/utils')
-const productsFile = './data.json'
+const productsFile = './backend/data.json'
 
 
 /**
