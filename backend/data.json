@@ -829,12 +829,33 @@
         "Name": "Grandes maracas",
         "Description": "25 cm et plus, Son plus fort, plus grave et puissant, Utilisées en scène ou orchestre latins Demandent un peu plus de force au poignet",
         "Quantity": 4,
-        "Prix": 0,
+        "Prix": 50,
         "Devise": "EUR (€)",
-        "Images": [],
+        "Images": [
+            "/maracas/grand_marron_1.jpg",
+            "/maracas/grand_marron_2.jpg"
+        ],
         "Caracs": {
-            "famille": "percussions"
+            "famille": "percussions",
+            "marque": "Coco Papaya"
         },
-        "Category": "maracas"
+        "Categorie": "maracas"
+    },
+    {
+        "ID": 45,
+        "Name": "Grandes maracas",
+        "Description": "25 cm et plus, Son plus fort, plus grave et puissant, Utilisées en scène ou orchestre latins Demandent un peu plus de force au poignet",
+        "Quantity": 4,
+        "Prix": 20,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/maracas/grand_noir_1.jpg",
+            "/maracas/grand_noir_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "marque": "Stagg"
+        },
+        "Categorie": "maracas"
     }
 ]
