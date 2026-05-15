@@ -4,9 +4,10 @@ const path = require('path')
 
 // La route '/' affiche le fichier index.ejs, qui est la page principale d'accueil du site
 router.get('/', (req, res) => res.render('index'))
+router.get('/category/strings', (req, res) => res.render())
+router.get('/category/brasses', (req, res) => res.render())
+router.get('/category/percussions', (req, res) => res.render())
 
-let message = 'ca marche trop bien'
-router.get('/test', (req, res) => res.render('test2', {message : message}))
 
 
 // On utilise router.use(...) sans spécifier de chemin pour intercepter tous les chemins. On renvoie donc tous les chemins inconnus sur une erreur 404.
