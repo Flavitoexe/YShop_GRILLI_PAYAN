@@ -1012,7 +1012,7 @@
             "famille": "percussions",
             "type": "acoustique"
         },
-        "Category": "batteries"
+        "Categorie": "batteries"
     },
     {
         "ID": 59,
@@ -1029,7 +1029,7 @@
             "famille": "percussions",
             "type": "acoustique"
         },
-        "Category": "batteries"
+        "Categorie": "batteries"
     },
     {
         "ID": 60,
@@ -1046,7 +1046,7 @@
             "famille": "percussions",
             "type": "acoustique"
         },
-        "Category": "batteries"
+        "Categorie": "batteries"
     },
     {
         "ID": 61,
@@ -1063,7 +1063,7 @@
             "famille": "percussions",
             "type": "electrique"
         },
-        "Category": "batteries"
+        "Categorie": "batteries"
     },
     {
         "ID": 62,
@@ -1080,7 +1080,7 @@
             "famille": "percussions",
             "type": "electrique"
         },
-        "Category": "batteries"
+        "Categorie": "batteries"
     },
     {
         "ID": 63,

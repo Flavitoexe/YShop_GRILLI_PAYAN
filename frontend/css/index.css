@@ -28,7 +28,8 @@ a:hover {
 
 /* Partie Carousel */
 .carousel {
-    background-color: oldlace;
+    /* background-color: oldlace; */
+    background: linear-gradient(90deg, #fdf5e6 0%, #f3dec2 50%, #e2be8a 100%);
     border: 1px solid gray;
     height: 50vh;
 
@@ -60,9 +61,8 @@ a:hover {
 
     display: flex;
 
-    box-shadow: 0 10px 30px rgba(60, 40, 20, 0.15);
+    box-shadow: 0 10px 30px rgba(60, 40, 20, 0.25);
 }
-
 
 .left-slide {
     height: 100%;
@@ -129,6 +129,7 @@ a:hover {
 .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
 }
 
 .category {

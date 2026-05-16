@@ -144,20 +144,22 @@ async function getSearchQuery() {
 }
 
 /**
- * getAllInstrument est la fonction qui fait une requête au backend pour avoir tous les insrtuments.
+ * getAllInstrument est la fonction qui fait une requête au backend pour avoir tous les instruments.
  * @returns : Tous les instruments dans le fichier backend/data.json.
  */
 async function getAllInstruments() {
-
     try {
+        // On fait une requête fetch à l'API,
         const response = await fetch("http://localhost:3000/getAllProducts")
+        // On vérifie qu'il y ait bien une réponse, sjnon on renvoie une erreur,
         if (!response.ok) throw new Error(`Error in getAllInstruments : ${response.status}`)
+        // On parse l'objet de la répons en un objet JS, 
         const data = await response.json()
+        // Et on renvoie les données.
         return data
     } catch (error) {
         console.error(error)
     }
-    
 }
 
 /**
@@ -204,7 +206,7 @@ async function carousel() {
                 <img class="product-img" src="../${data[i].Images[0]}">
             </div>
             <div class="right-slide">
-                <h1><a href='localhost:8000/test'>${data[i].Name}</a></h1>
+                <h1><a href='http://localhost:8000/${data[i].ID}'>${data[i].Name}</a></h1>
                 <p>${data[i].Prix} ${data[i].Devise}</p>
             </div>
         `
@@ -243,6 +245,7 @@ function updateCarousel() {
     // Enfin, on applique le offset dans un translateX pour faire glisser la slide.
     innerCarousel.style.transform = `translateX(${offset}px)`
 
+    // On appelle generateDots pour générer les dots de navigation à jour et correctement.
     generateDots()
 }
 
@@ -273,14 +276,11 @@ let carouselDots = document.querySelector('.carousel-dots')
  * generateDots est une fonction qui permet la création des dots de navigation pour le carousel.
  */
 function generateDots() {
-    console.log('Entrée dans generateDots : ')
-    console.log('currentSlide : ', currentSlide)
     // On vide le contenu des dots,
     carouselDots.innerHTML = ''
     // Ensuite, on boucle pour les recréer en vérifiant quel dot est active par rapport à sa slide,
     for (let i = 0; i < 5; i++) {
         if (i === currentSlide) {
-            console.log('cond ok')
             // On crée le dot avec la classe active,
             carouselDots.innerHTML += `<div class="dot active" onclick="goToSlide(${i})"></div>`
         } else {
@@ -297,8 +297,11 @@ function generateDots() {
 function goToSlide(index) {
     // On attribue à currentSlide l'index de la slide qur laquelle on veut aller,
     currentSlide = index
-    // Puis on met à jour le carousel.
+    // On met à jour le carousel.
     updateCarousel()
+    // Et on réinitialise le timer pour que quand on appuie sur un dot, on reste 5s sur l'instrument avant de passer au suivant.
+    // Si on ne faisati pas ca, en appuyant sur un dot on resterait 5s - le temps passé sur la slide d'avant, ce qui résultait
+    // en des slides qui pouvait durer 3s, 1s, voire 0.1s.
     clearInterval(carouselTimer)
     carouselTimer = setInterval(nextSlide, 5000)
 }
