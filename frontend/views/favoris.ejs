@@ -3,10 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/favoris.css">
-    <title>Catalogue produits</title>
+    <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
+    <title>Produits favoris</title>
 </head>
 <body>
+     <header>
+        <div class="upper-header">
+            <div class="logo-title">
+                <img class="logo" src="../img/misc/logo.png">
+                <h3>Music'shop</h3>
+            </div>
+        </div>
+        <div class="lower-header">
+            <div class="left-lower-header">
+                <h2>Produits</h2>
+            </div>
 
+            <div>
+                <form method="GET" class="search-bar">
+                    <input type="text" placeholder="Que recherchez-vous ?" name="search-query" id="search-query"/>
+                </form>
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+        <h1>⚡FAVORIS⚡</h1>
+
+        <div class="div_fav">
+            
+        </div>
+    </main>
+    <script src="./script.js"></script>
+    <script>
+        displayFavorites()
+    </script>
 </body>
 </html>
+    

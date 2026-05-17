@@ -79,13 +79,81 @@ function getFavorites() {
     // On récupère les instruments favoris dans le localstorage.
     const currentFavorites = JSON.parse(localStorage.getItem("favorites"))
     // On vérifie si il y a des favoris,
-    if (currentFavorites.length === 0 || currentFavorites === undefined) {
+    if (!currentFavorites || currentFavorites.length === 0) {
         // Si il n'y en a pas, on renvoie undefined pour faire des vérifications ailleurs,
         return undefined
     } else {
         // Si il y en a, on renvoie les favoris.
         return currentFavorites
     }
+}
+
+function displayFavorites() {
+    const div_fav = document.querySelector('.div_fav')
+    if (!div_fav) return;
+    div_fav.innerHTML = ""
+
+    const favorites = getFavorites();
+
+    if (!favorites) {
+        const mess_vide = document.createElement('div')
+        mess_vide.className = "mess_vide"
+        mess_vide.textContent = "Aucun instrument dans vos favoris pour le moment."
+        div_fav.append(mess_vide)
+        return
+    }
+
+    favorites.forEach(product => {
+        const div_prod = document.createElement('div')
+        div_prod.className = "div_prod"
+        div_prod.id = `${product.ID}`
+
+        const div_img = document.createElement('div')
+        div_img.className = "div_img"
+
+        const img = document.createElement('img')
+        img.src = product.Images[0]
+        img.alt = product.Name
+        div_img.appendChild(img)
+        img.addEventListener("mouseenter", () => {
+            img.src = product.Images[1]
+            
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.src = product.Images[0] 
+        });
+
+        const div_carac = document.createElement('div')
+        div_carac.className = "div_carac"
+        const div_nom = document.createElement('div')
+        const nom = document.createElement('h3')
+        nom.textContent = `${product.Name}`
+        const prix = document.createElement('div')
+        prix.textContent = `${product.Prix} €`
+        const btn = document.createElement('button')
+        btn.className = "btn"
+        btn.type = "button"
+        const lien = document.createElement('a')
+        lien.title = `Voir plus d'informations sur ${product.Name}`
+        lien.href = `http://localhost:8000/getDetailsProduct/:${product.ID}`
+        lien.textContent = `Voir`
+        const btn_supp = document.createElement('button')
+        btn_supp.className = "btn"
+        btn_supp.type = "button"
+        btn_supp.textContent = "Supprimer"
+
+        btn_supp.addEventListener("click", () => {
+            removeFavoriteByID(product.ID)
+            displayFavorites()          
+        });
+
+        div_fav.append(div_prod);
+        div_prod.append(div_img, div_carac);
+        
+        div_carac.append(div_nom, prix, btn, btn_supp); 
+        div_nom.append(nom);
+    });
 }
 
 // getBasket est la fonction qui permet d'avoir les instruments du panier dans le localstorage. Même principe que getFavorites.
@@ -149,7 +217,6 @@ function displayProduct(products) {
         lien.href = `http://localhost:8000/getDetailsProduct/:${product.ID}`
         lien.textContent = `Voir`
 
-
         div_cat.append(div_prod)
         div_prod.append(div_img, div_carac)
         div_carac.append(div_nom, prix, btn)
@@ -165,9 +232,4 @@ function getProductByID() {
             displayDetailsProduct(data.product)
         })
         .catch(error => console.error('Error fetching data : ', error))
-}
-
-
-function displayDetailsProduct(product) {
-
 }
