@@ -6,6 +6,12 @@ body {
     background-color: oldlace;
 }
 
+a { 
+    outline: none;
+    text-decoration: none;
+    color : black;
+}
+
 .div_cat {
     display: flex;
     flex-wrap: wrap;

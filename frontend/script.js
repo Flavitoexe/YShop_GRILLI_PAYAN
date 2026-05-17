@@ -116,6 +116,7 @@ function displayProduct(products) {
     products.forEach(product => {
         const div_prod = document.createElement('div')
         div_prod.className = "div_prod"
+        div_prod.id = `${product.ID}`
 
         const div_img = document.createElement('div')
         div_img.className = "div_img"
@@ -141,13 +142,32 @@ function displayProduct(products) {
         const prix = document.createElement('div')
         prix.textContent = `${product.Prix} €`
         const btn = document.createElement('button')
-        btn.textContent = `Voir`
         btn.className = "btn"
+        btn.type = "button"
+        const lien = document.createElement('a')
+        lien.title = `Voir plus d'informations sur ${product.Name}`
+        lien.href = `http://localhost:8000/getDetailsProduct/:${product.ID}`
+        lien.textContent = `Voir`
+
 
         div_cat.append(div_prod)
         div_prod.append(div_img, div_carac)
         div_carac.append(div_nom, prix, btn)
         div_nom.append(nom)
+        btn.append(lien)
     });
 }
 
+function getProductByID() {
+    fetch(urlAPI + "getDetailsProduct")
+        .then(response => response.json())
+        .then(data => {
+            displayDetailsProduct(data.product)
+        })
+        .catch(error => console.error('Error fetching data : ', error))
+}
+
+
+function displayDetailsProduct(product) {
+
+}
