@@ -47,7 +47,8 @@ function removeFavorite(instrument) {
 }
 
 /**
- * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. Même principe que pour addFavorite.
+ * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. 
+ * Même principe que pour addFavorite.
  * @param {Object} instrument : L'instrument à rajouter dans le panier.
  */
 function addToBasket(instrument) {
@@ -65,7 +66,8 @@ function addToBasket(instrument) {
 }
 
 /**
- * removeFromBasket est la fonction qui permet de retirer un instrument du panier. Même principe que removeFavorite.
+ * removeFromBasket est la fonction qui permet de retirer un instrument du panier. 
+ * Même principe que removeFavorite.
  * @param {Object} instrument : L'instrument à retirer du panier.
  */
 function removeFromBasket(instrument) {
@@ -123,7 +125,7 @@ document.querySelector('.search-bar').addEventListener('submit', (event) => {
 
 /**
  * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
- * @returns 
+ * @returns : Les instruments recherchés.
  */
 async function getSearchQuery() {
     console.log('Entrée dans getSearchQuery : ')
@@ -143,15 +145,165 @@ async function getSearchQuery() {
     return filteredArr
 }
 
+/**
+ * getAllInstrument est la fonction qui fait une requête au backend pour avoir tous les instruments.
+ * @returns : Tous les instruments dans le fichier backend/data.json.
+ */
 async function getAllInstruments() {
-
     try {
+        // On fait une requête fetch à l'API,
         const response = await fetch("http://localhost:3000/getAllProducts")
+        // On vérifie qu'il y ait bien une réponse, sjnon on renvoie une erreur,
         if (!response.ok) throw new Error(`Error in getAllInstruments : ${response.status}`)
+        // On parse l'objet de la répons en un objet JS, 
         const data = await response.json()
+        // Et on renvoie les données.
         return data
     } catch (error) {
         console.error(error)
     }
+}
+
+/**
+ * getFiveRandomInstruments est une fonction qui permet d'obtenir 5 instruments aléatoirement. Elle servira surtout pour faire le carousel des nouveautés.
+ * @returns : 5 instruments.
+ */
+async function getFiveRandomInstruments() {
+
+    // On récupère tous les instruments et on initialise le tableau qui contiendra les 5 instruments.
+    const data = await getAllInstruments()
+    let randoms = []
+
+    // On fait une boucle qui génère aléatoirement à chaque tour un nombre compris entre 0 et l'ID du dernier produit (Au moment de l'écriture, 45).
+    for (let i = 0; i < 5; i++) {
+        // On génère aléatoirement un nombre compris entre 0 et l'ID du dernier produit (Actuellement, 45),
+        let randomId = Math.floor(Math.random() * data.productsList.length)
+        // Et on ajoute le produit dans le tableau des randoms.
+        randoms.push(data.productsList[randomId])
+    }
+
+    return randoms
+}
+
+// On récupère l'élément inner-carousel dans une variable globale pour l'utiliser dans les fonctions concernant le carousel.
+let innerCarousel = document.querySelector('.inner-carousel')
+
+/**
+ * carousel est une fonction qui permet l'initialisation du carousel des nouveautés.
+ */
+async function carousel() {
+
+    // On appelle getFiveRandomInstruments pour obtenir les instruments,
+    const data = await getFiveRandomInstruments()
+
+    // On fait une boucle qui va créer les 5 slides comportant les nouveautés,
+    for (let i = 0; i < 5; i++) {
+        // Création de l'élément,
+        let slide = document.createElement('div')
+        // Attribution de la classe,
+        slide.classList.add('slide')
+        // Remplissage de la slide,
+        slide.innerHTML = `
+            <div class="left-slide">
+                <img class="product-img" src="../${data[i].Images[0]}">
+            </div>
+            <div class="right-slide">
+                <h1><a href='http://localhost:8000/${data[i].ID}'>${data[i].Name}</a></h1>
+                <p>${data[i].Prix} ${data[i].Devise}</p>
+            </div>
+        `
+        // Et enfin, ajout de la slide dans l'élément inner-carousel.
+        innerCarousel.appendChild(slide)
+    }
+
+}
+// On met une event listener pour qu'à chaque fois que l'utilisateur recharge la page, la fonction carousel se lance.
+window.addEventListener('load', () => {
+    carousel()
+    generateDots()
+})
+
+// On initialise la variable globale qui contiendra l'index de la slide actuelle.
+let currentSlide = 0
+
+/**
+ * updateCarousel est une fonction qui ajuste la position des slides en fonction de la slide actuelle.
+ */
+function updateCarousel() {
+    // On récupère une slide et on vérifie si il y en a une, sinon on quitte la fonction,
+    const slide = document.querySelector('.slide')
+    if (!slide) return
+
+    // On récupère les données CSS finales de l'élément inner-carousel avec getComputedStyle,
+    const style = window.getComputedStyle(innerCarousel)
+    // On récupère la taille finale du gap,
+    const gap = parseFloat(style.gap) 
+    // Et on récupère la taille réelle d'une slide en pixels avec offsetWidth.
+    const slideWidth = slide.offsetWidth
+
+    // Avec tous les éléments récupérés, on peut calculer le offset qui servira à faire glisser les slides dans le carousel.
+    let offset = -currentSlide * (slideWidth + gap)
     
+    // Enfin, on applique le offset dans un translateX pour faire glisser la slide.
+    innerCarousel.style.transform = `translateX(${offset}px)`
+
+    // On appelle generateDots pour générer les dots de navigation à jour et correctement.
+    generateDots()
+}
+
+/**
+ * nextSlide est une fonction qui calcule l'index de la prochaine slide.
+ */
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % 5
+    // On appelle updateCarousel pour appliquer les changements directement.
+    updateCarousel()
+}
+
+// On met un interval pour automatiser le carousel, qui passera à la slide suivante toutes les 5 secondes.
+let carouselTimer = setInterval(nextSlide, 5000)
+
+/**
+ * prevSlide est une fonction qui calcule l'index de la slide précédente. Même principe que poour nextSlide.
+ */
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + 5) % 5
+    updateCarousel()
+}
+
+// On récupère la div qui contiendra les dots de navigation du carousel.
+let carouselDots = document.querySelector('.carousel-dots')
+
+/**
+ * generateDots est une fonction qui permet la création des dots de navigation pour le carousel.
+ */
+function generateDots() {
+    // On vide le contenu des dots,
+    carouselDots.innerHTML = ''
+    // Ensuite, on boucle pour les recréer en vérifiant quel dot est active par rapport à sa slide,
+    for (let i = 0; i < 5; i++) {
+        if (i === currentSlide) {
+            // On crée le dot avec la classe active,
+            carouselDots.innerHTML += `<div class="dot active" onclick="goToSlide(${i})"></div>`
+        } else {
+            // On crée un dot simple.
+            carouselDots.innerHTML += `<div class="dot" onclick="goToSlide(${i})"></div>`
+        }
+    }
+}
+
+/**
+ * goToSlide est une fonction complémentaire de generateDots qui permet d'aller sur une slide en cliquant sur le dot lui correspondant.
+ * @param {int} index 
+ */
+function goToSlide(index) {
+    // On attribue à currentSlide l'index de la slide qur laquelle on veut aller,
+    currentSlide = index
+    // On met à jour le carousel.
+    updateCarousel()
+    // Et on réinitialise le timer pour que quand on appuie sur un dot, on reste 5s sur l'instrument avant de passer au suivant.
+    // Si on ne faisait pas ca, en appuyant sur un dot on resterait 5s - le temps passé sur la slide d'avant, ce qui résultait
+    // en des slides qui pouvait durer 3s, 1s, voire 0.1s.
+    clearInterval(carouselTimer)
+    carouselTimer = setInterval(nextSlide, 5000)
 }
