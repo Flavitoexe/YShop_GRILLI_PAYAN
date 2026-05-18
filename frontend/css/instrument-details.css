@@ -60,11 +60,22 @@ main {
 .upper-details-container {
     width: 90%;
     height: 25%;
-    /* background-color: red; */
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.shrink-1 {
+    height: 35px;
+    transition: transform 0.2s ease-in-out;
+}
+.shrink-1:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.shrink-1.active {
+    color: red;
 }
 
 .desc-container {
@@ -94,6 +105,14 @@ main {
     display: flex;
     gap: 20px;
 }
+
 .instrument-images-other {
     height: 50px;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 5px;
+}
+
+.instrument-images-other:hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }

@@ -47,7 +47,8 @@ function removeFavorite(instrument) {
 }
 
 /**
- * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. Même principe que pour addFavorite.
+ * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. 
+ * Même principe que pour addFavorite.
  * @param {Object} instrument : L'instrument à rajouter dans le panier.
  */
 function addToBasket(instrument) {
@@ -65,7 +66,8 @@ function addToBasket(instrument) {
 }
 
 /**
- * removeFromBasket est la fonction qui permet de retirer un instrument du panier. Même principe que removeFavorite.
+ * removeFromBasket est la fonction qui permet de retirer un instrument du panier. 
+ * Même principe que removeFavorite.
  * @param {Object} instrument : L'instrument à retirer du panier.
  */
 function removeFromBasket(instrument) {
@@ -300,7 +302,7 @@ function goToSlide(index) {
     // On met à jour le carousel.
     updateCarousel()
     // Et on réinitialise le timer pour que quand on appuie sur un dot, on reste 5s sur l'instrument avant de passer au suivant.
-    // Si on ne faisati pas ca, en appuyant sur un dot on resterait 5s - le temps passé sur la slide d'avant, ce qui résultait
+    // Si on ne faisait pas ca, en appuyant sur un dot on resterait 5s - le temps passé sur la slide d'avant, ce qui résultait
     // en des slides qui pouvait durer 3s, 1s, voire 0.1s.
     clearInterval(carouselTimer)
     carouselTimer = setInterval(nextSlide, 5000)
