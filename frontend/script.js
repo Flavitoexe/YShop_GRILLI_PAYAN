@@ -162,7 +162,7 @@ function displayFavorites() {
         btn_supp.textContent = "Supprimer"
 
         btn_supp.addEventListener("click", () => {
-            removeFavoriteByID(product.ID)
+            removeFavorite(product.ID)
             displayFavorites()          
         });
 
@@ -182,11 +182,79 @@ function displayFavorites() {
 function getBasket() {
     const currentBasket = JSON.parse(localStorage.getItem("basket"))
     // On vérifie si il y a des instruments dans le panier,
-    if (currentBasket.length === 0 || currentBasket === undefined) {
+    if (!currentBasket || currentBasket.length === 0) {
         return undefined
     } else {
         return currentBasket
     }
+}
+
+function displayBasket() {
+    const div_panier = document.querySelector('.div_panier')
+    if (!div_panier) return;
+    div_panier.innerHTML = ""
+
+    const inBasket = getBasket();
+
+    if (!inBasket) {
+        const mess_vide = document.createElement('div')
+        mess_vide.className = "mess_vide"
+        mess_vide.textContent = "Aucun élément dans votre panier pour le moment."
+        div_panier.append(mess_vide)
+        return
+    }
+
+    inBasket.forEach(product => {
+        const div_prod = document.createElement('div')
+        div_prod.className = "div_prod"
+        div_prod.id = `${product.ID}`
+
+        const div_img = document.createElement('div')
+        div_img.className = "div_img"
+
+        const img = document.createElement('img')
+        img.src = product.Images[0]
+        img.alt = product.Name
+        div_img.appendChild(img)
+        img.addEventListener("mouseenter", () => {
+            img.src = product.Images[1]
+            
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.src = product.Images[0] 
+        });
+
+        const div_carac = document.createElement('div')
+        div_carac.className = "div_carac"
+        const div_nom = document.createElement('div')
+        const nom = document.createElement('h3')
+        nom.textContent = `${product.Name}`
+        const prix = document.createElement('div')
+        prix.textContent = `${product.Prix} €`
+        const btn = document.createElement('button')
+        btn.className = "btn"
+        btn.type = "button"
+        const lien = document.createElement('a')
+        lien.title = `Voir plus d'informations sur ${product.Name}`
+        lien.href = `http://localhost:8000/getDetailsProduct/:${product.ID}`
+        lien.textContent = `Voir`
+        const btn_supp = document.createElement('button')
+        btn_supp.className = "btn"
+        btn_supp.type = "button"
+        btn_supp.textContent = "Supprimer"
+
+        btn_supp.addEventListener("click", () => {
+            removeFromBasket(product); 
+            displayBasket();          
+        });
+
+        div_panier.append(div_prod);
+        div_prod.append(div_img, div_carac);
+        
+        div_carac.append(div_nom, prix, btn, btn_supp); 
+        div_nom.append(nom);
+    });
 }
 
 function getAllProducts() {
@@ -351,7 +419,9 @@ async function carousel() {
             </div>
         `
         // Et enfin, ajout de la slide dans l'élément inner-carousel.
-        innerCarousel.appendChild(slide)
+        if (innerCarousel) {
+            innerCarousel.appendChild(slide)
+        }
     }
 
 }
@@ -370,7 +440,7 @@ let currentSlide = 0
 function updateCarousel() {
     // On récupère une slide et on vérifie si il y en a une, sinon on quitte la fonction,
     const slide = document.querySelector('.slide')
-    if (!slide) return
+    if (!slide || !innerCarousel) return
 
     // On récupère les données CSS finales de l'élément inner-carousel avec getComputedStyle,
     const style = window.getComputedStyle(innerCarousel)
@@ -416,6 +486,7 @@ let carouselDots = document.querySelector('.carousel-dots')
  * generateDots est une fonction qui permet la création des dots de navigation pour le carousel.
  */
 function generateDots() {
+    if (!carouselDots) return
     // On vide le contenu des dots,
     carouselDots.innerHTML = ''
     // Ensuite, on boucle pour les recréer en vérifiant quel dot est active par rapport à sa slide,
