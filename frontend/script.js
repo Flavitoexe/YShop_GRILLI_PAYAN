@@ -236,7 +236,7 @@ function displayProduct(products) {
         btn.type = "button"
         const lien = document.createElement('a')
         lien.title = `Voir plus d'informations sur ${product.Name}`
-        lien.href = `http://localhost:8000/getDetailsProduct/:${product.ID}`
+        lien.href = `http://localhost:8000/${product.ID}`
         lien.textContent = `Voir`
 
         div_cat.append(div_prod)

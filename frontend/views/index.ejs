@@ -3,7 +3,6 @@
 <head>
     <%- include('./components/head'); %>
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/catalogue.css">
     <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
     <title>YShop</title>
 </head>
@@ -14,17 +13,8 @@
             <div class="title">
                 <h1>Nouveautés</h1>
             </div>
-
-            <div>
-                <form method="GET" class="search-bar">
-                    <input type="text" placeholder="Que recherchez-vous ?" name="search-query" id="search-query"/>
-                </form>
-            </div>
-            
         </div>
-    </header>
-    <%- include('./catalogue'); %>
-    
+    </header>    
     
             <div class="carousel">
                 <div class="inner-carousel"></div>
@@ -52,11 +42,7 @@
                     <h2>Percussions</h2>
                 </div>
             </div>
-        </div>
-    </header>
-    <%- include('./catalogue'); %>
-    
-    
+        </div>    
     </main>
     <script src="./script.js"></script>
 </body>
