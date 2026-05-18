@@ -12,6 +12,7 @@ router.get('/', (req, res) => res.render('index'))
 router.get('/getAllProducts', (req, res) => res.render('catalogue'))
 router.get('/getDetailsProduct/:id', (req, res) => res.render('details'))
 router.get('/favoris', (req, res) => res.render('favoris'))
+router.get('/basket', (req, res) => res.render('basket'))
 
 let message = 'ca marche trop bien'
 router.get('/test', (req, res) => res.render('test2', {message : message}))
