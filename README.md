@@ -1,5 +1,9 @@
 # YShop 
 
+# Page index
+
+Manque le hover pour changer les images des instruments à la une.
+
 # Catalogue
 
 # Filtrer produits

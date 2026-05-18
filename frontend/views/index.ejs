@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./components/head'); %>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/catalogue.css">
     <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
     <title>YShop</title>
 </head>
 <body>
-    <header>
-        <div class="upper-header">
-            <div class="logo-title">
-                <img class="logo" src="../img/misc/logo.png">
-                <h3>Music'shop</h3>
-            </div>
-        </div>
-        <div class="lower-header">
-            <div class="left-lower-header">
-                <h2>Produits</h2>
+    <%- include('./components/header'); %>
+    <main>
+        <div class="carousel-container">
+            <div class="title">
+                <h1>Nouveautés</h1>
             </div>
 
             <div>
@@ -32,5 +26,34 @@
     <%- include('./catalogue'); %>
     
     
+            <div class="carousel">
+                <div class="inner-carousel"></div>
+
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+
+        <div class="categories-container">
+            <div class="title">
+                <h1>Catégories</h1>
+            </div>
+
+            <div class="categories">
+                <div class="category">
+                    <img class="category-logo" src="../img/guitares-s/4_4_gold_1.jpg" alt="strings-category-logo" >
+                    <h2>Instruments à cordes</h2>
+                </div>
+                <div class="category">
+                    <img class="category-logo" src="../img/trompettes/sib_cuivre_1.jpg" alt="brass-category-logo" >
+                    <h2>Cuivres</h2>
+                </div>
+                <div class="category">
+                    <img class="category-logo" src="../img/batteries/pearl_export_noire_1.jpg" alt="percussions-category-logo" >
+                    <h2>Percussions</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
