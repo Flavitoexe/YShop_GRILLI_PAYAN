@@ -267,6 +267,155 @@
     {
         "ID": 15,
         "Name": "Basse électrique",
+        "Description": "",
+        "Quantity": 1,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/basse/verte_1.jpg",
+            "/img/basse/verte_2.jpg",
+            "/img/basse/verte_3.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "marque": "Fender",
+            "type": "éléctrique"
+        },
+        "Category": "basses"
+    },
+    {
+        "ID": 16,
+        "Name": "Violon 1/4",
+        "Description": "Enfants de 5-7 ans",
+        "Quantity": 3,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "violons"
+    },
+    {
+        "ID": 17,
+        "Name": "Violon 1/2",
+        "Description": "Enfants de 7-9 ans",
+        "Quantity": 5,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "violons"
+    },
+    {
+        "ID": 18,
+        "Name": "Violon 3/4",
+        "Description": "Enfants d'environ 9-12 ans",
+        "Quantity": 4,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/violons/3_4_blanc_1.jpg",
+            "/img/violons/3_4_blanc_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "violons"
+    },
+    {
+        "ID": 19,
+        "Name": "Violon 4/4",
+        "Description": "Violon standard pour adultes et ados (≈ à partir de 12 ans)",
+        "Quantity": 2,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/violons/4_4_marron_1.jpg",
+            "/img/violons/4_4_marron_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "violons"
+    },
+    {
+        "ID": 20,
+        "Name": "Contrebasse 1/2",
+        "Description": "Pour ados ou adultes de petit gabarit, Plus facile à transporter et à jouer",
+        "Quantity": 8,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/contrebasses/1_2_marron_1.jpg",
+            "/img/contrebasses/1_2_marron_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "contrebasses"
+    },
+    {
+        "ID": 21,
+        "Name": "Contrebasse 3/4",
+        "Description": "Taille standard pour adultes, Bon équilibre entre confort et puissance sonore",
+        "Quantity": 9,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/contrebasses/1_2_noire_1.jpg",
+            "/img/contrebasses/1_2_noire_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "contrebasses"
+    },
+    {
+        "ID": 22,
+        "Name": "Mandoline standard",
+        "Description": "Convient à la majorité des adultes et des ados, Instrument compact, facile à transporter (Longueur totale : environ 60–70 cm Mensur (longueur des cordes) : ~33–35 cm)",
+        "Quantity": 3,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/mandolines/beige_1.jpg",
+            "/img/mandolines/beige_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "mandolines"
+    },
+    {
+        "ID": 23,
+        "Name": "Grande harpe",
+        "Description": "Harpe à pédales, 40 à 47 cordes, Environ 1,70 m à 1,85 m de haut, Utilisée en musique classique et orchestre, Très lourde (30-40 kg), destinée aux musiciens avancés",
+        "Quantity": 1,
+        "Prix": 0,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/harpes/grande_beige_1.jpg",
+            "/img/harpes/grande_beige_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "cordes",
+            "type": "acoustique"
+        },
+        "Category": "harpes"
+    },
+    {
+        "ID": 24,
+        "Name": "Basse électrique",
         "Description": "Cette basse électrique Cort noire est l'alliée idéale pour poser des bases rythmiques solides. Dotée d'une électronique polyvalente, elle permet de sculpter un son précis, que vous jouiez au doigt ou au médiator. Son manche ergonomique facilite l'accès aux cases, rendant l'apprentissage du groove fluide et agréable. Un excellent rapport qualité-prix pour les débutants et amateurs souhaitant un instrument sérieux et bien fini.",
         "Quantity": 2,
         "Prix": 319,
@@ -282,7 +431,7 @@
         "Categorie": "basses"
     },
     {
-        "ID": 16,
+        "ID": 25,
         "Name": "Basse électrique",
         "Description": "Dynamique et stylée, la basse Cort rouge offre des performances remarquables pour son prix. Sa configuration simple et efficace permet de trouver rapidement son son, idéal pour les musiciens qui veulent se concentrer sur l'essentiel : le rythme. Légère et bien équilibrée, elle évite la fatigue lors des sessions de jeu debout. C'est un choix judicieux pour les bassistes cherchant un instrument fiable, coloré et facile à prendre en main.",
         "Quantity": 2,
@@ -299,7 +448,7 @@
         "Categorie": "basses"
     },
     {
-        "ID": 17,
+        "ID": 26,
         "Name": "Violon 3/4",
         "Description": "Parfait pour les jeunes apprentis de 9 à 12 ans, ce violon Harley Benton 3/4 est conçu pour faciliter l'initiation. Disponible en blanc moderne ou noir classique, il offre une structure robuste capable de supporter les premières années d'étude au conservatoire. Livré prêt à l'emploi, il permet aux enfants de découvrir la justesse et le maniement de l'archet sur un instrument léger, stable et esthétiquement très réussi.",
         "Quantity": 5,
@@ -316,7 +465,7 @@
         "Categorie": "violons"
     },
     {
-        "ID": 18,
+        "ID": 27,
         "Name": "Violon 3/4",
         "Description": "Parfait pour les jeunes apprentis de 9 à 12 ans, ce violon Harley Benton 3/4 est conçu pour faciliter l'initiation. Disponible en blanc moderne ou noir classique, il offre une structure robuste capable de supporter les premières années d'étude au conservatoire. Livré prêt à l'emploi, il permet aux enfants de découvrir la justesse et le maniement de l'archet sur un instrument léger, stable et esthétiquement très réussi.",
         "Quantity": 5,
@@ -334,7 +483,7 @@
         "Categorie": "violons"
     },
     {
-        "ID": 19,
+        "ID": 28,
         "Name": "Violon 4/4",
         "Description": "Le violon Yamaha 4/4 est la référence pour les étudiants adultes et adolescents. Réputé pour sa grande stabilité d'accordage et sa facilité d'émission sonore, il permet de progresser sereinement avec une sonorité boisée et authentique. La qualité de fabrication Yamaha assure une longévité exceptionnelle à l'instrument, faisant de ce modèle 4/4 un choix rassurant pour ceux qui souhaitent s'investir sérieusement dans la pratique du violon.",
         "Quantity": 2,
@@ -351,7 +500,7 @@
         "Categorie": "violons"
     },
     {
-        "ID": 20,
+        "ID": 29,
         "Name": "Violon 4/4",
         "Description": "Pièce de maître absolue, ce violon 4/4 signé Andrea Varazzani représente le sommet de la lutherie contemporaine. Chaque détail de cet instrument a été sculpté pour offrir une projection exceptionnelle et une palette de couleurs sonores infinie. Destiné aux concertistes et collectionneurs, il se distingue par une profondeur d'âme et une réponse harmonique unique. Un investissement artistique majeur pour une vie de performances de haut niveau.",
         "Quantity": 2,
@@ -369,7 +518,7 @@
         "Categorie": "violons"
     },
     {
-        "ID": 21,
+        "ID": 30,
         "Name": "Contrebasse 1/2",
         "Description": "Cette contrebasse 1/2 en bois laminé est le choix idéal pour les jeunes musiciens ou les adultes de petit gabarit. Sa construction robuste la rend particulièrement résistante aux variations de température, un atout majeur pour le transport. Plus maniable qu'un modèle standard, elle offre une sonorité ronde et chaleureuse, parfaite pour débuter l'apprentissage du jazz ou du classique avec un instrument fiable et facile à dompter.",
         "Quantity": 2,
@@ -386,7 +535,7 @@
         "Categorie": "contrebasses"
     },
     {
-        "ID": 22,
+        "ID": 31,
         "Name": "Contrebasse 1/2",
         "Description": "Avec son look noir audacieux, cette contrebasse Gewa Rockabilly 1/2 est spécialement conçue pour les styles dynamiques comme le slap ou le blues. Son format réduit facilite grandement le jeu debout et le transport en concert. Malgré sa taille compacte, elle délivre une attaque percutante et un sustain impressionnant. C'est l'instrument de prédilection pour les contrebassistes cherchant un style unique sans sacrifier le confort de jeu.",
         "Quantity": 2,
@@ -403,7 +552,7 @@
         "Categorie": "contrebasses"
     },
     {
-        "ID": 23,
+        "ID": 32,
         "Name": "Contrebasse 3/4",
         "Description": "Affichant une finition blanche élégante, cette contrebasse 3/4 Master Bucur offre l'équilibre parfait entre confort et puissance sonore. Taille standard pour adulte, elle convient à la majorité des styles musicaux. Sa conception soignée permet une projection sonore claire et une excellente réponse sous l'archet comme en pizzicato. Un instrument polyvalent et esthétique pour les musiciens souhaitant allier performance acoustique et design moderne.",
         "Quantity": 3,
@@ -421,7 +570,7 @@
         "Categorie": "contrebasses"
     },
     {
-        "ID": 24,
+        "ID": 33,
         "Name": "Contrebasse 3/4",
         "Description": "Véritable trésor de lutherie, cette contrebasse 3/4 Master Bucur est une pièce d'exception destinée aux solistes et aux orchestres professionnels. Façonnée à partir de bois séculaires sélectionnés, elle offre une profondeur sonore et une complexité harmonique inégalées. Sa résonance majestueuse et sa précision de jeu permettent d'exprimer les nuances les plus subtiles. Un investissement pour toute une vie, représentant le sommet de l'artisanat européen.",
         "Quantity": 3,
@@ -439,7 +588,7 @@
         "Categorie": "contrebasses"
     },
     {
-        "ID": 25,
+        "ID": 34,
         "Name": "Mandoline standard",
         "Description": "Cette mandoline standard Thomann est l'instrument parfait pour s'initier aux sonorités folk et bluegrass. Très compacte et facile à transporter, elle offre une prise en main immédiate pour les adultes et les adolescents. Sa finition beige naturelle met en valeur une lutherie simple mais efficace, produisant un son cristallin et brillant. Idéale pour les voyageurs ou les musiciens souhaitant ajouter une nouvelle couleur à leur répertoire sans encombrement.",
         "Quantity": 5,
@@ -456,7 +605,7 @@
         "Categorie": "mandolines"
     },
     {
-        "ID": 26,
+        "ID": 35,
         "Name": "Mandoline standard",
         "Description": "Fender décline son savoir-faire légendaire avec cette mandoline au coloris marron profond. Conçue pour offrir une meilleure résonance et une stabilité d'accordage supérieure aux modèles d'étude, elle se distingue par un confort de manche optimisé. Sa projection sonore équilibrée et ses finitions soignées en font une alliée de choix pour les musiciens réguliers. Un instrument élégant qui traverse les styles, du classique au rock acoustique, avec une fiabilité exemplaire.",
         "Quantity": 4,
@@ -473,7 +622,7 @@
         "Categorie": "mandolines"
     },
     {
-        "ID": 27,
+        "ID": 36,
         "Name": "Grande harpe",
         "Description": "Cette grande harpe à pédales Gear4music est une pièce majestueuse de plus d'1,70 m, conçue pour les musiciens avancés et les orchestres classiques. Avec ses 47 cordes, elle offre une étendue sonore complète et une résonance profonde idéale pour le répertoire symphonique. Son poids imposant garantit une stabilité parfaite durant le jeu. Disponible en beige naturel ou noir élégant, c'est l'instrument ultime pour franchir un cap professionnel.",
         "Quantity": 2,
@@ -491,7 +640,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 28,
+        "ID": 37,
         "Name": "Grande harpe",
         "Description":  "Cette grande harpe à pédales Gear4music est une pièce majestueuse de plus d'1,70 m, conçue pour les musiciens avancés et les orchestres classiques. Avec ses 47 cordes, elle offre une étendue sonore complète et une résonance profonde idéale pour le répertoire symphonique. Son poids imposant garantit une stabilité parfaite durant le jeu. Disponible en beige naturel ou noir élégant, c'est l'instrument ultime pour franchir un cap professionnel.",
         "Quantity": 2,
@@ -509,7 +658,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 29,
+        "ID": 38,
         "Name": "Harpe celtique",
         "Description": "La harpe celtique Thomann est le compromis idéal pour les harpistes de niveau débutant à intermédiaire. Plus compacte et maniable qu'une harpe de concert, elle dispose de 32 à 38 cordes offrant une sonorité cristalline et chaleureuse, typique des musiques traditionnelles. Sa structure en bois de qualité assure une bonne tenue d'accordage, ce qui en fait un instrument fiable et agréable pour progresser au quotidien.",
         "Quantity": 1,
@@ -526,7 +675,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 30,
+        "ID": 39,
         "Name": "Harpe celtique",
         "Description": "Découvrez l'excellence de lutherie avec cette harpe celtique Muzikkon haut de gamme. Destinée aux passionnés exigeants, elle allie une esthétique rouge unique à une précision acoustique supérieure. Sa conception ergonomique offre une tension de corde parfaite et une richesse harmonique exceptionnelle pour un instrument de cette taille. C'est une pièce de caractère qui se distingue tant par sa puissance sonore que par ses finitions artisanales irréprochables.",
         "Quantity": 1,
@@ -543,7 +692,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 31,
+        "ID": 40,
         "Name": "Petite harpe",
         "Description": "Spécialement conçue pour l'éveil musical ou pour les musiciens nomades, cette petite harpe de 15 à 27 cordes se pose facilement sur les genoux ou une table. Légère et ludique, elle permet aux enfants et aux débutants de s'initier aux premières mélodies sans contrainte d'espace. Sa fabrication soignée offre un son doux et apaisant, idéal pour l'apprentissage à domicile ou pour découvrir les bases de l'instrument de manière accessible.",
         "Quantity": 3,
@@ -560,7 +709,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 32,
+        "ID": 41,
         "Name": "Petite harpe",
         "Description": "Spécialement conçue pour l'éveil musical ou pour les musiciens nomades, cette petite harpe de 15 à 27 cordes se pose facilement sur les genoux ou une table. Légère et ludique, elle permet aux enfants et aux débutants de s'initier aux premières mélodies sans contrainte d'espace. Sa fabrication soignée offre un son doux et apaisant, idéal pour l'apprentissage à domicile ou pour découvrir les bases de l'instrument de manière accessible.",
         "Quantity": 3,
@@ -577,7 +726,7 @@
         "Categorie": "harpes"
     },
     {
-        "ID": 33,
+        "ID": 42,
         "Name": "Banjo 5 cordes",
         "Description": "Signé Ibanez, ce banjo 5 cordes blanc est un choix de qualité pour les amateurs de folk et de bluegrass. Doté d'un manche standard très confortable, il permet un jeu rapide et précis propre aux styles traditionnels américains. Sa conception assure une projection percutante et une clarté de son remarquable. C'est un instrument robuste et élégant qui bénéficie de tout le savoir-faire de la marque pour un rendu professionnel sur scène.",
         "Quantity": 2,
@@ -594,7 +743,7 @@
         "Categorie": "banjos"
     },
     {
-        "ID": 34,
+        "ID": 43,
         "Name": "Banjo 5 cordes",
         "Description": "Le banjo Ortega 5 cordes se distingue par sa finition noire moderne et sa polyvalence. Idéal pour le bluegrass, il offre une résonance équilibrée et une grande facilité de jeu grâce à son manche ergonomique. La qualité des matériaux utilisés garantit une excellente projection acoustique et une grande durabilité. Que vous soyez débutant ou confirmé, ce banjo adulte classique saura répondre à vos exigences sonores avec style.",
         "Quantity": 7,
@@ -611,7 +760,7 @@
         "Categorie": "banjos"
     },
     {
-        "ID": 35,
+        "ID": 44,
         "Name": "Banjo plectrum (4 cordes)",
         "Description": "Ce banjo plectrum 4 cordes Thomann est l'instrument de prédilection pour le jazz traditionnel et le ragtime. Sa configuration à 4 cordes simplifie le jeu d'accords tout en conservant le timbre brillant et métallique caractéristique du banjo. Avec son manche standard et sa finition beige classique, il propose un excellent rapport qualité-prix pour les musiciens souhaitant explorer les sonorités rétro et festives des années folles.",
         "Quantity": 4,
@@ -628,7 +777,7 @@
         "Categorie": "banjos"
     },
     {
-        "ID": 36,
+        "ID": 45,
         "Name": "Banjo plectrum (4 cordes)",
         "Description": "Le banjo Gold Tone plectrum monte en gamme pour offrir aux musiciens de jazz une expérience de jeu supérieure. Sa construction haut de gamme assure une puissance sonore et une netteté de note indispensables pour percer dans un mix acoustique. Sa finition noire sobre et ses composants de précision en font un instrument fiable pour les concerts réguliers. Un choix de premier ordre pour ceux qui recherchent le son authentique et riche du jazz traditionnel.",
         "Quantity": 3,
@@ -645,7 +794,7 @@
         "Categorie": "banjos"
     },
     {
-        "ID": 37,
+        "ID": 46,
         "Name": "Saxophone alto",
         "Description": "Le saxophone alto Yamaha est la référence incontestée pour les étudiants sérieux. Réputé pour sa justesse irréprochable et sa facilité d'émission, il permet de progresser rapidement avec un son équilibré et chaleureux. Sa mécanique robuste et ergonomique offre un confort de jeu optimal pour les débutants comme pour les musiciens confirmés. Un investissement sûr pour accompagner votre parcours musical durant de nombreuses années.",
         "Quantity": 5,
@@ -662,7 +811,7 @@
         "Categorie": "saxophones"
     },
     {
-        "ID": 38,
+        "ID": 47,
         "Name": "Saxophone alto",
         "Description": "Pièce d'orfèvrerie acoustique, ce saxophone alto Selmer en finition noire est destiné aux solistes et professionnels les plus exigeants. Instrument d'exception, il offre une richesse de timbre unique et une projection sonore monumentale. Chaque note est d'une précision absolue, permettant une expression artistique sans limite. Sa finition rare et sa lutherie de prestige en font l'un des instruments les plus convoités au monde par les maîtres du jazz et du classique.",
         "Quantity": 2,
@@ -679,7 +828,7 @@
         "Categorie": "saxophones"
     },
     {
-        "ID": 39,
+        "ID": 48,
         "Name": "Saxophone ténor",
         "Description": "Ce saxophone ténor offre une introduction abordable au son profond et puissant caractéristique de ce registre. Idéal pour les musiciens souhaitant explorer des sonorités plus graves que l'alto, il se distingue par une prise en main facilitée et un bec réactif. Sa construction équilibrée permet une transition fluide vers le ténor, tout en garantissant un timbre cuivré authentique, parfait pour le rock, le blues ou les premières sessions de jazz.",
         "Quantity": 4,
@@ -696,7 +845,7 @@
         "Categorie": "saxophones"
     },
     {
-        "ID": 40,
+        "ID": 49,
         "Name": "Saxophone ténor",
         "Description": "Alliant élégance moderne et puissance sonore, le saxophone ténor CHEWYZ noir est conçu pour les musiciens cherchant une identité visuelle et acoustique forte. Son vernis noir influe sur la rondeur du son, offrant un timbre feutré mais puissant. Avec une mécanique fluide et des tampons de haute qualité, il assure une excellente étanchéité et une réponse rapide dans les graves comme dans les suraigus. Un choix audacieux et performant.",
         "Quantity": 3,
@@ -713,7 +862,7 @@
         "Categorie": "saxophones"
     },
     {
-        "ID": 41,
+        "ID": 50,
         "Name": "Clarinette en Sib (Bb)",
         "Description": "La clarinette en Sib de la maison F.A. Uebel est un instrument de soliste par excellence. Fabriquée dans les bois les plus nobles, elle produit une sonorité boisée, sombre et d'une clarté exceptionnelle. Sa perce sophistiquée garantit une intonation parfaite sur l'ensemble du registre. Destinée aux professionnels et aux étudiants en cycle supérieur, elle offre une souplesse de jeu et une dynamique qui répondent aux exigences des plus grandes scènes internationales.",
         "Quantity": 1,
@@ -730,7 +879,7 @@
         "Categorie": "clarinettes"
     },
     {
-        "ID": 42,
+        "ID": 51,
         "Name": "Clarinette en Sib (Bb)",
         "Description": "Cette clarinette Yamaha Sib haut de gamme est le choix privilégié des musiciens d'orchestre. Alliant tradition artisanale et innovation technologique, elle offre une régularité de son impressionnante. Son clétage ergonomique permet une virtuosité sans effort, tandis que la qualité de son bois assure une résonance riche et profonde. C'est un instrument d'une fiabilité totale, conçu pour offrir une justesse absolue dans toutes les conditions de concert.",
         "Quantity": 4,
@@ -747,7 +896,7 @@
         "Categorie": "clarinettes"
     },
     {
-        "ID": 43,
+        "ID": 52,
         "Name": "Clarinette en La (A)",
         "Description": "La clarinette en La ZMTV est un instrument spécialisé, indispensable pour aborder le répertoire de musique classique et de chambre. Plus longue que le modèle en Sib, elle offre une sonorité plus douce et plus profonde. Ce modèle propose un excellent rapport qualité-prix pour les clarinettistes souhaitant acquérir leur premier instrument en La sans compromis sur la qualité des matériaux et la précision du clétage. Une alliée indispensable pour l'orchestre.",
         "Quantity": 3,
@@ -764,7 +913,7 @@
         "Categorie": "clarinettes"
     },
     {
-        "ID": 44,
+        "ID": 53,
         "Name": "Clarinette en La (A)",
         "Description": "Idéale pour l'initiation ou pour ajouter une touche de couleur à votre ensemble, cette clarinette en La Gear4music rouge surprend par son accessibilité. Conçue pour les débutants, elle est légère et facile à jouer. Bien que très abordable, elle respecte les standards de doigté classiques, permettant de découvrir les spécificités de la tonalité en La de manière ludique. Parfaite pour un premier contact avec l'instrument ou pour les jeunes élèves.",
         "Quantity": 3,
@@ -781,7 +930,7 @@
         "Categorie": "clarinettes"
     },
     {
-        "ID": 45,
+        "ID": 54,
         "Name": "Trompette en Sib (Bb)",
         "Description": "La trompette Sib Yamaha est un modèle polyvalent qui excelle aussi bien en orchestre qu'en ensemble de jazz. Sa perce moyenne et son pavillon équilibré permettent une émission facile et un son brillant très apprécié. Très robuste, elle est conçue pour résister à une utilisation quotidienne intensive tout en conservant une fluidité de pistons exemplaire. C'est le choix de confiance pour les trompettistes cherchant un instrument évolutif de haute qualité.",
         "Quantity": 2,
@@ -798,7 +947,7 @@
         "Categorie": "trompettes"
     },
     {
-        "ID": 46,
+        "ID": 55,
         "Name": "Trompette en Sib (Bb)",
         "Description": "Affichez un style moderne avec cette trompette Sib Thomann en finition noire. Conçue pour les débutants, elle offre une réponse rapide et une prise en main immédiate. Son look original n'enlève rien à ses qualités acoustiques, proposant un son centré et une bonne projection. C'est l'instrument idéal pour les musiciens qui veulent se démarquer au sein d'une fanfare ou d'un groupe de rock tout en maîtrisant leur budget d'apprentissage.",
         "Quantity": 2,
@@ -815,7 +964,7 @@
         "Categorie": "trompettes"
     },
     {
-        "ID": 47,
+        "ID": 56,
         "Name": "Trompette en Ut (C)",
         "Description": "Indispensable pour l'orchestre symphonique, cette trompette en Ut Yamaha argentée se distingue par son éclat sonore et sa précision chirurgicale. Plus courte que la Sib, elle offre un son plus direct et brillant, idéal pour les traits virtuoses classiques. Sa finition argentée ne se contente pas d'être élégante : elle contribue à la clarté des harmoniques. Un instrument professionnel pour les trompettistes recherchant l'excellence et une justesse parfaite.",
         "Quantity": 3,
@@ -832,7 +981,7 @@
         "Categorie": "trompettes"
     },
     {
-        "ID": 48,
+        "ID": 57,
         "Name": "Trompette en Ut (C)",
         "Description": "Cette trompette en Ut Thomann est une solution extrêmement accessible pour découvrir les spécificités de la tonalité en Do. Sa construction en cuivre classique offre un son chaleureux et traditionnel. Bien que positionnée en entrée de gamme, elle respecte scrupuleusement les exigences de jeu pour l'initiation à la musique d'orchestre. C'est l'option parfaite pour un étudiant souhaitant s'essayer à la trompette en Ut sans un investissement massif immédiat.",
         "Quantity": 3,
@@ -849,20 +998,92 @@
         "Categorie": "trompettes"
     },
     {
-        "ID": 35,
-        "Name": "Batterie",
-        "Description": "",
-        "Quantity": 0,
-        "Prix": 0,
+        "ID": 58,
+        "Name": "Batterie Pearl Export",
+        "Description": "Batterie Pearl Export 5 fûts avec caisse claire de 14 pouces, toms de 10, 12 et 16 et grosse caisse de 22. Hardware et cymbales inclues. Parfait pour débuter. Faite pour tout type de jeu.",
+        "Quantity": 6,
+        "Prix": 1100,
         "Devise": "EUR (€)",
-        "Images": [],
+        "Images": [
+            "/img/batteries/pearl_export_noire_1.jpg",
+            "/img/batteries/pearl_export_noire_2.jpg"
+        ],
         "Caracs": {
-            "famille": "percussions"
+            "famille": "percussions",
+            "type": "acoustique"
         },
         "Categorie": "batteries"
     },
     {
-        "ID": 40,
+        "ID": 59,
+        "Name": "Batterie Tama SuperStar Classic",
+        "Description": "Batterie Tama SuperStar Classic 7 fûts avec caisse claire de 14 pouces, toms de 8, 10, 12, 14 et 16 et grosse caisse de 22. Hardware et cymbales non inclues. Bien pour tous niveaux. Idéal pour du rock.",
+        "Quantity": 4,
+        "Prix": 1500,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/batteries/tama_superstar_classic_1.jpg",
+            "/img/batteries/tama_superstar_classic_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "acoustique"
+        },
+        "Categorie": "batteries"
+    },
+    {
+        "ID": 60,
+        "Name": "Batterie Mapex Comet",
+        "Description": "Batterie Mapex Comet 5 fûts avec caisse claire de 14 pouces, toms de 10, 12 et 14 et grosse caisse de 18. Hardware, siège et cymbales inclues. Parfait pour faire découvrir un bel instrumment à ses enfants.",
+        "Quantity": 10,
+        "Prix": 700,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/batteries/mapex_comet_noire_1.jpg",
+            "/img/batteries/mapex_comet_noire_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "acoustique"
+        },
+        "Categorie": "batteries"
+    },
+    {
+        "ID": 61,
+        "Name": "Batterie Alesis Strata Prime",
+        "Description": "Batterie éléctrique Alesis Strata Prime 6 fûts avec caisse claire de 14 pouces, toms de 8, 10, 12 et 14 et grosse caisse de 20. Cymbales inclues mais pas  hardware. Très bon compromis pour une batterie éléctrique haut de gamme.",
+        "Quantity": 6,
+        "Prix": 1100,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/batteries/alessia_strata_prime_1.jpg",
+            "/img/batteries/alessia_strata_prime_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "electrique"
+        },
+        "Categorie": "batteries"
+    },
+    {
+        "ID": 62,
+        "Name": "Batterie Roland TD-02K V-Drums",
+        "Description": "Batterie Roland TD-02K V-Drums 4 pads PD-4 pour caisse claire et toms et pédale grosse caisse KT-1. Hardware et cymbales inclues. Parfait pour débuter et faire moins de bruit.",
+        "Quantity": 12,
+        "Prix": 400,
+        "Devise": "EUR (€)",
+        "Images": [
+            "/img/batteries/roland_td02k_1.jpg",
+            "/img/batteries/roland_td02k_2.jpg"
+        ],
+        "Caracs": {
+            "famille": "percussions",
+            "type": "electrique"
+        },
+        "Categorie": "batteries"
+    },
+    {
+        "ID": 63,
         "Name": "Petit djembe",
         "Description": "Parfaitement adapté aux enfants ou aux grands voyageurs, ce petit djembé se distingue par sa légèreté et sa maniabilité. Sa peau de 20 à 25 cm produit des sons aigus et claquants très réactifs, parfaits pour l'éveil rythmique ou les sessions improvisées. Sa petite taille permet de le transporter partout sans effort, tout en offrant une introduction ludique et accessible aux percussions traditionnelles africaines.",
         "Quantity": 9,
@@ -879,7 +1100,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 41,
+        "ID": 64,
         "Name": "Petit djembe",
         "Description": "Parfaitement adapté aux enfants ou aux grands voyageurs, ce petit djembé se distingue par sa légèreté et sa maniabilité. Sa peau de 20 à 25 cm produit des sons aigus et claquants très réactifs, parfaits pour l'éveil rythmique ou les sessions improvisées. Sa petite taille permet de le transporter partout sans effort, tout en offrant une introduction ludique et accessible aux percussions traditionnelles africaines.",
         "Quantity": 9,
@@ -896,7 +1117,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 42,
+        "ID": 65,
         "Name": "Djembe moyen",
         "Description": "Le djembé de taille moyenne est la configuration la plus courante, plébiscitée par les amateurs et les élèves en école de musique. Avec un diamètre de 28 à 32 cm, il offre un son parfaitement équilibré entre des basses rondes et des aigus précis. Sa hauteur ergonomique (~50-60 cm) assure un confort de jeu optimal. C'est le choix standard pour ceux qui recherchent un instrument polyvalent capable de s'adapter à tous les contextes rythmiques.",
         "Quantity": 5,
@@ -913,7 +1134,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 41,
+        "ID": 66,
         "Name": "Djembe moyen",
         "Description":"Le djembé de taille moyenne est la configuration la plus courante, plébiscitée par les amateurs et les élèves en école de musique. Avec un diamètre de 28 à 32 cm, il offre un son parfaitement équilibré entre des basses rondes et des aigus précis. Sa hauteur ergonomique (~50-60 cm) assure un confort de jeu optimal. C'est le choix standard pour ceux qui recherchent un instrument polyvalent capable de s'adapter à tous les contextes rythmiques.",
         "Quantity": 4,
@@ -930,7 +1151,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 43,
+        "ID": 67,
         "Name": "Grand djembe",
         "Description": "Ce grand djembé Thomann est un instrument d'exception conçu pour les professionnels et la scène. Sa fabrication haut de gamme et ses dimensions généreuses (plus de 33 cm de diamètre) lui confèrent des basses extrêmement profondes et une puissance de projection impressionnante. Idéal pour les performances en extérieur ou les enregistrements en studio, il offre une richesse harmonique et une dynamique qui satisferont les percussionnistes les plus exigeants.",
         "Quantity": 3,
@@ -947,7 +1168,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 44,
+        "ID": 68,
         "Name": "Grand djembe",
         "Description": "Le grand djembé Afroton est l'allié parfait pour les musiciens de scène et les passionnés de musique traditionnelle. Avec son large diamètre de peau, il délivre un son puissant et des basses percutantes. Conçu pour offrir une résonance authentique, il permet une grande variété de nuances de frappe. C'est un instrument robuste et performant, idéal pour les percussionnistes souhaitant un instrument de grande taille avec un excellent rapport qualité-prix.",
         "Quantity": 5,
@@ -964,7 +1185,7 @@
         "Categorie": "djembes"
     },
     {
-        "ID": 45,
+        "ID": 69,
         "Name": "Maracas moyennes",
         "Description": "Ces maracas de taille intermédiaire (15 à 25 cm) sont indispensables pour apporter du relief à vos rythmiques. Elles offrent un son équilibré, mêlant des aigus cristallins à une légère assise dans les médiums. Parfaites pour la danse, les musiques latines ou l'éveil musical en école, elles sont légères et offrent une prise en main immédiate. Que vous choisissiez la version jaune Thomann ou la version noire MEINL, vous bénéficierez d'un accessoire fiable et précis.",
         "Quantity": 6,
@@ -981,7 +1202,7 @@
         "Categorie": "maracas"
     },
     {
-        "ID": 46,
+        "ID": 70,
         "Name": "Maracas moyennes",
         "Description": "Ces maracas de taille intermédiaire (15 à 25 cm) sont indispensables pour apporter du relief à vos rythmiques. Elles offrent un son équilibré, mêlant des aigus cristallins à une légère assise dans les médiums. Parfaites pour la danse, les musiques latines ou l'éveil musical en école, elles sont légères et offrent une prise en main immédiate. Que vous choisissiez la version jaune Thomann ou la version noire MEINL, vous bénéficierez d'un accessoire fiable et précis.",
         "Quantity": 6,
@@ -998,7 +1219,7 @@
         "Categorie": "maracas"
     },
     {
-        "ID": 47,
+        "ID": 71,
         "Name": "Grandes maracas",
         "Description": "Ces grandes maracas artisanales de chez Coco Papaya sont destinées aux musiciens cherchant un son puissant et typé. Avec plus de 25 cm de long, elles produisent une percussion plus grave et forte, idéale pour percer dans un mix d'orchestre latin ou sur scène. Leur volume sonore demande un peu plus de poigne, mais offre en retour une texture rythmique riche et authentique qui ne passera pas inaperçue.",
         "Quantity": 4,
@@ -1015,7 +1236,7 @@
         "Categorie": "maracas"
     },
     {
-        "ID": 48,
+        "ID": 72,
         "Name": "Grandes maracas",
         "Description": "Les grandes maracas Stagg sont conçues pour offrir une projection sonore maximale à un prix très accessible. Leur format généreux permet d'obtenir un son fort et percutant, essentiel pour les ensembles de percussions ou les fanfares. Simples et efficaces, elles sont parfaites pour les musiciens qui ont besoin de puissance acoustique et d'une solidité à toute épreuve lors de leurs représentations en public.",
         "Quantity": 4,

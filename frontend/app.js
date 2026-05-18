@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(express.static(__dirname))
 
 // On dit à ejs que toutes les pages 'views' seront dans le dossier views/
-app.set('views', './views')
+app.set('views', './frontend/views')
 app.set('view engine', 'ejs')
 
 app.use(router)
