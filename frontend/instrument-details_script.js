@@ -3,7 +3,8 @@ const idUrl = document.location.pathname
 const id = parseInt(idUrl.slice(1))
 
 /**
- * getInstrumentById est la fonction qui permet d'obtenir un instrument en fonction de son id en faisant une requête à l'API (localhost:3000).
+ * getInstrumentById est la fonction qui permet d'obtenir un instrument en fonction de son id en faisant une requête à 
+ * l'API (localhost:3000).
  * Même principe que getAllInstruments dans script.js.
  * @returns : L'instrument ayant l'id dans l'url.
  */
@@ -31,7 +32,7 @@ async function displayInstrument() {
     let principalImage = document.querySelector('.instrument-image')
     let namePlaceholder = document.querySelector('.name-placeholder')
     let categoryPlaceholder = document.querySelector('.category-placeholder')
-    let descPlaceholder = document.querySelector('.desc-placeholder')
+    // let descPlaceholder = document.querySelector('.desc-placeholder')
     let imagesContainer = document.querySelector('.images-container')
     let pricePlaceholder = document.querySelector('.price-placeholder')
     let quantityPlaceholder = document.querySelector('.quantity-placeholder')
@@ -40,63 +41,135 @@ async function displayInstrument() {
     principalImage.src = instrument.Images[0]
     namePlaceholder.innerHTML = instrument.Name 
     categoryPlaceholder.innerHTML = instrument.Categorie
-    descPlaceholder.innerHTML = instrument.Description
+    limitDesc(instrument.Description)
+    document.querySelector('.expand-btn').addEventListener('click', () => toggleDesc(instrument.Description))
     imagesContainer.innerHTML = ''
     pricePlaceholder.innerHTML = `${instrument.Prix} ${instrument.Devise}`
     quantityPlaceholder.innerHTML = `${instrument.Quantity} restant(e)s`
 
     // On fait une boucle pour afficher les différentes images du produit.
     for (let i = 0; i < instrument.Images.length; i++) {
-        imagesContainer.innerHTML += `<img class='instrument-images-other' src='${instrument.Images[i]}'>`
+        // On crée un élément img,
+        let newImage = document.createElement('img')
+        // On lui applique sa classe et sa src (lien de l'image)
+        newImage.classList.add('instrument-images-other')
+        newImage.src = instrument.Images[i]
+        // On ajoute un eventListener pour que, quand on clique sur l'image, elle rempalce la grande image principale,
+        newImage.addEventListener('click', () => {
+            principalImage.src = newImage.src
+        })
+        // Et enfin on ajoute l'élément contenant l'image dans le container d'images.
+        imagesContainer.appendChild(newImage)
     }
 
     // On récupère aussi le container du symbole des favoris,
     let favoriteContainer = document.querySelector('.favorite-container')
-    const currentFavorites = JSON.parse(localStorage.getItem("favorites"))
-    let favorite = false
-    for (let i = 0; i < currentFavorites.length; i++) {
-        if (currentFavorites[i].ID === instrument.ID) {
-            favorite = true
-        }
-    }
-
-    if (favorite) {
+    const currentFavorites = getFavorites()
+    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) {
         favoriteContainer.innerHTML = `
-            <svg viewBox="0 0 20 20" class="shrink-1 active" onclick='toggleFavorite(${instrument})'>
-                <path fill="currentColor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44Z"></path>
-            </svg>
-            <p>Sauvegarder dans les favoris</p>
-        `
-    } else {
-        favoriteContainer.innerHTML = `
-            <svg viewBox="0 0 20 20" class="shrink-1" onclick="toggleFavorite(${instrument})">
+            <svg viewBox="0 0 20 20" class="shrink-1 out-favorite">
                 <path fill="currentcolor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44ZM5.752 3.307c-.821 0-1.594.31-2.183.878-.71.682-1.131 1.663-1.157 2.69-.026 1.028.346 2.032 1.02 2.755l6.588 7.055 6.42-6.875c1.389-1.487 1.522-3.883.297-5.342-.627-.747-1.518-1.19-2.445-1.217a3.326 3.326 0 0 0-2.5 1.072l-1.224 1.31a.75.75 0 0 1-1.096 0L8.415 4.503c-.685-.734-1.625-1.17-2.578-1.194h-.085v-.001Z"></path>
             </svg>
             <p>Sauvegarder dans les favoris</p>
         `
+    } else {
+        favoriteContainer.innerHTML = `
+            <svg viewBox="0 0 20 20" class="shrink-1 in-favorite">
+                <path fill="currentColor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44Z"></path>
+            </svg>
+            <p>Sauvegarder dans les favoris</p>
+        `
     }
-    document.querySelector('.shrink-1').addEventListener('click', toggleFavorite(instrument))
+    
+    document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
+}
 
+/**
+ * toggleDesc est une fonction qui rallonge ou limite la description d'un produit en focntion de son état actuel.
+ * @param {string} text 
+ */
+function toggleDesc(text) {
+    // On récupère l'élément qui contient la description ainsi que le bouton pour afficher plus ou moins,
+    let descCont = document.querySelector('.desc-container')
+
+    // Puis on vérifie ses classes pour appeler les fonctions correspondantes,
+    // Si il y a la classe limited, alors on rallonge la description,
+    if (descCont.classList.contains('limited')) expandDesc(text)
+    // Sinon on la limite.
+    else limitDesc(text)
 
 }
 
+/**
+ * limitDesc est une fonction qui prend en paramètre un texte (dans ce cas, la description d'un produit), et qui 
+ * le tronque à 150 caractères.
+ * Sert dans toggleDesc.
+ * @param {string} text 
+ */
+function limitDesc(text) {
+    // On récupère le conteneur de la description et on y met la description tronquée,
+    let descPlaceholder = document.querySelector('.desc-placeholder')
+    descPlaceholder.innerHTML = text.slice(0, 151) + '...'
+
+    // On change également le texte du bouton Afficher plus/moins,
+    let expandBtn = document.querySelector('.expand-btn')
+    expandBtn.innerHTML = 'Afficher plus'
+
+    // Et on change la classe de desc-container pour faire les vérifications.
+    let descCont = document.querySelector('.desc-container')
+    descCont.classList.toggle('limited')
+}
+
+/**
+ * expandDesc est une fonction qui prend en paramètre un texte (dans ce cas, la description d'un produit), et qui
+ * l'affiche en entier.
+ * Même principe que limitDesc, sauf pour le texte non tronqué et Afficher plus/moins.
+ * Sert dans toggleDesc.
+ * @param {string} text 
+ */
+function expandDesc(text) {
+    let descPlaceholder = document.querySelector('.desc-placeholder')
+    descPlaceholder.innerHTML = text
+
+    let expandBtn = document.querySelector('.expand-btn')
+    expandBtn.innerHTML = 'Afficher moins'
+
+    let descCont = document.querySelector('.desc-container')
+    descCont.classList.toggle('limited')
+}
+
+/**
+ * getFavorites est la fonction qui permet d'obtenir les instruments favoris dans le localstorage.
+ * @returns : Les instruments stockés si ils existent, undefined sinon.
+ */
+function getFavorites() {
+    // On récupère les instruments favoris dans le localstorage.
+    const currentFavorites = JSON.parse(localStorage.getItem("favorites"))
+    // On vérifie si il y a des favoris,
+    if (!currentFavorites || currentFavorites.length === 0) {
+        // Si il n'y en a pas, on renvoie undefined pour faire des vérifications ailleurs,
+        return undefined
+    } else {
+        // Si il y en a, on renvoie les favoris.
+        return currentFavorites
+    }
+}
 
 function toggleFavorite(instrument) {
-    let currentFavorites = JSON.parse(localStorage.getItem("favorites"))
-    let favorite = false
-    for (let i = 0; i < currentFavorites.length; i++) {
-        if (currentFavorites[i].ID === instrument.ID) {
-            favorite = true
-        }
+    let currentFavorites = getFavorites()
+    let favorite
+    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) { 
+        favorite = false 
+    }
+    else { 
+        favorite = true 
     }
 
-    if (favorite) {
+    if (!favorite) {
         addFavorite(instrument)
     } else {
         removeFavorite(instrument)
     }
-    
-
 }
 
 /**
@@ -123,6 +196,15 @@ function addFavorite(instrument) {
         localStorage.setItem("favorites", JSON.stringify(currentFavorites))
     }
 
+    let favoriteContainer = document.querySelector('.favorite-container')
+    favoriteContainer.innerHTML = `
+        <svg viewBox="0 0 20 20" class="shrink-1 in-favorite">
+            <path fill="currentColor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44Z"></path>
+        </svg>
+        <p>Sauvegarder dans les favoris</p>
+    `
+
+    document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
 }
 
 /**
@@ -130,20 +212,31 @@ function addFavorite(instrument) {
  * @param {Object} instrument : L'instrument à retirer des favoris.
  */
 function removeFavorite(instrument) {
-    console.log('Entrée dans removeFavorite : ')
     let currentFavorites = JSON.parse(localStorage.getItem("favorites"))
     // On vérifie si l'instrument est bien dans les favoris, et on sort de la fonction sinon.
-    if (!currentFavorites.includes(instrument)) {
+    if (!currentFavorites.some( elt => instrument.ID === elt.ID)) {
         console.error('Erreur : Instrument pas dans les favoris')
         return
     }
 
     if (currentFavorites.length > 0) {
         // On enlève l'instrument du tableau.
-        currentFavorites.splice(currentFavorites.indexOf(instrument), 1)
+        currentFavorites.splice(currentFavorites.findIndex(elt => elt.ID === instrument.ID), 1)
         localStorage.setItem("favorites", JSON.stringify(currentFavorites))
     } else if (currentFavorites.length === 0) {
         alert('Pas de favoris')
     }
+
+    let favoriteContainer = document.querySelector('.favorite-container')
+    favoriteContainer.innerHTML = `
+        <svg viewBox="0 0 20 20" class="shrink-1 out-favorite">
+            <path fill="currentcolor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44ZM5.752 3.307c-.821 0-1.594.31-2.183.878-.71.682-1.131 1.663-1.157 2.69-.026 1.028.346 2.032 1.02 2.755l6.588 7.055 6.42-6.875c1.389-1.487 1.522-3.883.297-5.342-.627-.747-1.518-1.19-2.445-1.217a3.326 3.326 0 0 0-2.5 1.072l-1.224 1.31a.75.75 0 0 1-1.096 0L8.415 4.503c-.685-.734-1.625-1.17-2.578-1.194h-.085v-.001Z"></path>
+        </svg>
+        <p class="favorite-text">Sauvegarder dans les favoris</p>
+    `
+
+    document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
 }
+
+// on met un eventListener pour qu'à chaque fois que la page se recharge, ça affiche les instruments comme il faut.
 window.addEventListener('load', displayInstrument)

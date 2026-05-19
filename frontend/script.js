@@ -1,6 +1,5 @@
 const urlAPI = "http://localhost:3000/"
 
-// addFavorite est la fonction qui permet d'ajouter un instrument dans sa liste de favoris en appuyant sur un bouton, grâce au localstorage. 
 /**
  * addFavorite est la fonction qui permet d'ajouter un instrument dans sa liste de favoris en appuyant sur un bouton, grâce au localstorage. 
  * @param {Object} instrument : L'instrument à rajouter dans les favoris.
@@ -174,7 +173,6 @@ function displayFavorites() {
     });
 }
 
-// getBasket est la fonction qui permet d'avoir les instruments du panier dans le localstorage. Même principe que getFavorites.
 /**
  * getBasket est la fonction qui permet d'avoir les instruments du panier dans le localstorage. Même principe que getFavorites.
  * @returns : Les instruments stockées si il y en a, undefined sinon.
