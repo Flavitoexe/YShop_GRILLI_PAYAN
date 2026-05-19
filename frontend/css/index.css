@@ -29,7 +29,7 @@ a:hover {
 /* Partie Carousel */
 .carousel {
     /* background-color: oldlace; */
-    background: linear-gradient(90deg, #fdf5e6 0%, #f3dec2 50%, #e2be8a 100%);
+    background: linear-gradient(90deg, #FFFFFF 0%, #F5EFEB 50%, #DFD2BE 100%);
     border: 1px solid gray;
     height: 50vh;
 
@@ -68,11 +68,18 @@ a:hover {
     height: 100%;
     width: 33%;
     border-right: 1px solid gray;
+    display: flex;
+    align-items: center;     
+    justify-content: center;  
+    background-color: #ffffff;
 }
 .product-img {
-    /* height: 100%; */
     /* transform: translateY(-12%); */
-    width: 100%;
+    /*width: 100%;*/
+    max-width: 98%;
+    max-height: 98%;
+    object-fit: contain;
+    
 }
 
 .right-slide {
