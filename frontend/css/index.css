@@ -1,0 +1,161 @@
+main {
+    padding-top: 17vh;
+}
+
+.title {
+    width: 100%;
+    padding: 40px;
+    padding-top: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title h1 {
+    border-bottom: 5px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: violet;
+    border-bottom: 5px solid violet;
+    cursor: pointer;
+}
+
+/* Partie Carousel */
+.carousel {
+    /* background-color: oldlace; */
+    background: linear-gradient(90deg, #FFFFFF 0%, #F5EFEB 50%, #DFD2BE 100%);
+    border: 1px solid gray;
+    height: 50vh;
+
+    transform: none;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.inner-carousel {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    margin-left: 5vw;
+    gap: 5vw;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    height: 100%;   
+    min-width: 100%;
+
+    border: 2px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: flex;
+
+    box-shadow: 0 10px 30px rgba(60, 40, 20, 0.25);
+}
+
+.left-slide {
+    height: 100%;
+    width: 33%;
+    border-right: 1px solid gray;
+    display: flex;
+    align-items: center;     
+    justify-content: center;  
+    background-color: #ffffff;
+}
+.product-img {
+    /* transform: translateY(-12%); */
+    /*width: 100%;*/
+    max-width: 98%;
+    max-height: 98%;
+    object-fit: contain;
+    
+}
+
+.right-slide {
+    width: 67%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-slide p {
+    margin: 25px;
+}
+
+.carousel-dots {
+    border-radius: 25px;
+    position: absolute;
+    width: 150px;
+    height: 25px;
+    bottom: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    left: 50vw;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(184, 134, 11, 0.3);
+    transition: transform 0.2s ease-in-out;
+
+}
+.dot:hover {
+    background-color: #B8860B;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background-color: #B8860B;
+    transform: scale(1.2);
+}
+
+/* Partie Catégories */
+.category-logo {
+    height: 75px;
+    margin-right: 25px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+}
+
+.category {
+    border-bottom: 1px solid gray;
+
+    padding: 20px;
+    margin: 40px;
+
+    display: flex;
+}
+.category h2 {
+    transform: translateY(25%);
+}
+
+.category:hover {
+    cursor: pointer;
+}
+
+.category h2:hover {
+    color: violet;
+    /* cursor: pointer; */
+}

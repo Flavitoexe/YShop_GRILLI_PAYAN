@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./components/head'); %>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/instrument-details.css">
+    <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
+    <title>YShop</title>
+</head>
+<body>
+    <%- include('./components/header'); %>
+    <main>
+        <div class="instrument-container">
+            <div class="instrument-image-container">
+                <img class="instrument-image" src="" alt="instrument-image">
+            </div>
+            
+            <div class="details">
+                <div class="upper-details-container">
+                    <div class="left-upper-container">
+                        <h1 class="name-placeholder"></h1>
+                        <p class="category-placeholder"></p>
+                    </div>
+
+                    <div class="right-upper-container">
+                        <div class="favorite-container">
+                        </div>                        
+                    </div>
+                    
+                </div>
+                <div class="desc-container">
+                    <p class="desc-placeholder"></p>
+                    <p class="expand-btn">Afficher plus</p>
+                </div>
+                <div class="lower-details-container">
+                    <div class="images-container">
+                        <img class='instrument-images-other' src="">
+                        <img class='instrument-images-other' src="">
+                    </div>
+
+                    <div class="right-lower-container">
+                        <h2 class="price-placeholder"></h2>
+                        <p class="quantity-placeholder"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./instrument-details_script.js"></script>
+</body>
+</html>

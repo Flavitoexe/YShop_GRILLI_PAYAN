@@ -1,14 +1,14 @@
 {
-  "name": "yshop",
+  "name": "yshop-backend",
   "version": "1.0.0",
-  "description": "YShop final project Challenge JS",
+  "description": "Backend for YShop final project Challenge JS",
   "main": "app.js",
   "author": "GRILLI Flavio, PAYAN Lisa",
   "license": "ISC",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodeemon app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
