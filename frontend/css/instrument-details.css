@@ -27,11 +27,9 @@ main {
 
     display: grid;
     grid-template-columns: 600px 1fr;
-    /* grid-template-columns: 4fr 5fr; */
 }
 
 .instrument-image-container {
-    /* padding: 10px; */
     height: 100%;
     background-color: white;
     border-right: solid 1px gray;
@@ -114,6 +112,17 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.add-to-basket {
+    margin: 5px;
+    text-decoration: underline;
+    transition: transform 0.2s ease-in-out;
+}
+.add-to-basket:hover {
+    cursor: pointer;
+    color: violet;
+    transform: scale(1.1);
 }
 
 .images-container {

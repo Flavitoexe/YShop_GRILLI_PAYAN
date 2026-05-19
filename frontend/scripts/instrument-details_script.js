@@ -2,10 +2,40 @@
 const idUrl = document.location.pathname
 const id = parseInt(idUrl.slice(1))
 
+
+/**
+ * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
+ * @returns : Les instruments recherchés.
+ */
+async function getSearchQuery() {
+    // On récupère la valeur de la recherche, et on la met en minuscule,
+    const query = document.getElementById('search-query').value.toLowerCase()
+
+    // Si l'utilisateur ne tape rien, on annule la recherche,
+    if (query.length < 1) return
+
+    // On récupère tous les instruments pour pouvoir effectuer la recherche,
+    const data = await getAllInstruments()
+    const instruments = data.productsList
+    // On crée le tableau filtré en cherchant dans le nom ou la catégorie de l'instrument.
+    const filteredArr = instruments.filter( elt => 
+        elt.Name.toLowerCase().includes(query) ||
+        elt.Category.toLowerCase().includes(query)
+    )
+
+    // Et on renvoie le tableau.
+    return filteredArr
+}
+
+// On ajoute un eventListener pour que quand une recherche se fait, la page ne se recharge pas automatiquement.
+document.querySelector('.search-bar').addEventListener('submit', (event) => {
+    event.preventDefault()
+    getSearchQuery()
+})
 /**
  * getInstrumentById est la fonction qui permet d'obtenir un instrument en fonction de son id en faisant une requête à 
  * l'API (localhost:3000).
- * Même principe que getAllInstruments dans script.js.
+ * Même principe que getAllInstruments dans scripts/script.js.
  * @returns : L'instrument ayant l'id dans l'url.
  */
 async function getInstrumentById() {
@@ -47,6 +77,9 @@ async function displayInstrument() {
     pricePlaceholder.innerHTML = `${instrument.Prix} ${instrument.Devise}`
     quantityPlaceholder.innerHTML = `${instrument.Quantity} restant(e)s`
 
+    // On ajoute un eventListener pour que, quand on clique sur 'Ajouter au panier', ca appelle addToBasket.
+    document.querySelector('.add-to-basket').addEventListener('click', () => addToBasket(instrument))
+
     // On fait une boucle pour afficher les différentes images du produit.
     for (let i = 0; i < instrument.Images.length; i++) {
         // On crée un élément img,
@@ -55,16 +88,16 @@ async function displayInstrument() {
         newImage.classList.add('instrument-images-other')
         newImage.src = instrument.Images[i]
         // On ajoute un eventListener pour que, quand on clique sur l'image, elle rempalce la grande image principale,
-        newImage.addEventListener('click', () => {
-            principalImage.src = newImage.src
-        })
+        newImage.addEventListener('click', () => principalImage.src = newImage.src)
         // Et enfin on ajoute l'élément contenant l'image dans le container d'images.
         imagesContainer.appendChild(newImage)
     }
 
     // On récupère aussi le container du symbole des favoris,
     let favoriteContainer = document.querySelector('.favorite-container')
+    // On récupère les favoris pour pouvoir faire les vérifications,
     const currentFavorites = getFavorites()
+    // Si il n'y a pas de favoris, ou que l'instrument n'y figure pas, on affiche le coeur vide,
     if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) {
         favoriteContainer.innerHTML = `
             <svg viewBox="0 0 20 20" class="shrink-1 out-favorite">
@@ -72,6 +105,7 @@ async function displayInstrument() {
             </svg>
             <p>Sauvegarder dans les favoris</p>
         `
+    // Si il y est, on affiche le coeur rouge.
     } else {
         favoriteContainer.innerHTML = `
             <svg viewBox="0 0 20 20" class="shrink-1 in-favorite">
@@ -80,12 +114,13 @@ async function displayInstrument() {
             <p>Sauvegarder dans les favoris</p>
         `
     }
-    
+
+    // On met un eventListener pour que, quand on clique sur le coeur (vide ou rempli), ca appelle toggleFavorite. 
     document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
 }
 
 /**
- * toggleDesc est une fonction qui rallonge ou limite la description d'un produit en focntion de son état actuel.
+ * toggleDesc est une fonction qui rallonge ou limite la description d'un produit en fonction de son état actuel.
  * @param {string} text 
  */
 function toggleDesc(text) {
@@ -155,19 +190,21 @@ function getFavorites() {
     }
 }
 
+/**
+ * toggleFavorite est une fonction qui vérifie si un instrument figure dans les favoris ou non, puis qui ajoute
+ * ou retire cet instrument des favoris.
+ * @param {Object} instrument 
+ */
 function toggleFavorite(instrument) {
+    // On récupère les favoris,
     let currentFavorites = getFavorites()
-    let favorite
-    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) { 
-        favorite = false 
-    }
-    else { 
-        favorite = true 
-    }
 
-    if (!favorite) {
+    // Puis on vérifie si l'instrument figure ou pas dans les favoris, puis on l'ajoute/retire.
+    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) {
+        // L'instrument n'est pas dans les favoris, donc si on clique sur le coeur, on l'ajoute,
         addFavorite(instrument)
     } else {
+        // L'instrument est dans les favoris, donc si on clique sur le coeur, on le retire.
         removeFavorite(instrument)
     }
 }
@@ -177,8 +214,6 @@ function toggleFavorite(instrument) {
  * @param {Object} instrument : L'instrument à rajouter dans les favoris.
  */
 function addFavorite(instrument) {
-    console.log('Entrée dans addFavorite : ')
-
     // On transforme le tableau du localstorage en un tableau JSON pour pouvoir le manipuler en JavaScript.
     let currentFavorites = JSON.parse(localStorage.getItem("favorites"))
 
@@ -196,6 +231,8 @@ function addFavorite(instrument) {
         localStorage.setItem("favorites", JSON.stringify(currentFavorites))
     }
 
+    // On récupère le container du coeur et du texte, puis on y ajoute le coeur rempli (car l'instrument 
+    // a été ajouté aux favoris) ainsi que le texte,
     let favoriteContainer = document.querySelector('.favorite-container')
     favoriteContainer.innerHTML = `
         <svg viewBox="0 0 20 20" class="shrink-1 in-favorite">
@@ -204,6 +241,7 @@ function addFavorite(instrument) {
         <p>Sauvegarder dans les favoris</p>
     `
 
+    // Enfin, on met un eventListener sur le coeur pour repartie sur toggleFavorite en cas de clic.
     document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
 }
 
@@ -212,7 +250,7 @@ function addFavorite(instrument) {
  * @param {Object} instrument : L'instrument à retirer des favoris.
  */
 function removeFavorite(instrument) {
-    let currentFavorites = JSON.parse(localStorage.getItem("favorites"))
+    let currentFavorites = getFavorites()
     // On vérifie si l'instrument est bien dans les favoris, et on sort de la fonction sinon.
     if (!currentFavorites.some( elt => instrument.ID === elt.ID)) {
         console.error('Erreur : Instrument pas dans les favoris')
@@ -227,6 +265,8 @@ function removeFavorite(instrument) {
         alert('Pas de favoris')
     }
 
+    // On récupère le container du coeur et du texte, puis on y ajoute le coeur vide (car l'instrument 
+    // a été retiré des favoris) ainsi que le texte.
     let favoriteContainer = document.querySelector('.favorite-container')
     favoriteContainer.innerHTML = `
         <svg viewBox="0 0 20 20" class="shrink-1 out-favorite">
@@ -238,5 +278,23 @@ function removeFavorite(instrument) {
     document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
 }
 
-// on met un eventListener pour qu'à chaque fois que la page se recharge, ça affiche les instruments comme il faut.
+/**
+ * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. 
+ * Même principe que pour addFavorite.
+ * @param {Object} instrument : L'instrument à rajouter dans le panier.
+ */
+function addToBasket(instrument) {
+    let currentBasket = JSON.parse(localStorage.getItem("basket"))
+
+    if (currentBasket) {
+        currentBasket.push(instrument)
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
+    } else {
+        currentBasket = []
+        currentBasket.push(instrument)
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
+    }
+}
+
+// On met un eventListener pour qu'à chaque fois que la page se recharge, ça affiche les instruments comme il faut.
 window.addEventListener('load', displayInstrument)
