@@ -321,6 +321,7 @@ function getProductByID() {
         })
         .catch(error => console.error('Error fetching data : ', error))
 }
+
 // On ajoute un eventListener pour que quand une recherche se fait, la page ne se recharge pas automatiquement.
 document.querySelector('.search-bar').addEventListener('submit', (event) => {
     event.preventDefault()
@@ -416,6 +417,7 @@ async function carousel() {
                 <p>${data[i].Prix} ${data[i].Devise}</p>
             </div>
         `
+
         // Et enfin, ajout de la slide dans l'élément inner-carousel.
         if (innerCarousel) {
             innerCarousel.appendChild(slide)
