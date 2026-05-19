@@ -74,20 +74,35 @@ main {
     transform: scale(1.2);
     cursor: pointer;
 }
-.shrink-1.active {
+.shrink-1.in-favorite {
     color: red;
+}
+
+.favorite-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .desc-container {
     width: 80%;
     height: 25%;
-    /* background-color: blue; */
+}
+
+.expand-btn {
+    padding: 5px;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: underline;
+}
+.expand-btn:hover {
+    cursor: pointer;
+    color: violet;
 }
 
 .lower-details-container {
     width: 90%;
     height: 25%;
-    /* background-color: green; */
 
     display: flex;
     justify-content: space-between;
