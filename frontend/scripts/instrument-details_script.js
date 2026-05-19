@@ -2,10 +2,40 @@
 const idUrl = document.location.pathname
 const id = parseInt(idUrl.slice(1))
 
+
+/**
+ * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
+ * @returns : Les instruments recherchés.
+ */
+async function getSearchQuery() {
+    // On récupère la valeur de la recherche, et on la met en minuscule,
+    const query = document.getElementById('search-query').value.toLowerCase()
+
+    // Si l'utilisateur ne tape rien, on annule la recherche,
+    if (query.length < 1) return
+
+    // On récupère tous les instruments pour pouvoir effectuer la recherche,
+    const data = await getAllInstruments()
+    const instruments = data.productsList
+    // On crée le tableau filtré en cherchant dans le nom ou la catégorie de l'instrument.
+    const filteredArr = instruments.filter( elt => 
+        elt.Name.toLowerCase().includes(query) ||
+        elt.Category.toLowerCase().includes(query)
+    )
+
+    // Et on renvoie le tableau.
+    return filteredArr
+}
+
+// On ajoute un eventListener pour que quand une recherche se fait, la page ne se recharge pas automatiquement.
+document.querySelector('.search-bar').addEventListener('submit', (event) => {
+    event.preventDefault()
+    getSearchQuery()
+})
 /**
  * getInstrumentById est la fonction qui permet d'obtenir un instrument en fonction de son id en faisant une requête à 
  * l'API (localhost:3000).
- * Même principe que getAllInstruments dans script.js.
+ * Même principe que getAllInstruments dans scripts/script.js.
  * @returns : L'instrument ayant l'id dans l'url.
  */
 async function getInstrumentById() {
@@ -220,7 +250,7 @@ function addFavorite(instrument) {
  * @param {Object} instrument : L'instrument à retirer des favoris.
  */
 function removeFavorite(instrument) {
-    let currentFavorites = JSON.parse(localStorage.getItem("favorites"))
+    let currentFavorites = getFavorites()
     // On vérifie si l'instrument est bien dans les favoris, et on sort de la fonction sinon.
     if (!currentFavorites.some( elt => instrument.ID === elt.ID)) {
         console.error('Erreur : Instrument pas dans les favoris')

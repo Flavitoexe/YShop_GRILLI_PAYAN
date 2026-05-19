@@ -1,17 +1,15 @@
-# YShop 
+# YShop
 
-# Page index
+## Filtrer produits
 
-Manque le hover pour changer les images des instruments à la une.
+- Faire la page html
+- Implémenter la fonctionnalités
 
-# Catalogue
+## Gérer stocks
 
-# Filtrer produits
+- Gérer l'ajout d'un même produit plusieurs fois
+- Gérer ce qu'il se passe quand il n'y a plus de produits
 
-# Trier produits
+## Panier d'achat
 
-# Gérer stocks
-
-# Panier d'achat
-
-# Gérer favoris
+- Gérer les ajouts du même produit plusieurs fois (gérer stocks)
