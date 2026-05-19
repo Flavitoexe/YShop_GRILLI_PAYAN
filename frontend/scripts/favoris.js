@@ -83,7 +83,9 @@ function displayFavorites() {
 
         // On crée l'élément qui contiendra les caractéristiques du produit (Nom, prix, boutons),
         const div_carac = document.createElement('div')
+        const sous_carac = document.createElement('div')
         div_carac.className = "div_carac"
+        sous_carac.className = "sous_carac"
         // Ajout du nom,
         const div_nom = document.createElement('div')
         const nom = document.createElement('h3')
@@ -92,19 +94,21 @@ function displayFavorites() {
         const prix = document.createElement('div')
         prix.textContent = `${product.Prix} €`
         // Ajout des boutons (+ d'infos, supprimer),
-        // const btn = document.createElement('button')
-        // btn.className = "btn"
-        // btn.type = "button"
+        const btn = document.createElement('button')
+        btn.className = "btn"
+        btn.type = "button"
         const lien = document.createElement('a')
         lien.title = `Voir plus d'informations sur ${product.Name}`
         lien.href = `http://localhost:8000/${product.ID}`
         lien.textContent = `Voir`
-        // lien.appendChild(btn)
 
+        const div_supp = document.createElement('div')
+        div_supp.className = "div_supp"
         const btn_supp = document.createElement('button')
-        btn_supp.className = "btn"
+        btn_supp.className = "btn_supp"
         btn_supp.type = "button"
-        btn_supp.textContent = "Supprimer"
+        btn_supp.textContent = "✖"
+        btn_supp.title = `Supprimer ${product.Name} des favoris`
 
         // Ajout des eventListeners pour ces boutons,
         btn_supp.addEventListener("click", () => {
@@ -116,7 +120,10 @@ function displayFavorites() {
         div_fav.append(div_prod)
         div_prod.append(div_img, div_carac)
         
-        div_carac.append(div_nom, prix, lien, btn_supp)
+        div_carac.append(div_supp, sous_carac)
+        sous_carac.append(div_nom, prix, lien, btn)
+        div_supp.append(btn_supp)
         div_nom.append(nom)
+        btn.append(lien)
     })
 }
