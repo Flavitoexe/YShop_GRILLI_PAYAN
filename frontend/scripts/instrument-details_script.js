@@ -279,22 +279,119 @@ function removeFavorite(instrument) {
 }
 
 /**
+ * getBasket est la fonction qui permet d'avoir les instruments du panier dans le localstorage. 
+ * Même principe que getFavorites dans scripts/favoris.js.
+ * @returns : Les instruments stockées si il y en a, undefined sinon.
+ */
+function getBasket() {
+    const currentBasket = JSON.parse(localStorage.getItem("basket"))
+    // On vérifie si il y a des instruments dans le panier,
+    if (!currentBasket || currentBasket.length === 0) {
+        return undefined
+    } else {
+        return currentBasket
+    }
+}
+
+/**
  * addToBasket est la fonction qui permet d'ajouter un instrument dans le panier. 
  * Même principe que pour addFavorite.
  * @param {Object} instrument : L'instrument à rajouter dans le panier.
  */
 function addToBasket(instrument) {
-    let currentBasket = JSON.parse(localStorage.getItem("basket"))
+    // On vérifie si le produit est disponible, sinon on montre un toast qui dit que le produit n'est 
+    // plus disponible,  puis on arrête la fonction.
+    if (outOfStock(instrument)) {
+        showToast(true)
+        return
+    }
+    let currentBasket = getBasket()
 
-    if (currentBasket) {
+    if (currentBasket && currentBasket.findIndex(elt => elt.ID === instrument.ID) === -1) {
+        // On initialise la variable quantityInBasket de instrument à 1, cela servira pour gérer les stocks,
+        instrument.quantityInBasket = 1
         currentBasket.push(instrument)
         localStorage.setItem("basket", JSON.stringify(currentBasket))
-    } else {
+    } else if (!currentBasket) {
+        // Pareil qu'au dessus,
+        instrument.quantityInBasket = 1
         currentBasket = []
         currentBasket.push(instrument)
         localStorage.setItem("basket", JSON.stringify(currentBasket))
+    } else if (currentBasket && currentBasket.findIndex(elt => elt.ID === instrument.ID) !== -1) {
+        // L'instrument est déjà dans le panier, alors on incrémente la variable quantityInBasket.
+        currentBasket.find(elt => elt.ID === instrument.ID).quantityInBasket += 1
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
     }
+
+    // On appelle showToast pour afficher à l'utilisateur que l'ajout s'est bien fait.
+    showToast()
 }
+
+/**
+ * outOfStcok est une fonction qui permet de vérifier si un produit sera toujours disponible après ajout
+ * dans le panier.
+ * @param {Object} instrument L'instrument qu'on veut vérifier.
+ * @returns Booléen, true si l'instrument n'est plus disponible, false sinon.
+ */
+function outOfStock(instrument) {
+    // On récupère et vérifie le panier,
+    const currentBasket = getBasket()
+    if (!currentBasket) return
+
+    // On chercher l'instrument que l'on veut vérifier, et si il existe,
+    const inBasket = currentBasket.find(elt => elt.ID === instrument.ID)
+    if (!inBasket) return false
+
+    // Et enfin, on retourne la valeur de la comparaison.
+    return inBasket.Quantity <= inBasket.quantityInBasket + 1
+}
+
+// On récupère les éléments nécessaires à l'affichage du toast, càd le bouton d'ajout au panier et le toast en lui même.
+const addToCartBtn = document.querySelector(".add-to-basket")
+const toast = document.querySelector('.cart-toast')
+
+// On ajoute un eventListener sur le bouton d'ajout au panier pour appeler la fonction qui affiche le toast.
+addToCartBtn.addEventListener('click', () => addToBasket(instrument))
+
+// On déclare la variable de timeout à l'extérieur de la fonction pour que, quand on appuie plusieurs fois sur le bouton
+// pour ajouter au panier, le timeout se réinitialise comme il faut.
+let toastTimeout
+
+/**
+ * showToast est la fonction qui permet d'afficher le toast quand on ajoute un produit dans le panier.
+ */
+function showToast(bool = false) {
+    // On vérifie la valeur de bool qui détermine si l'instrument est toujours en stock, puis on adapte 
+    // le message en fonction de sa valeur (true il n'est plus en stock, false il l'est).
+    if (bool) document.querySelector('.toast-text').innerHTML = 'Erreur : Produit indisponible'
+    else document.querySelector('.toast-text').innerHTML = 'Produit ajouté au panier !'
+
+    // On vérifie que le toast n'aie pas la classe qui l'affiche (cart-toast--show), et on vérifie que 
+    // la transition CSS de l'opacité se soit bien terminée avec les getComputedStyle, qui permettent 
+    // d'avoir la valeur exacte de l'opacité au moment de l'animation.
+    if (!toast.classList.contains('cart-toast--show') && getComputedStyle(toast).opacity > 0 && getComputedStyle(toast).opacity < 1) {
+        // Si on arrive là, c'est que le toast n'est pas affiché, alors on l'affiche.
+        toast.classList.add('cart-toast--show')
+    } else if (toast.classList.contains('cart-toast--show')) {
+        // Si on arrive là, c'est que le toast est déjà existant, alors on réinitialise le timeout pour 
+        // qu'il reste affiché 4 secondes par rapport au dernier clic.
+        clearTimeout(toastTimeout)
+    } else {
+        // Si on arrive là, c'est que le toast n'existe pas, et qu'il n'y a pas de transition en cours, 
+        // alors on ajoute simplement la classe qui affichera le toast.
+        toast.classList.add('cart-toast--show')
+    }
+
+    // Ici, on crée un timeout qui, au bout de 4s, exécute la fonction callback qui, dans ce cas, 
+    // enlève la classe qui affiche le toast.
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('cart-toast--show');
+    }, 4000)
+}
+
+// On ajoute  un eventListener sur le bouton du toast pour qu'au clic, l'utilisateur soit redirigé vers le panier.
+document.querySelector('.c-cta-button').addEventListener('click', () => document.location.href = 'http://localhost:8000/basket')
 
 // On met un eventListener pour qu'à chaque fois que la page se recharge, ça affiche les instruments comme il faut.
 window.addEventListener('load', displayInstrument)

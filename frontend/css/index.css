@@ -20,15 +20,8 @@ a {
     color: black;
 }
 
-a:hover {
-    color: violet;
-    border-bottom: 5px solid violet;
-    cursor: pointer;
-}
-
 /* Partie Carousel */
 .carousel {
-    /* background-color: oldlace; */
     background: linear-gradient(90deg, #FFFFFF 0%, #F5EFEB 50%, #DFD2BE 100%);
     border: 1px solid gray;
     height: 50vh;
@@ -74,12 +67,16 @@ a:hover {
     background-color: #ffffff;
 }
 .product-img {
-    /* transform: translateY(-12%); */
-    /*width: 100%;*/
     max-width: 98%;
     max-height: 98%;
     object-fit: contain;
     
+}
+
+.slide-title a:hover {
+    color: violet;
+    border-bottom: solid 5px violet;
+    cursor: pointer;
 }
 
 .right-slide {
@@ -157,5 +154,4 @@ a:hover {
 
 .category h2:hover {
     color: violet;
-    /* cursor: pointer; */
 }

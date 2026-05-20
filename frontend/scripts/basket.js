@@ -12,12 +12,14 @@ function removeFromBasket(instrument) {
     }
 
     if (currentBasket.length > 0) {
-        currentBasket.splice(currentBasket.indexOf(instrument), 1)
+        console.log('id de linstrument et index :', instrument.ID, )
+        currentBasket.splice(currentBasket.findIndex( elt => elt.ID === instrument.ID), 1)
         localStorage.setItem("basket", JSON.stringify(currentBasket))
     } else {
         alert('Rien dans le panier à supprimer')
     }
 }
+
 /**
  * getBasket est la fonction qui permet d'avoir les instruments du panier dans le localstorage. 
  * Même principe que getFavorites dans scripts/favoris.js.
