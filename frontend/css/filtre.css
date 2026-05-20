@@ -1,0 +1,83 @@
+
+.btn_ouvrir_filtre, .btn_submit_filtre {
+    background-color: black; 
+    color: oldlace;
+    border: 2px solid black;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px; 
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.btn_ouvrir_filtre {
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+.btn_ouvrir_filtre:hover {
+    background-color: oldlace;
+    color: black; 
+}
+
+.zone_filtre {
+    width: 80%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.form_filtre {
+    background-color: oldlace; 
+    border: 2px solid black;
+    border-radius: 20px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    margin-left: 20vw;
+}
+
+.div_filtre_section {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 12px;       
+    align-items: center;
+}
+
+.titre_section_filtre {
+    width: 100%; 
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    padding-bottom: 4px;
+}
+
+.label_famille, .label_instrument, .label_marque {
+    display: inline-flex;
+    align-items: center;
+    background-color: white; 
+    border: 1.5px solid black;
+    border-radius: 15px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.label_famille:hover, .label_instrument:hover, .label_marque:hover {
+    background-color: #ebe3cc; 
+}
+
+.check_famille, .check_instrument, .check_marque {
+    accent-color: black; 
+    margin-right: 8px;    
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}

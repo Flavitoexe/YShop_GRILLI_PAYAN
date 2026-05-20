@@ -23,6 +23,31 @@ function displayProduct(products) {
     const div_cat = document.querySelector('.div_cat')
     div_cat.innerHTML = ""
 
+    const btn_ouvrir_filtre = document.createElement('button')
+    btn_ouvrir_filtre.textContent = 'Filtre'
+    btn_ouvrir_filtre.id = 'btn_ouvrir_filtre'
+    btn_ouvrir_filtre.className = "btn_ouvrir_filtre"
+    btn_ouvrir_filtre.type = "button" // Évite les soumissions de formulaires fantômes
+
+    const zone_filtre = document.createElement('div')
+    zone_filtre.id = 'zone_filtre'
+    zone_filtre.className = "zone_filtre"
+
+    // 2. On les place JUSTE AVANT la liste des produits pour ne pas casser ta grille CSS
+    div_cat.before(btn_ouvrir_filtre)
+    btn_ouvrir_filtre.after(zone_filtre)
+
+    // 3. L'écouteur du clic (qui va maintenant trouver la bonne fonction)
+    btn_ouvrir_filtre.addEventListener('click', function() {
+        if (zone_filtre.innerHTML !== "") {
+            zone_filtre.innerHTML = ""; 
+        } else {
+            // Cette fonction s'appelle bien ainsi dans filtre.js désormais !
+            const leFormulaire = displayFilter();
+            zone_filtre.appendChild(leFormulaire);
+        }
+    });
+
     products.forEach(product => {
         const div_prod = document.createElement('div')
         div_prod.className = "div_prod"
