@@ -293,3 +293,7 @@ function goToSlide(index) {
 }
 
 // ---------------- //
+
+document.querySelector('#category-strings').addEventListener('click', () => document.location.href = 'http://localhost:8000/cordes')
+document.querySelector('#category-brasses').addEventListener('click', () => document.location.href = 'http://localhost:8000/vent')
+document.querySelector('#category-percussions').addEventListener('click', () => document.location.href = 'http://localhost:8000/percussions')

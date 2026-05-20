@@ -945,7 +945,7 @@
             "/img/djembes/petit_marron_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Thomann"
         },
         "Categorie": "djembes"
@@ -962,7 +962,7 @@
             "/img/djembes/petit_marron2_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Djoliba"
         },
         "Categorie": "djembes"
@@ -979,7 +979,7 @@
             "/img/djembes/moyen_clair_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Thomann"
         },
         "Categorie": "djembes"
@@ -996,7 +996,7 @@
             "/img/djembes/moyen_marron_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Shiver"
         },
         "Categorie": "djembes"
@@ -1013,7 +1013,7 @@
             "/img/djembes/grand_marron_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Thomann"
         },
         "Categorie": "djembes"
@@ -1030,7 +1030,7 @@
             "/img/djembes/grand_marron2_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Afroton"
         },
         "Categorie": "djembes"
@@ -1047,7 +1047,7 @@
             "/img/maracas/moyen_jaune_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "Thomann"
         },
         "Categorie": "maracas"
@@ -1064,7 +1064,7 @@
             "/img/maracas/moyen_noir_2.jpg"
         ],
         "Caracs": {
-            "famille": "vent",
+            "famille": "percussions",
             "marque": "MEINL"
         },
         "Categorie": "maracas"

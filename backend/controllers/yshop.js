@@ -52,7 +52,6 @@ const getProductById = (req, res) => {
             product
         })
     }
-
 }
 
 
@@ -68,12 +67,54 @@ const getProductsByCategory = (req, res) => {
     const category = req.params.category
     if (category === undefined) {
         res.status(500).json({
-            message: "Error with category."
+            message: "Error with category (undefined)."
         })
     }
 
     const instrumentsList = utils.strToObject(productsFile)
-    console.log('instrumentsList : ', instrumentsList)
+    const productsList = instrumentsList.filter( elt => elt.Categorie === category )
+
+    if (!productsList) {
+        res.status(404).json({
+            message: "Products not found."
+        })
+    } else {
+        res.status(200).json({
+            message: "Products found.",
+            productsList
+        })
+    }
+}
+
+/**
+ * getProductsByFamily est la fonction backend qui permet d'obtenir tous les produits en fonction de leur famille.
+ * @@param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Les produits correspondant à la famille passée en paramètre.
+ */
+const getProductsByFamily = (req, res) => {
+    console.log('Entrée dans getproductsByFamily :')
+    // On récupère la famille dans l'url
+    const family = req.params.family
+    if (family === undefined) {
+        res.status(500).json({
+            message: "Error with category (undefined)."
+        })
+    }
+
+    const instrumentsList = utils.strToObject(productsFile)
+    const productsList = instrumentsList.filter( elt => elt.Caracs.famille === family )
+
+    if (!productsList) {
+        res.status(404).json({
+            message: "Products not found."
+        })
+    } else {
+        res.status(200).json({
+            message: "Products found.",
+            productsList
+        })
+    }
 }
 
 
@@ -213,4 +254,4 @@ const deleteProduct = (req, res) => {
     }
 }
 
-module.exports = {getAllProducts, getProductById, addProduct, updateProduct, deleteProduct}
+module.exports = {getAllProducts, getProductById, getProductsByCategory, getProductsByFamily, addProduct, updateProduct, deleteProduct}
