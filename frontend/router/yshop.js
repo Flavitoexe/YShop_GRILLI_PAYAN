@@ -9,9 +9,9 @@ router.get('/favoris', (req, res) => res.render('favoris'))
 router.get('/basket', (req, res) => res.render('basket'))
 
 // Les catégories
-router.get('/category/strings', (req, res) => res.render('catalogue'))
-router.get('/category/brasses', (req, res) => res.render('catalogue'))
-router.get('/category/percussions', (req, res) => res.render('catalogue'))
+router.get('/cordes', (req, res) => res.render('category'))
+router.get('/vent', (req, res) => res.render('category'))
+router.get('/percussions', (req, res) => res.render('category'))
 
 // Les routes dynamiques avec paramètres 
 router.get('/:id', (req, res) => res.render('instrument-details'))
