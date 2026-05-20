@@ -120,6 +120,7 @@ function removeFavorite(instrument) {
  */
 function addToBasket(instrument) {
     console.log('Entrée dans addToBasket : ')
+    console.log(instrument)
     let currentBasket = JSON.parse(localStorage.getItem("basket"))
 
     if (currentBasket) {
@@ -130,6 +131,8 @@ function addToBasket(instrument) {
         currentBasket.push(instrument)
         localStorage.setItem("basket", JSON.stringify(currentBasket))
     }
+
+    instrument.quantityInBasket = 1
 }
 
 // On ajoute un eventListener pour que quand une recherche se fait, la page ne se recharge pas automatiquement.
@@ -190,7 +193,7 @@ async function carousel() {
                 <img class="product-img" src="../${data[i].Images[0]}">
             </div>
             <div class="right-slide">
-                <h1><a href='http://localhost:8000/${data[i].ID}'>${data[i].Name}</a></h1>
+                <h1 class="slide-title"><a href='http://localhost:8000/${data[i].ID}'>${data[i].Name}</a></h1>
                 <p>${data[i].Prix} ${data[i].Devise}</p>
             </div>
         `
