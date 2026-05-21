@@ -132,6 +132,17 @@ Et appuyez simplement sur *Ctrl + C*, puis sur *Entrée*. </br> Les serveurs ser
 
 </br>
 
-## Auteurs
+## Auteurs et Organisation
 
 *GRILLI Flavio* et *PAYAN Lisa*, dans le cadre d'un projet scolaire.
+
+**Côté Backend** : Flavio </br>
+**Côté Frontend** : Lisa, aidée par Flavio
+
+En effet, la partie ayant demandée le plus de travail a éte la partie Frontend. </br>
+Flavio s'est plus occupé de la partie *logique*, tandis que Lisa s'occupait de la partie *affichage*. </br>
+
+Nous nous sommes organisés en nous répartissant les tâches à l'oral quand nous étions en cours et par écrit via messages privés. </br>
+Nous avons également utilisé GitHub et la fonctionnalité de *branches* pour mieux *versionner* et *organiser* notre travail. </br> </br>
+Nous avions chacun nos branches (*lisa* et *flavio*) sur lesquelles nous developpions nos fonctionnalités de notre côté. Ensuite, nous fusionnions notre travail sur la branche *testing*, où nous pouvions également récupéré le travail l'un de l'autre. </br>
+Enfin, une fois tout le travail fini, nous avons envoyé la *version finale* de notre travail, testée et vérifiée, sur la branche *main*.

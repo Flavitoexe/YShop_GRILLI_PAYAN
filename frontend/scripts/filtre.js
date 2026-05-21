@@ -142,7 +142,11 @@ function displayFilters() {
     return form_filtre
 }
 
-
+/**
+ * filterInstruments est une fonction qui permet de filtrer les instruments en fonction des filtres cochés par 
+ * l'utilisateur dans le menu affiché par displayFilters.
+ * @returns tableau des instruments filtrés.
+ */
 async function filterInstruments() {
     // On récupère tous les instruments,
     const data = await getAllInstruments()
