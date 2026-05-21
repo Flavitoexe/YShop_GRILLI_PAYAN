@@ -110,7 +110,7 @@ async function sortInstruments() {
     console.log(allInstruments)
     return allInstruments
 }
-
+ // on affiche les produits
 function displayResultFilter(products) {
     const div_cat = document.querySelector('.div_cat');
     if (!div_cat) return;
