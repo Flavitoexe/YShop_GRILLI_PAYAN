@@ -3,18 +3,21 @@ body {
 }
 
 main { 
-    padding-top: 17vh;
-    height: 100vh;
-    width: 100vw;
+    
 
     box-sizing: border-box;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .instrument-container {
+    margin-top: 7vh;
+    height: 70vh;
+    width: 80vw;
+    box-sizing: content-box;
     width: 90%;
     min-height: 85%;
 
@@ -33,7 +36,7 @@ main {
     height: 100%;
     background-color: white;
     border-right: solid 1px gray;
-
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +46,32 @@ main {
     width: 100%; */
     height: 550px;
     width: 550px;
+    object-fit: contain;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;    
+    background: gray;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.arrow-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.arrow-left { 
+    left: 15px; 
+}
+
+.arrow-right { 
+    right: 15px; 
 }
 
 .details {
@@ -191,4 +220,74 @@ main {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.similaire {
+    display: flex;
+    width: 85vw;
+    height: 18vh;
+    flex-direction: column;
+}
+
+.h2 {
+    display: flex;
+    margin-bottom: 1vh;
+    align-items:end;
+    box-sizing: content-box;
+    height: 40%;
+}
+
+.zone_simi {
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+    height: 60%;
+    gap: 2vw;
+}
+
+.plaire {
+    display: flex;
+    width: 85vw;
+    min-height: 18vh;
+    flex-direction: column;
+}
+
+.h2_plaire {
+    display: flex;
+    margin-bottom: 1vh;
+    align-items:center;
+    box-sizing: content-box;
+    height: 40%;
+}
+
+.zone_plaire {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 3vh;
+    justify-content: space-evenly;
+}
+
+/* Le reste de tes styles de cartes ne change pas */
+.simi-product-card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    cursor: pointer;
+    background-color: oldlace;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.simi-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.instrument-images-simi-grande {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    padding-bottom: 20px;
 }

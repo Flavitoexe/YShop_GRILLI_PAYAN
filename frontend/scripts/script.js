@@ -136,32 +136,31 @@ function addToBasket(instrument) {
 }
 
 // On ajoute un eventListener pour que quand une recherche se fait, la page ne se recharge pas automatiquement.
-document.querySelector('.search-bar').addEventListener('submit', (event) => {
-    event.preventDefault()
-    getSearchQuery()
-})
+// document.querySelector('.search-bar').addEventListener('submit', (event) => {
+//     event.preventDefault()
+//     getSearchQuery()
+// })
 
-/**
- * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
- * @returns : Les instruments recherchés.
- */
-async function getSearchQuery() {
-    console.log('Entrée dans getSearchQuery : ')
-    // On récupère la valeur de la recherche.
-    const query = document.getElementById('search-query').value.toLowerCase()
+// /**
+//  * getSearchQuery est la fonction qui permet d'obtenir les résultats d'une recherche effectuée avec la barre de recherche.
+//  * @returns : Les instruments recherchés.
+//  */
+// async function getSearchQuery() {
+//     console.log('Entrée dans getSearchQuery : ')
+//     // On récupère la valeur de la recherche.
+//     const query = document.getElementById('search-query').value.toLowerCase()
 
-    if (query.length < 1) return
+//     if (query.length < 1) return
 
-    const data = await getAllInstruments()
-    const instruments = data.productsList
-    // console.log(instruments)
-    const filteredArr = instruments.filter( elt => 
-        elt.Name.toLowerCase().includes(query) ||
-        elt.Category.toLowerCase().includes(query)
-    )
+//     const data = await getAllInstruments()
+//     const instruments = data.productsList
+//     // console.log(instruments)
+//     const filteredArr = instruments.filter( elt => 
+//         (elt.Name.toLowerCase().includes(query)) || (elt.Category.toLowerCase().includes(query))
+//     )
 
-    return filteredArr
-}
+//     return filteredArr
+// }
 
 
 // ------------------------------------ //

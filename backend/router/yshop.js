@@ -5,6 +5,7 @@ const controllers = require('../controllers/yshop')
 // Ceci représente l'ensemble de nos routes pour récupérer, ajouter, modifier ou supprimer les données demandées.
 router.get('/getAllProducts', controllers.getAllProducts)
 router.get('/getProductById/:id', controllers.getProductById)
+router.get('/getProductsByName/:name', controllers.getProductsByName)
 router.get('/getProductsByCategory/:category', controllers.getProductsByCategory)
 router.get('/getProductsByFamily/:family', controllers.getProductsByFamily)
 router.post('/addProduct', controllers.addProduct)

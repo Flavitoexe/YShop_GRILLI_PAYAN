@@ -6,6 +6,10 @@ body {
     background-color: #F5EFEB;
 }
 
+h1 {
+    margin: 5vh;
+}
+
 a { 
     outline: none;
     text-decoration: none;
