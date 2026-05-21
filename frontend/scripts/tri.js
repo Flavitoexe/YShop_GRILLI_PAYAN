@@ -25,6 +25,8 @@ async function getAllInstruments() {
 function displayTri() {
     const form_tri = document.createElement('form')
     form_tri.className = "form_tri"
+    form_tri.action = "/tri-results" // Mets ici le nom de ta route de redirection pour le tri
+    form_tri.method = "GET"
 
     const div_tri = document.createElement('div')
     div_tri.className = "div_filtre_section"
@@ -88,13 +90,14 @@ function displayTri() {
 async function sortInstruments() {
     // On récupère les instruments,
     const data = await getAllInstruments()
-    let allInstruments = data.productsList
+    let allInstruments = data.productsList || data || []
     // On récupère l'élément qui contient la valeur du formulaire,
-    const sortingValue = document.querySelector('#tri-select')
+    const urlParams = new URLSearchParams(window.location.search);
+    const sortingValue = urlParams.get('tri');   
     // Puis on vérifie quel tri a été demandé par l'utilisateur, et on trie en fonction.
-    if (sortingValue.value === 'croissant') allInstruments.sort( (a, b) => a.Prix - b.Prix )
-    if (sortingValue.value === 'decroissant') allInstruments.sort( (a, b)  => b.Prix - a.Prix )
-    if (sortingValue.value === 'alpha') allInstruments.sort( (a, b) => {
+    if (sortingValue === 'croissant') allInstruments.sort( (a, b) => a.Prix - b.Prix )
+    if (sortingValue === 'decroissant') allInstruments.sort( (a, b)  => b.Prix - a.Prix )
+    if (sortingValue === 'alpha') allInstruments.sort( (a, b) => {
         let nameA = a.Name.toLowerCase()
         let nameB = b.Name.toLowerCase()
 
@@ -107,3 +110,77 @@ async function sortInstruments() {
     console.log(allInstruments)
     return allInstruments
 }
+
+function displayResultFilter(products) {
+    const div_cat = document.querySelector('.div_cat');
+    if (!div_cat) return;
+    
+    div_cat.innerHTML = "";
+
+    if (!products || products.length <= 0) {
+        const mess_vide = document.createElement('div');
+        mess_vide.className = "mess_vide";
+        mess_vide.style.textAlign = "center";
+        mess_vide.style.fontWeight = "bold";
+        mess_vide.style.marginTop = "40px";
+        mess_vide.style.width = "100%";
+        mess_vide.style.fontSize = "1.3rem";
+        mess_vide.style.color = "#333";
+        mess_vide.textContent = "Aucun instrument ne correspond à votre recherche.";
+        div_cat.append(mess_vide); 
+        return;
+    }
+
+    products.forEach(product => {
+        const div_prod = document.createElement('div');
+        div_prod.className = "div_prod";
+        div_prod.id = `${product.ID}`;
+
+        const div_img = document.createElement('div');
+        div_img.className = "div_img";
+        const img = document.createElement('img');
+        img.src = product.Images[0];
+        img.alt = product.Name;
+        div_img.appendChild(img);
+        
+        if (product.Images[1]) {
+            img.addEventListener("mouseenter", () => img.src = product.Images[1]);
+            img.addEventListener("mouseleave", () => img.src = product.Images[0]);
+        }
+
+        const div_carac = document.createElement('div');
+        div_carac.className = "div_carac";
+        
+        const div_nom = document.createElement('div');
+        const nom = document.createElement('h3');
+        nom.textContent = `${product.Name}`;
+        
+        const prix = document.createElement('div');
+        prix.className = "prix_prod"; 
+        prix.textContent = `${product.Prix} €`;
+        
+        const btn = document.createElement('button');
+        btn.className = "btn";
+        btn.type = "button";
+        
+        const lien = document.createElement('a');
+        lien.href = `http://localhost:8000/${product.ID}`;
+        lien.textContent = `Voir`;
+        btn.append(lien);
+
+        div_nom.append(nom);
+        div_carac.append(div_nom, prix, btn);
+        div_prod.append(div_img, div_carac);
+        div_cat.append(div_prod);
+    });
+}
+
+// la page de tri s'ouvre
+document.addEventListener('DOMContentLoaded', async () => {
+    // Récupère et trie les instruments
+    const instrumentsTries = await sortInstruments();
+    
+    // Affiche le résultat
+    displayResultFilter(instrumentsTries);
+});
+

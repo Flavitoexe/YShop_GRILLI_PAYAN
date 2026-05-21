@@ -15,6 +15,7 @@ router.get('/percussions', (req, res) => res.render('category'))
 
 router.get('/search-results', (req, res) => res.render('search'));
 router.get('/filter-results', (req, res) => res.render('filtre_result'));
+router.get('/tri-results', (req, res) => res.render('tri_result'));
 
 // Les routes dynamiques avec paramètres 
 router.get('/:id', (req, res) => res.render('instrument-details'))
