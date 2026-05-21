@@ -255,8 +255,7 @@
         "Devise": "EUR (€)",
         "Images": [
             "/img/guitares-e/verte_1.jpg",
-            "/img/guitares-e/verte_2.jpg",
-            "/img/guitares-e/verte_3.jpg"
+            "/img/guitares-e/verte_2.jpg"
         ],
         "Caracs": {
             "famille": "cordes",

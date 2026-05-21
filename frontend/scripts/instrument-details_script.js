@@ -1,6 +1,6 @@
 // On récupère l'id de l'instrument qui est dans l'url, et on le parse en entier.
 const idUrl = document.location.pathname
-const id = parseInt(idUrl.slice(1))
+let id = parseInt(idUrl.slice(1))
 
 
 /**
@@ -18,7 +18,7 @@ async function getSearchQuery() {
     const data = await getAllInstruments()
     const instruments = data.productsList
     // On crée le tableau filtré en cherchant dans le nom ou la catégorie de l'instrument.
-    const filteredArr = instruments.filter( elt => 
+    const filteredArr = instruments.filter(elt =>
         elt.Name.toLowerCase().includes(query) ||
         elt.Category.toLowerCase().includes(query)
     )
@@ -50,12 +50,49 @@ async function getInstrumentById() {
     }
 }
 
+async function getInstrumentsByName(name) {
+    try {
+        const response = await fetch(`http://localhost:3000/getProductsByName/${encodeURIComponent(name)}`);
+
+        if (!response.ok) {
+            throw new Error(`Erreur dans getInstrumentsByName : ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.products;
+    } catch (error) {
+        console.error("Erreur fetch nom similaires :", error);
+        return [];
+    }
+}
+
+async function getProductsByCategory(category) {
+    try {
+
+        const response = await fetch(`http://localhost:3000/getProductsByCategory/${encodeURIComponent(category)}`);
+
+        if (!response.ok) {
+            throw new Error(`Erreur dans getProductsByCategory : ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.productsList || []; 
+    } catch (error) {
+        console.error("Erreur fetch catégories similaires :", error);
+        return [];
+    }
+}
+
+
 /**
  * displayInstrument est la fonction qui affiche les détails d'un instrument dans la page html.
  */
+
+let currentImgIndex = 0;
+
 async function displayInstrument() {
     // On récupère l'instrument,
-    const data = await getInstrumentById() 
+    const data = await getInstrumentById()
     const instrument = data.product
 
     // On récupère tous les placeholders de la page html pour y insérer les bonnes valeurs,
@@ -67,9 +104,10 @@ async function displayInstrument() {
     let pricePlaceholder = document.querySelector('.price-placeholder')
     let quantityPlaceholder = document.querySelector('.quantity-placeholder')
 
+    currentImgIndex = 0;
     // Et on effectue les changements.
-    principalImage.src = instrument.Images[0]
-    namePlaceholder.innerHTML = instrument.Name 
+    principalImage.src = instrument.Images[currentImgIndex]
+    namePlaceholder.innerHTML = instrument.Name
     categoryPlaceholder.innerHTML = instrument.Categorie
     limitDesc(instrument.Description)
     document.querySelector('.expand-btn').addEventListener('click', () => toggleDesc(instrument.Description))
@@ -79,6 +117,91 @@ async function displayInstrument() {
 
     // On ajoute un eventListener pour que, quand on clique sur 'Ajouter au panier', ca appelle addToBasket.
     document.querySelector('.add-to-basket').addEventListener('click', () => addToBasket(instrument))
+
+    const leftArrow = document.querySelector('.arrow-left');
+    const rightArrow = document.querySelector('.arrow-right');
+
+    leftArrow.onclick = () => {
+        currentImgIndex--;
+        if (currentImgIndex < 0) currentImgIndex = instrument.Images.length - 1;
+        principalImage.src = instrument.Images[currentImgIndex];
+    };
+
+    rightArrow.onclick = () => {
+        currentImgIndex++;
+        if (currentImgIndex >= instrument.Images.length) currentImgIndex = 0;
+        principalImage.src = instrument.Images[currentImgIndex];
+    };
+
+    let thumbImages = document.querySelectorAll('.images-container .instrument-images-other');
+
+    const zoneSimi = document.querySelector('.zone_simi');
+    const sameNameProducts = await getInstrumentsByName(instrument.Name);
+
+    if (zoneSimi) zoneSimi.innerHTML = '';
+
+    if (sameNameProducts && sameNameProducts.length > 0 && zoneSimi) {
+        const filteredProducts = sameNameProducts.filter(item => item.ID !== instrument.ID);
+        filteredProducts.forEach(otherProduct => {
+            let newImage = document.createElement('img');
+            newImage.classList.add('instrument-images-other');
+
+            newImage.src = otherProduct.Images[0];
+            newImage.alt = otherProduct.Name;
+            newImage.style.cursor = 'pointer';
+
+          
+            newImage.addEventListener('click', () => {
+                id = otherProduct.ID;
+
+    history.pushState(null, '', `/${id}`);
+
+    displayInstrument();
+            });
+
+            zoneSimi.appendChild(newImage);
+        });
+    }
+
+const zonePlaire = document.querySelector('.zone_plaire');
+
+const sameCategoryProducts = await getProductsByCategory(instrument.Categorie); 
+
+if (zonePlaire) zonePlaire.innerHTML = '';
+
+if (sameCategoryProducts && sameCategoryProducts.length > 0 && zonePlaire) {
+    const filteredProducts = sameCategoryProducts.filter(item => item.ID !== instrument.ID);
+
+    filteredProducts.forEach(otherProduct => {
+        let productCard = document.createElement('div');
+        productCard.classList.add('simi-product-card');
+        
+        productCard.addEventListener('click', () => {
+            id = otherProduct.ID;
+            history.pushState(null, '', `/${id}`);
+            displayInstrument(); 
+        });
+
+        let newImage = document.createElement('img');
+        newImage.classList.add('instrument-images-simi-grande'); 
+        newImage.src = otherProduct.Images[0];
+        newImage.alt = otherProduct.Name;
+
+        let productTitle = document.createElement('h3');
+        productTitle.classList.add('simi-product-title');
+        productTitle.innerHTML = otherProduct.Name;
+
+        let productPrice = document.createElement('p');
+        productPrice.classList.add('simi-product-price');
+        productPrice.innerHTML = `${otherProduct.Prix} ${otherProduct.Devise || 'EUR'}`;
+
+        productCard.appendChild(newImage);
+        productCard.appendChild(productTitle);
+        productCard.appendChild(productPrice);
+
+        zonePlaire.appendChild(productCard);
+    });
+}
 
     // On fait une boucle pour afficher les différentes images du produit.
     for (let i = 0; i < instrument.Images.length; i++) {
@@ -98,14 +221,14 @@ async function displayInstrument() {
     // On récupère les favoris pour pouvoir faire les vérifications,
     const currentFavorites = getFavorites()
     // Si il n'y a pas de favoris, ou que l'instrument n'y figure pas, on affiche le coeur vide,
-    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) {
+    if (!currentFavorites || !currentFavorites.some(elt => instrument.ID === elt.ID)) {
         favoriteContainer.innerHTML = `
             <svg viewBox="0 0 20 20" class="shrink-1 out-favorite">
                 <path fill="currentcolor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44ZM5.752 3.307c-.821 0-1.594.31-2.183.878-.71.682-1.131 1.663-1.157 2.69-.026 1.028.346 2.032 1.02 2.755l6.588 7.055 6.42-6.875c1.389-1.487 1.522-3.883.297-5.342-.627-.747-1.518-1.19-2.445-1.217a3.326 3.326 0 0 0-2.5 1.072l-1.224 1.31a.75.75 0 0 1-1.096 0L8.415 4.503c-.685-.734-1.625-1.17-2.578-1.194h-.085v-.001Z"></path>
             </svg>
             <p>Sauvegarder dans les favoris</p>
         `
-    // Si il y est, on affiche le coeur rouge.
+        // Si il y est, on affiche le coeur rouge.
     } else {
         favoriteContainer.innerHTML = `
             <svg viewBox="0 0 20 20" class="shrink-1 in-favorite">
@@ -117,6 +240,8 @@ async function displayInstrument() {
 
     // On met un eventListener pour que, quand on clique sur le coeur (vide ou rempli), ca appelle toggleFavorite. 
     document.querySelector('.shrink-1').addEventListener('click', () => toggleFavorite(instrument))
+
+
 }
 
 /**
@@ -200,7 +325,7 @@ function toggleFavorite(instrument) {
     let currentFavorites = getFavorites()
 
     // Puis on vérifie si l'instrument figure ou pas dans les favoris, puis on l'ajoute/retire.
-    if (!currentFavorites || !currentFavorites.some( elt => instrument.ID === elt.ID)) {
+    if (!currentFavorites || !currentFavorites.some(elt => instrument.ID === elt.ID)) {
         // L'instrument n'est pas dans les favoris, donc si on clique sur le coeur, on l'ajoute,
         addFavorite(instrument)
     } else {
@@ -252,7 +377,7 @@ function addFavorite(instrument) {
 function removeFavorite(instrument) {
     let currentFavorites = getFavorites()
     // On vérifie si l'instrument est bien dans les favoris, et on sort de la fonction sinon.
-    if (!currentFavorites.some( elt => instrument.ID === elt.ID)) {
+    if (!currentFavorites.some(elt => instrument.ID === elt.ID)) {
         console.error('Erreur : Instrument pas dans les favoris')
         return
     }
@@ -346,7 +471,7 @@ function outOfStock(instrument) {
 
     // Et enfin, on retourne la valeur de la comparaison.
     console.log('résultat condition outofStock : ', inBasket.Quantity <= inBasket.quantityInBasket + 1)
-    return inBasket.Quantity <= inBasket.quantityInBasket 
+    return inBasket.Quantity <= inBasket.quantityInBasket
 }
 
 // On récupère les éléments nécessaires à l'affichage du toast, càd le bouton d'ajout au panier et le toast en lui même.

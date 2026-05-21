@@ -54,6 +54,50 @@ const getProductById = (req, res) => {
     }
 }
 
+/**
+ * getProductsByName est la fonction backend qui permet d'obtenir un produit grâce à son nom.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Les produit correspondants au nom passé en paramètre.
+ */
+
+const getProductsByName = (req, res) => {
+    try {
+        console.log('Entrée dans getProductsByName pour le nom :', req.params.name);
+        const nameToGet = req.params.name ? decodeURIComponent(req.params.name) : null;
+        
+        if (!nameToGet) {
+            return res.status(400).json({
+                message: 'Error: Product name is missing or undefined.'
+            });
+        }
+        if (!productsFile) {
+            return res.status(500).json({ message: 'Database file is missing.' });
+        }
+
+        const currentProducts = utils.strToObject(productsFile);
+        const products = currentProducts.filter(product => product.Name === nameToGet);
+
+        if (products.length === 0) {
+            return res.status(404).json({
+                message: 'No products found with this name.',
+                products: [] 
+            });
+        } 
+        
+        return res.status(200).json({
+            message: 'Products successfully found.',
+            products
+        });
+
+    } catch (error) {
+        console.error("Crash évité dans getProductsByName :", error);
+        return res.status(500).json({
+            message: 'Internal server error inside getProductsByName.',
+            error: error.message
+        });
+    }
+}
 
 /**
  * getProductsbyCategory est la fonction backend qui permet d'obtenir tous les produits d'une catégorie.
@@ -254,4 +298,4 @@ const deleteProduct = (req, res) => {
     }
 }
 
-module.exports = {getAllProducts, getProductById, getProductsByCategory, getProductsByFamily, addProduct, updateProduct, deleteProduct}
+module.exports = {getAllProducts, getProductById, getProductsByName,getProductsByCategory, getProductsByFamily, addProduct, updateProduct, deleteProduct}
