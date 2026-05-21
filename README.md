@@ -75,7 +75,7 @@ Et voilà ! Vous êtes sur le site !
 
 4. Stopper les serveurs
 
-Si vous voulez arréter le site vous devez couper les serveurs, pour cela : </br> Retournez dans votre terminal, là où vous avez tapé la commande :
+Si vous voulez arrêter le site vous devez couper les serveurs, pour cela : </br> Retournez dans votre terminal, là où vous avez tapé la commande :
 
 ```bash
 npm run yshop

@@ -299,13 +299,14 @@ function getBasket() {
  * @param {Object} instrument : L'instrument à rajouter dans le panier.
  */
 function addToBasket(instrument) {
+    let currentBasket = getBasket()
+
     // On vérifie si le produit est disponible, sinon on montre un toast qui dit que le produit n'est 
     // plus disponible,  puis on arrête la fonction.
-    if (outOfStock(instrument)) {
+    if (currentBasket && outOfStock(instrument)) {
         showToast(true)
         return
     }
-    let currentBasket = getBasket()
 
     if (currentBasket && currentBasket.findIndex(elt => elt.ID === instrument.ID) === -1) {
         // On initialise la variable quantityInBasket de instrument à 1, cela servira pour gérer les stocks,
@@ -339,12 +340,13 @@ function outOfStock(instrument) {
     const currentBasket = getBasket()
     if (!currentBasket) return
 
-    // On chercher l'instrument que l'on veut vérifier, et si il existe,
+    // On cherche l'instrument que l'on veut vérifier, et si il existe,
     const inBasket = currentBasket.find(elt => elt.ID === instrument.ID)
     if (!inBasket) return false
 
     // Et enfin, on retourne la valeur de la comparaison.
-    return inBasket.Quantity <= inBasket.quantityInBasket + 1
+    console.log('résultat condition outofStock : ', inBasket.Quantity <= inBasket.quantityInBasket + 1)
+    return inBasket.Quantity <= inBasket.quantityInBasket 
 }
 
 // On récupère les éléments nécessaires à l'affichage du toast, càd le bouton d'ajout au panier et le toast en lui même.
