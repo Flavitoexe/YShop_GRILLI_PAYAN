@@ -3,7 +3,7 @@
         "ID": 0,
         "Name": "Guitare sèche 1/4",
         "Description": "Cette guitare Yamaha 1/4 est l'instrument de référence pour l'éveil musical des enfants de 4 à 6 ans (moins de 110 cm). Sa petite caisse ergonomique et son manche adapté aux petites mains facilitent l'apprentissage des premiers accords sans fatigue. Conçue pour être robuste et fiable, elle offre une sonorité douce et équilibrée, idéale pour accompagner les jeunes débutants durant leurs premières années de conservatoire ou d'initiation à la maison.",
-        "Quantity": 6,
+        "Quantity": 5,
         "Prix": 149,
         "Devise": "EUR (€)",
         "Images": [
@@ -21,7 +21,7 @@
         "ID": 1,
         "Name": "Guitare sèche 1/4",
         "Description": "Destinée aux jeunes musiciens exigeants, cette guitare Lag 1/4 combine un format compact avec une qualité de fabrication premium. Contrairement aux modèles d'étude standards, elle bénéficie de bois sélectionnés offrant une projection sonore et une richesse harmonique surprenante. Parfaite pour les enfants de moins de 110 cm, elle se distingue par une finition élégante et un confort de jeu exceptionnel, permettant de développer une oreille musicale fine dès le plus jeune âge.",
-        "Quantity": 4,
+        "Quantity": 0,
         "Prix": 549,
         "Devise": "EUR (€)",
         "Images": [
@@ -39,7 +39,7 @@
         "ID": 2,
         "Name": "Guitare sèche 1/2",
         "Description": "Cette guitare 1/2 Gear4music est le choix le plus accessible pour les enfants de 6 à 8 ans débutant en école primaire. Malgré son prix mini, elle offre une prise en main légère et confortable pour découvrir les premières notes. C’est l’instrument idéal pour vérifier la motivation d'un jeune débutant sans se ruiner, tout en bénéficiant d'un look coloré et d'un gabarit parfaitement adapté aux morphologies entre 110 et 130 cm.",
-        "Quantity": 2,
+        "Quantity": 0,
         "Prix": 52,
         "Devise": "EUR (€)",
         "Images": [
@@ -51,13 +51,14 @@
             "famille": "cordes",
             "marque": "Gear4music"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 3,
         "Name": "Guitare sèche 1/2",
         "Description": "Passer à la qualité supérieure avec cette guitare Ortega 1/2. Conçue pour offrir une résonance bien plus riche que les modèles d'entrée de gamme, elle accompagne les enfants de 6 à 8 ans avec une précision de jeu accrue. Ses mécaniques de qualité assurent un accordage stable, essentiel pour l'oreille musicale des débutants. Un investissement durable pour les parents souhaitant un instrument de caractère pour les premières années de cours.",
-        "Quantity": 2,
+        "Quantity": 1,
         "Prix": 229,
         "Devise": "EUR (€)",
         "Images": [
@@ -69,7 +70,8 @@
             "famille": "cordes",
             "marque": "Ortega"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 4,
@@ -163,7 +165,7 @@
         "ID": 9,
         "Name": "Guitare sèche 4/4 (adulte)",
         "Description": "Retrouvez tout le savoir-faire de Fender dans cette guitare 4/4 accessible et performante. Taille standard pour adulte, elle est parfaite pour débuter avec un instrument de marque légendaire. Son manche est conçu pour être facile à jouer, même pour les débutants, tandis que sa caisse en marron classique offre le son authentique de la guitare acoustique. Robuste et polyvalente, c'est la compagne idéale pour apprendre ses premiers morceaux et progresser avec style.",
-        "Quantity": 8,
+        "Quantity": 7,
         "Prix": 199,
         "Devise": "EUR (€)",
         "Images": [
@@ -175,13 +177,14 @@
             "famille": "cordes",
             "marque": "Fender"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 10,
         "Name": "Guitare sèche 4/4 (adulte)",
         "Description": "Cette Takamine d'exception en finition verte est un chef-d'œuvre de lutherie moderne. Sa caisse 4/4 entière offre une profondeur sonore rare et une richesse harmonique qui ravira les guitaristes professionnels. Alliant un design audacieux à des matériaux de premier choix, elle garantit une projection parfaite sur scène comme en studio. Un instrument de prestige pour ceux qui cherchent à se démarquer par le son et le style.",
-        "Quantity": 2,
+        "Quantity": 1,
         "Prix": 2900,
         "Devise": "EUR (€)",
         "Images": [
@@ -193,7 +196,8 @@
             "famille": "cordes",
             "marque": "Takamine"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 11,
@@ -565,7 +569,7 @@
         "ID": 41,
         "Name": "Petite harpe",
         "Description": "Spécialement conçue pour l'éveil musical ou pour les musiciens nomades, cette petite harpe de 15 à 27 cordes se pose facilement sur les genoux ou une table. Légère et ludique, elle permet aux enfants et aux débutants de s'initier aux premières mélodies sans contrainte d'espace. Sa fabrication soignée offre un son doux et apaisant, idéal pour l'apprentissage à domicile ou pour découvrir les bases de l'instrument de manière accessible.",
-        "Quantity": 3,
+        "Quantity": 1,
         "Prix": 95,
         "Devise": "EUR (€)",
         "Images": [
@@ -576,7 +580,8 @@
             "famille": "cordes",
             "marque": "Uzman"
         },
-        "Categorie": "harpes"
+        "Categorie": "harpes",
+        "quantityInBasket": 0
     },
     {
         "ID": 42,
@@ -650,7 +655,7 @@
         "ID": 46,
         "Name": "Saxophone alto",
         "Description": "Le saxophone alto Yamaha est la référence incontestée pour les étudiants sérieux. Réputé pour sa justesse irréprochable et sa facilité d'émission, il permet de progresser rapidement avec un son équilibré et chaleureux. Sa mécanique robuste et ergonomique offre un confort de jeu optimal pour les débutants comme pour les musiciens confirmés. Un investissement sûr pour accompagner votre parcours musical durant de nombreuses années.",
-        "Quantity": 5,
+        "Quantity": 1,
         "Prix": 998,
         "Devise": "EUR (€)",
         "Images": [
@@ -661,13 +666,14 @@
             "famille": "vent",
             "marque": "Yamaha"
         },
-        "Categorie": "saxophones"
+        "Categorie": "saxophones",
+        "quantityInBasket": 0
     },
     {
         "ID": 47,
         "Name": "Saxophone alto",
         "Description": "Pièce d'orfèvrerie acoustique, ce saxophone alto Selmer en finition noire est destiné aux solistes et professionnels les plus exigeants. Instrument d'exception, il offre une richesse de timbre unique et une projection sonore monumentale. Chaque note est d'une précision absolue, permettant une expression artistique sans limite. Sa finition rare et sa lutherie de prestige en font l'un des instruments les plus convoités au monde par les maîtres du jazz et du classique.",
-        "Quantity": 2,
+        "Quantity": 0,
         "Prix": 9220,
         "Devise": "EUR (€)",
         "Images": [
@@ -678,7 +684,8 @@
             "famille": "vent",
             "marque": "Selmer"
         },
-        "Categorie": "saxophones"
+        "Categorie": "saxophones",
+        "quantityInBasket": 0
     },
     {
         "ID": 48,
@@ -926,7 +933,7 @@
         "ID": 62,
         "Name": "Batterie Roland TD-02K V-Drums",
         "Description": "Batterie Roland TD-02K V-Drums 4 pads PD-4 pour caisse claire et toms et pédale grosse caisse KT-1. Hardware et cymbales inclues. Parfait pour débuter et faire moins de bruit.",
-        "Quantity": 12,
+        "Quantity": 11,
         "Prix": 400,
         "Devise": "EUR (€)",
         "Images": [
@@ -938,7 +945,8 @@
             "marque": "Roland",
             "type": "electrique"
         },
-        "Categorie": "batteries"
+        "Categorie": "batteries",
+        "quantityInBasket": 0
     },
     {
         "ID": 63,

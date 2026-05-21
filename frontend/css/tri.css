@@ -13,7 +13,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;  
-    margin-left: 36vw;
+    margin-left: 20vw; 
+    margin-right: 20vw; 
     max-width: 95%;           
 }
 
