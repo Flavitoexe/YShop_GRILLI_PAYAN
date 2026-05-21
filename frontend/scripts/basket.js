@@ -63,7 +63,7 @@ function displayBasket() {
     mess_total.textContent = "Total de votre panier :"
     mess_total.className = "mess_total"
     const prix_total = document.createElement('div')
-    prix_total.textContent = "0 €" // mettre la fonction somme
+    prix_total.textContent =`${getBasketPrice()} €`
     prix_total.className = "prix_total"
     const div_btn_total = document.createElement('div')
     div_btn_total.className = "div_btn_total"
@@ -294,4 +294,19 @@ function removeFavorite(instrument) {
             <path fill="currentcolor" d="M10.02 18.25c-.377 0-.743-.161-1.003-.441l-6.68-7.154C1.396 9.647.877 8.255.912 6.839c.036-1.42.625-2.78 1.616-3.733.9-.87 2.08-1.32 3.349-1.296 1.352.035 2.677.644 3.635 1.67l.509.545.676-.724c.954-1.022 2.253-1.596 3.638-1.548 1.355.039 2.649.678 3.55 1.752 1.727 2.053 1.573 5.273-.348 7.33l-6.513 6.975c-.261.28-.627.44-1.004.44ZM5.752 3.307c-.821 0-1.594.31-2.183.878-.71.682-1.131 1.663-1.157 2.69-.026 1.028.346 2.032 1.02 2.755l6.588 7.055 6.42-6.875c1.389-1.487 1.522-3.883.297-5.342-.627-.747-1.518-1.19-2.445-1.217a3.326 3.326 0 0 0-2.5 1.072l-1.224 1.31a.75.75 0 0 1-1.096 0L8.415 4.503c-.685-.734-1.625-1.17-2.578-1.194h-.085v-.001Z"></path>
         </svg>
     `
+}
+
+/**
+ * getBasketPrice est une fonction qui permet d'obtenir le prix total du panier.
+ * @returns Prix total de tous les instruments.
+ */
+function getBasketPrice() {
+    // On récupère le panier,
+    const currentBasket = getBasket()
+    // On initialise la variable qui contiendra le prix total,
+    let fullPrice = 0
+    // On boucle sur chaque élément du panier, sur lesquels on multiplie le prix avec la quantité dans le panier,
+    currentBasket.forEach( elt => fullPrice += elt.quantityInBasket * elt.Prix )
+    // Et on retourne le tout.
+    return fullPrice
 }
