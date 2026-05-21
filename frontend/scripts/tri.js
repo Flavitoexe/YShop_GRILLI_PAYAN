@@ -1,4 +1,4 @@
-function displayTri() {
+function displayTri(filteredArray) {
     const form_tri = document.createElement('form')
     form_tri.className = "form_tri"
 
@@ -9,12 +9,12 @@ function displayTri() {
     titre_tri.className = "titre_section_filtre"
     titre_tri.textContent = "Tri des produits"
 
-    // menu déroulant
+    // Menu déroulant
     const select_tri = document.createElement('select')
     select_tri.name = "tri"
     select_tri.id = "tri-select"
     select_tri.className = "select_tri_style"
-    // l'option par défaut (
+    // L'option par défaut (
     const option_defaut = document.createElement('option')
     option_defaut.value = ""
     option_defaut.textContent = "Choisir une option"
@@ -52,8 +52,6 @@ function displayTri() {
     div_tri.appendChild(btn_submit)
 
     form_tri.appendChild(div_tri)
-
-
 
     return form_tri
 

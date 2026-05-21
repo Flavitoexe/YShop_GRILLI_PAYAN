@@ -24,18 +24,6 @@ async function getAllInstruments() {
 }
 
 /**
- * getProductById ???
- */
-// function getProductByID() {
-//     fetch(urlAPI + "getDetailsProduct")
-//         .then(response => response.json())
-//         .then(data => {
-//             displayDetailsProduct(data.product)
-//         })
-//         .catch(error => console.error('Error fetching data : ', error))
-// }
-
-/**
  * getFiveRandomInstruments est une fonction qui permet d'obtenir 5 instruments aléatoirement. Elle servira surtout 
  * pour faire le carousel des nouveautés.
  * @returns : 5 instruments.
