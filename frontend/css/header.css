@@ -97,3 +97,14 @@ header {
     display: flex;
     justify-content: flex-end;
 }
+
+.btn_search {
+    background-color: black; 
+    color: oldlace;
+    border: 2px solid black;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 20px; 
+    cursor: pointer;
+    display: inline-block;
+}
