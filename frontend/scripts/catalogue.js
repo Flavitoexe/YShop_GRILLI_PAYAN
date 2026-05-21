@@ -27,24 +27,42 @@ function displayProduct(products) {
     btn_ouvrir_filtre.textContent = 'Filtre'
     btn_ouvrir_filtre.id = 'btn_ouvrir_filtre'
     btn_ouvrir_filtre.className = "btn_ouvrir_filtre"
-    btn_ouvrir_filtre.type = "button" // Évite les soumissions de formulaires fantômes
+    btn_ouvrir_filtre.type = "button"
+
+    const btn_ouvrir_tri = document.createElement('button')
+    btn_ouvrir_tri.textContent = 'Trier'
+    btn_ouvrir_tri.id = 'btn_ouvrir_tri'
+    btn_ouvrir_tri.className = "btn_ouvrir_filtre"
+    btn_ouvrir_tri.type = "button"
 
     const zone_filtre = document.createElement('div')
     zone_filtre.id = 'zone_filtre'
     zone_filtre.className = "zone_filtre"
 
-    // 2. On les place JUSTE AVANT la liste des produits pour ne pas casser ta grille CSS
+    const zone_tri = document.createElement('div')
+    zone_tri.id = 'zone_tri'
+    zone_tri.className = "zone_tri"
+
     div_cat.before(btn_ouvrir_filtre)
     btn_ouvrir_filtre.after(zone_filtre)
+    zone_filtre.after(btn_ouvrir_tri)
+    btn_ouvrir_tri.after(zone_tri)
 
-    // 3. L'écouteur du clic (qui va maintenant trouver la bonne fonction)
-    btn_ouvrir_filtre.addEventListener('click', function() {
+    btn_ouvrir_filtre.addEventListener('click', function () {
         if (zone_filtre.innerHTML !== "") {
-            zone_filtre.innerHTML = ""; 
-        } else {
-            // Cette fonction s'appelle bien ainsi dans filtre.js désormais !
+            zone_filtre.innerHTML = "";
+        } else { 
             const leFormulaire = displayFilter();
             zone_filtre.appendChild(leFormulaire);
+        }
+    });
+
+    btn_ouvrir_tri.addEventListener('click', function () {
+        if (zone_tri.innerHTML !== "") {
+            zone_tri.innerHTML = "";
+        } else {
+            const leTri = displayTri();
+            zone_tri.appendChild(leTri);
         }
     });
 
