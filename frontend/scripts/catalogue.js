@@ -52,7 +52,7 @@ function displayProduct(products) {
         if (zone_filtre.innerHTML !== "") {
             zone_filtre.innerHTML = "";
         } else { 
-            const leFormulaire = displayFilter();
+            const leFormulaire = displayFilters();
             zone_filtre.appendChild(leFormulaire);
         }
     });

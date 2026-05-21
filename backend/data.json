@@ -728,7 +728,7 @@
         ],
         "Caracs": {
             "famille": "vent",
-            "marque": " F.A. Uebel"
+            "marque": "F.A. Uebel"
         },
         "Categorie": "clarinettes"
     },
@@ -864,6 +864,7 @@
         ],
         "Caracs": {
             "famille": "percussions",
+            "marque": "Pearl",
             "type": "acoustique"
         },
         "Categorie": "batteries"
@@ -881,6 +882,7 @@
         ],
         "Caracs": {
             "famille": "percussions",
+            "marque": "Tama",
             "type": "acoustique"
         },
         "Categorie": "batteries"
@@ -898,6 +900,7 @@
         ],
         "Caracs": {
             "famille": "percussions",
+            "marque": "Mapex",
             "type": "acoustique"
         },
         "Categorie": "batteries"
@@ -915,6 +918,7 @@
         ],
         "Caracs": {
             "famille": "percussions",
+            "marque": "Alesis",
             "type": "electrique"
         },
         "Categorie": "batteries"
@@ -932,6 +936,7 @@
         ],
         "Caracs": {
             "famille": "percussions",
+            "marque": "Roland",
             "type": "electrique"
         },
         "Categorie": "batteries"
