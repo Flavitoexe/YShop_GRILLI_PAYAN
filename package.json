@@ -4,6 +4,7 @@
   "description": "YShop final project for module Challenge JS",
   "author": "GRILLI Flavio, PAYAN Lisa",
   "scripts": {
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend",
     "backend": "nodemon backend/app.js",
     "frontend": "nodemon frontend/app.js",
     "yshop": "concurrently \"npm run backend\" \"npm run frontend\""

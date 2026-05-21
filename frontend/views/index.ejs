@@ -3,7 +3,6 @@
 <head>
     <%- include('./components/head'); %>
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="shortcut icon" href="./img/misc/shortcut_icon.png">
     <title>YShop</title>
 </head>
 <body>
@@ -29,21 +28,22 @@
             </div>
 
             <div class="categories">
-                <div class="category">
+                <div class="category" id="category-strings">
                     <img class="category-logo" src="../img/guitares-s/4_4_gold_1.jpg" alt="strings-category-logo" >
                     <h2>Instruments à cordes</h2>
                 </div>
-                <div class="category">
+                <div class="category" id="category-brasses">
                     <img class="category-logo" src="../img/trompettes/sib_cuivre_1.jpg" alt="brass-category-logo" >
                     <h2>Cuivres</h2>
                 </div>
-                <div class="category">
+                <div class="category" id="category-percussions">
                     <img class="category-logo" src="../img/batteries/pearl_export_noire_1.jpg" alt="percussions-category-logo" >
                     <h2>Percussions</h2>
                 </div>
             </div>
         </div>    
     </main>
-    <script src="./script.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

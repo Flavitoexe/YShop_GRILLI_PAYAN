@@ -52,9 +52,52 @@ const getProductById = (req, res) => {
             product
         })
     }
-
 }
 
+/**
+ * getProductsByName est la fonction backend qui permet d'obtenir un produit grâce à son nom.
+ * @param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Les produit correspondants au nom passé en paramètre.
+ */
+
+const getProductsByName = (req, res) => {
+    try {
+        console.log('Entrée dans getProductsByName pour le nom :', req.params.name);
+        const nameToGet = req.params.name ? decodeURIComponent(req.params.name) : null;
+        
+        if (!nameToGet) {
+            return res.status(400).json({
+                message: 'Error: Product name is missing or undefined.'
+            });
+        }
+        if (!productsFile) {
+            return res.status(500).json({ message: 'Database file is missing.' });
+        }
+
+        const currentProducts = utils.strToObject(productsFile);
+        const products = currentProducts.filter(product => product.Name === nameToGet);
+
+        if (products.length === 0) {
+            return res.status(404).json({
+                message: 'No products found with this name.',
+                products: [] 
+            });
+        } 
+        
+        return res.status(200).json({
+            message: 'Products successfully found.',
+            products
+        });
+
+    } catch (error) {
+        console.error("Crash évité dans getProductsByName :", error);
+        return res.status(500).json({
+            message: 'Internal server error inside getProductsByName.',
+            error: error.message
+        });
+    }
+}
 
 /**
  * getProductsbyCategory est la fonction backend qui permet d'obtenir tous les produits d'une catégorie.
@@ -68,12 +111,54 @@ const getProductsByCategory = (req, res) => {
     const category = req.params.category
     if (category === undefined) {
         res.status(500).json({
-            message: "Error with category."
+            message: "Error with category (undefined)."
         })
     }
 
     const instrumentsList = utils.strToObject(productsFile)
-    console.log('instrumentsList : ', instrumentsList)
+    const productsList = instrumentsList.filter( elt => elt.Categorie === category )
+
+    if (!productsList) {
+        res.status(404).json({
+            message: "Products not found."
+        })
+    } else {
+        res.status(200).json({
+            message: "Products found.",
+            productsList
+        })
+    }
+}
+
+/**
+ * getProductsByFamily est la fonction backend qui permet d'obtenir tous les produits en fonction de leur famille.
+ * @@param {*} req : Requête reçue par le backend;
+ * @param {*} res : Réponse renvoyée par le backend;
+ * @returns : Les produits correspondant à la famille passée en paramètre.
+ */
+const getProductsByFamily = (req, res) => {
+    console.log('Entrée dans getproductsByFamily :')
+    // On récupère la famille dans l'url
+    const family = req.params.family
+    if (family === undefined) {
+        res.status(500).json({
+            message: "Error with category (undefined)."
+        })
+    }
+
+    const instrumentsList = utils.strToObject(productsFile)
+    const productsList = instrumentsList.filter( elt => elt.Caracs.famille === family )
+
+    if (!productsList) {
+        res.status(404).json({
+            message: "Products not found."
+        })
+    } else {
+        res.status(200).json({
+            message: "Products found.",
+            productsList
+        })
+    }
 }
 
 
@@ -132,6 +217,7 @@ const updateProduct = (req, res) => {
         })
         return
     }
+    console.log('req.body : ', req.body)
 
     // On cherche, dans le fichier data.json, le produit avec l'id correspondant,
     const currentProducts = utils.strToObject(productsFile)
@@ -145,14 +231,18 @@ const updateProduct = (req, res) => {
     
     // On récupère les nouvelles données et on modifie le produit,
     const newValues = req.body
-    if (newValues.id) { product.id = newValues.id }   // A voir si on garde
-    if (newValues.Name) { product.Name = newValues.Name }
-    if (newValues.Description) { product.Description = newValues.Description }
-    if (newValues.Quantity) { product.Quantity = newValues.Quantity }
-    if (newValues.Prix) { product.Prix = newValues.Prix }
-    if (newValues.Devise) { product.Devise = newValues.Devise }
-    if (newValues.Images) { product.Images = newValues.Images }
-    if (newValues.Caracs) { product.Caracs = newValues.Caracs }
+    if (newValues.Name) product.Name = newValues.Name
+    if (newValues.Description) product.Description = newValues.Description
+    if (newValues.Quantity !== undefined) product.Quantity = newValues.Quantity
+    if (newValues.Prix) product.Prix = newValues.Prix
+    if (newValues.Devise) product.Devise = newValues.Devise
+    if (newValues.Images) product.Images = newValues.Images
+    if (newValues.Caracs) product.Caracs = newValues.Caracs
+    product.quantityInBasket = 0
+
+    // On cherche l'index de l'instrument à changer, puis on le change dans le tableau au même endroit,
+    const instrumentIndex = currentProducts.findIndex( elt => elt.ID === idToUpdate )
+    currentProducts.splice(instrumentIndex, 1, product)
 
     // On réécrit dans le fichier data.json avec les nouvelles données.
     const error = utils.writeInFile(productsFile, currentProducts)
@@ -213,4 +303,4 @@ const deleteProduct = (req, res) => {
     }
 }
 
-module.exports = {getAllProducts, getProductById, addProduct, updateProduct, deleteProduct}
+module.exports = {getAllProducts, getProductById, getProductsByName,getProductsByCategory, getProductsByFamily, addProduct, updateProduct, deleteProduct}
