@@ -173,6 +173,7 @@ const updateProduct = (req, res) => {
         })
         return
     }
+    console.log('req.body : ', req.body)
 
     // On cherche, dans le fichier data.json, le produit avec l'id correspondant,
     const currentProducts = utils.strToObject(productsFile)
@@ -186,14 +187,18 @@ const updateProduct = (req, res) => {
     
     // On récupère les nouvelles données et on modifie le produit,
     const newValues = req.body
-    if (newValues.id) { product.id = newValues.id }   // A voir si on garde
-    if (newValues.Name) { product.Name = newValues.Name }
-    if (newValues.Description) { product.Description = newValues.Description }
-    if (newValues.Quantity) { product.Quantity = newValues.Quantity }
-    if (newValues.Prix) { product.Prix = newValues.Prix }
-    if (newValues.Devise) { product.Devise = newValues.Devise }
-    if (newValues.Images) { product.Images = newValues.Images }
-    if (newValues.Caracs) { product.Caracs = newValues.Caracs }
+    if (newValues.Name) product.Name = newValues.Name
+    if (newValues.Description) product.Description = newValues.Description
+    if (newValues.Quantity !== undefined) product.Quantity = newValues.Quantity
+    if (newValues.Prix) product.Prix = newValues.Prix
+    if (newValues.Devise) product.Devise = newValues.Devise
+    if (newValues.Images) product.Images = newValues.Images
+    if (newValues.Caracs) product.Caracs = newValues.Caracs
+    product.quantityInBasket = 0
+
+    // On cherche l'index de l'instrument à changer, puis on le change dans le tableau au même endroit,
+    const instrumentIndex = currentProducts.findIndex( elt => elt.ID === idToUpdate )
+    currentProducts.splice(instrumentIndex, 1, product)
 
     // On réécrit dans le fichier data.json avec les nouvelles données.
     const error = utils.writeInFile(productsFile, currentProducts)

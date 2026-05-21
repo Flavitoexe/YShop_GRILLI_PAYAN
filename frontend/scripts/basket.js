@@ -1,22 +1,40 @@
 /**
- * removeFromBasket est la fonction qui permet de retirer un instrument du panier. 
- * Même principe que removeFavorite dans scripts/favoris.js.
- * @param {Object} instrument : L'instrument à retirer du panier.
+ * updateBasket est une fonction qui fait une requête PUT à l'API pour modifier les stocks.
+ * @param {Object} instrument 
+ * @returns Un code de status ainsi que l'instrument modifié.
  */
-function removeFromBasket(instrument) {
-    console.log('Entrée dans removeFromBasket : ')
-    let currentBasket = JSON.parse(localStorage.getItem("basket"))
-    if (!currentBasket || !currentBasket.some(elt => elt.ID === instrument.ID)) {
-        console.error('Erreur : Instrument pas dans le panier')
-        return
+async function updateBasket(instrument) {
+    // On initialise un objet avec notre nouvelle quantité de stocks,
+    const newVariables = {
+        Quantity: instrument.Quantity - instrument.quantityInBasket
     }
 
-    if (currentBasket.length > 0) {
-        console.log('id de linstrument et index :', instrument.ID, )
-        currentBasket.splice(currentBasket.findIndex( elt => elt.ID === instrument.ID), 1)
-        localStorage.setItem("basket", JSON.stringify(currentBasket))
-    } else {
-        alert('Rien dans le panier à supprimer')
+    // On fait la requête à l'API,
+    try {
+        // On envoie une requête PUT avec nos nouvelles valeurs dans le body,
+        const response = await fetch(`http://localhost:3000/updateProduct/${instrument.ID}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newVariables)
+        })
+
+        // On vérifie le statut de la réponse,
+        if (response.ok) {
+            // Si le statut de la réponse est ok, càd que tout s'est bien passé,
+            // On transforme la réponse en objet Javascript,
+            const data = await response.json()
+            // On réaffiche le panier, sans les instruments achetés,
+            displayBasket()
+            // Et on renvoie la réponse.
+            return data
+        } else {
+            // Sinon on envoie une erreur.
+            throw new Error(`Error : updateProduct. Response status : ${response.status}`)
+        }
+
+    } catch (error) {
+        console.error(error)
+        return
     }
 }
 
@@ -26,12 +44,42 @@ function removeFromBasket(instrument) {
  * @returns : Les instruments stockées si il y en a, undefined sinon.
  */
 function getBasket() {
+    // On récupère le panier dans le localStorage,
     const currentBasket = JSON.parse(localStorage.getItem("basket"))
     // On vérifie si il y a des instruments dans le panier,
     if (!currentBasket || currentBasket.length === 0) {
+        // Si non, on retourne undefined pour faire des vérifications, 
         return undefined
     } else {
+        // Si oui on renvoie la panier.
         return currentBasket
+    }
+}
+
+/**
+ * removeFromBasket est la fonction qui permet de retirer un instrument du panier. 
+ * Même principe que removeFavorite dans scripts/favoris.js.
+ * @param {Object} instrument : L'instrument à retirer du panier.
+ */
+function removeFromBasket(instrument) {
+    // On récupère le panier,
+    let currentBasket = getBasket()
+    // On vérifie si il y a quelque chose dedans et si l'instrument y est,
+    if (!currentBasket || !currentBasket.some(elt => elt.ID === instrument.ID)) {
+        // Si non, on affiche une erreur dans la console et on quitte la fonction.
+        console.error('Erreur : Instrument pas dans le panier')
+        return
+    }
+
+    // On vérifie si il y a quelque chose dans le panier,
+    if (currentBasket.length > 0) {
+        // Si oui, alors on supprime l'instrument dans le tableau,
+        currentBasket.splice(currentBasket.findIndex( elt => elt.ID === instrument.ID), 1)
+        // Puis on le réécrit dans le localStorage.
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
+    } else {
+        // Si non, on alerte l'utilisateur.
+        alert('Rien dans le panier à supprimer')
     }
 }
 
@@ -40,13 +88,18 @@ function getBasket() {
  * Même principe que displayFavorites dans scripts/favoris.js.
  */
 function displayBasket() {
+    // On récupère le container du panier,
     const div_panier = document.querySelector('.div_panier')
+    // Si le container n'existe pas, alors on quitte la fonction,
     if (!div_panier) return;
+    // Sinon, on le vide.
     div_panier.innerHTML = ""
 
+    // On récupère le panier,
     const inBasket = getBasket()
-
+    // On vérifie si le panier existe ou est vide,
     if (!inBasket || inBasket.length <= 0) {
+        // Si oui, alors on crée une div qui affichera un message à l'utilisateur lui disant qu'il n'a rien dans le panier.
         const mess_vide = document.createElement('div')
         mess_vide.className = "mess_vide"
         mess_vide.textContent = "Aucun élément dans votre panier pour le moment."
@@ -54,9 +107,10 @@ function displayBasket() {
         return
     }
 
+    // Sinon, on crée toutes les container nécessaires pour tout afficher,
+    // En commençant par la div qui contiendra le total du panier, ainsi que le bouton pour acheter,
     const div_total = document.createElement('div')
     div_total.className = "div_total"
-
     const sous_total = document.createElement('div')
     sous_total.className = "sous_total"
     const mess_total = document.createElement('div')
@@ -71,23 +125,26 @@ function displayBasket() {
     btn_total.className = "btn_total"
     btn_total.textContent = "Acheter"
     
-
+    // Ensuite, on crée l'élément qui contiendra la liste des instruments dans le panier,
     const div_ele = document.createElement('div')
     div_ele.className = "div_ele"
-
+    // On boucle sur la panier pour crée un container spécifique à chaque instrument,
     inBasket.forEach(product => {
+        // Assignation au container d'une classe générale pour le CSS, ainsi que d'un id 
+        // représentant l'id de l'instrument affiché,
         const div_prod = document.createElement('div')
         div_prod.className = "div_prod"
         div_prod.id = `product${product.ID}`
 
+        // Ajout de l'image
         const div_img = document.createElement('div')
         div_img.className = "div_img"
-
         const img = document.createElement('img')
         img.src = product.Images[0]
         img.alt = product.Name
         div_img.appendChild(img)
 
+        // Création et assignation des emplacement des différentes informations de l'instrument,
         const div_carac_1 = document.createElement('div')
         div_carac_1.className = "div_carac_1"
 
@@ -114,6 +171,8 @@ function displayBasket() {
         prix.className = "prix"
         prix.textContent = `${product.Prix} €`
 
+        // Création des boutons pour voir les détails de l'instrument, le supprimer,
+        // l'ajouter en favori ou pour ajouter/réduire la quantité dans le panier,
         const btn = document.createElement('button')
         btn.className = "btn"
         btn.type = "button"
@@ -134,8 +193,11 @@ function displayBasket() {
         favoriteContainer.className = 'favorite-container'
         favoriteContainer.id = `fav${product.ID}`
 
+        // Ajout de l'eventListener pour supprimer un élément du panier,
         btn_supp.addEventListener("click", () => {
             removeFromBasket(product)
+            // Après la suppression, on réaffiche le panier pour que la modification 
+            // soit directe.
             displayBasket()
         })
 
@@ -157,6 +219,7 @@ function displayBasket() {
         btn_plus.id = `add${product.ID}`
         btn_plus.textContent = "+"
 
+        // On ajoute les éléments à leur élément parent pour afficher le tout.
         div_panier.append(div_ele, div_total)
         div_total.append(sous_total)
         sous_total.append(mess_total, prix_total, div_btn_total)
@@ -178,6 +241,7 @@ function displayBasket() {
         div_nom.append(nom)
         btn.append(lien)
 
+        // Pour l'affichage du favori,
         // On récupère les favoris pour pouvoir faire les vérifications,
         const currentFavorites = getFavorites()
         // Si il n'y a pas de favoris, ou que l'instrument n'y figure pas, on affiche le coeur vide,
@@ -196,11 +260,32 @@ function displayBasket() {
             `
         }
 
-        // On met un eventListener pour faire basculer le favori en fonction de son état actuel.
+        // On met un eventListener pour faire basculer le favori en fonction de son état actuel,
         document.querySelector(`#fav${product.ID}`).addEventListener('click', () => toggleFavorite(product))
+        // Ainsi que des eventListeners pour ajouter/réduire la quantité dans le panier.
         document.querySelector(`#rm${product.ID}`).addEventListener('click', () => removeOneFromBasket(product))
         document.querySelector(`#add${product.ID}`).addEventListener('click', () => addOneToBasket(product))
     })
+    // On ajoute un eventListener sur le bouton 'Acheter' pour qu'au clic, la fonction buyBasket soit appelée.
+    document.querySelector('.btn_total').addEventListener('click', () => buyBasket())
+}
+
+/**
+ * buyBasket est une fonction qui permet d'acheter des instruments, gérant en même temps leur stock.
+ */
+function buyBasket() {
+    // On récupère le panier,
+    const currentBasket = getBasket()
+
+    // On boucle sur la panier,
+    for (let i = 0; i < currentBasket.length; i++) {
+        // On appelle updateBasket en passant l'instrument à l'index i en paramètre,
+        updateBasket(currentBasket[i])
+    }
+    // On vide le localStorage,
+    localStorage.setItem('basket', JSON.stringify([]))
+    // Et on affiche à l'utilisateur que l'achat s'est bien passé.
+    alert('Achat effectué !')
 }
 
 /**
@@ -273,7 +358,6 @@ function addOneToBasket(instrument) {
         localStorage.setItem("basket", JSON.stringify(currentBasket))
         // Puis on réactualise la page.
         displayBasket()
-
     } 
 }
 
@@ -347,6 +431,7 @@ function addFavorite(instrument) {
 
 /**
  * removeFavorite est la fonction qui permet de retirer un instrument de sa liste de favoris en appuyant sur un bouton.
+ * Même principe que addFavorite, à l'envers.
  * @param {Object} instrument : L'instrument à retirer des favoris.
  */
 function removeFavorite(instrument) {
@@ -383,11 +468,12 @@ function getBasketPrice() {
     // On récupère le panier,
     const currentBasket = getBasket()
 
+    // Si il est vide, alors on arrête la fonction,
     if (!currentBasket || currentBasket.length <= 0) {
-        displayBasket()
         return
     }
-    // On initialise la variable qui contiendra le prix total,
+
+    // Sinon, on initialise la variable qui contiendra le prix total,
     let fullPrice = 0
     // On boucle sur chaque élément du panier, sur lesquels on multiplie le prix avec la quantité dans le panier,
     currentBasket.forEach( elt => fullPrice += elt.quantityInBasket * elt.Prix )

@@ -14,7 +14,8 @@
             "famille": "cordes",
             "marque": "Yamaha"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 1,
@@ -31,7 +32,8 @@
             "famille": "cordes",
             "marque": "Lag"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 2,
@@ -89,7 +91,7 @@
     {
         "ID": 5,
         "Name": "Guitare sèche 3/4",
-        "Description":"La guitare Gear4music 3/4 en finition noire est une option robuste et abordable pour les enfants de 8 à 11 ans. Parfaitement dimensionnée pour les tailles allant de 130 à 150 cm, elle permet une transition fluide vers des modèles plus grands. Sa construction simplifiée en fait une alliée idéale pour les cours collectifs ou pour jouer à la maison, offrant un son correct et un style moderne qui plaît beaucoup aux jeunes musiciens en herbe.",
+        "Description": "La guitare Gear4music 3/4 en finition noire est une option robuste et abordable pour les enfants de 8 à 11 ans. Parfaitement dimensionnée pour les tailles allant de 130 à 150 cm, elle permet une transition fluide vers des modèles plus grands. Sa construction simplifiée en fait une alliée idéale pour les cours collectifs ou pour jouer à la maison, offrant un son correct et un style moderne qui plaît beaucoup aux jeunes musiciens en herbe.",
         "Quantity": 6,
         "Prix": 156,
         "Devise": "EUR (€)",
@@ -209,7 +211,8 @@
             "famille": "cordes",
             "marque": "Ibanez"
         },
-        "Categorie": "guitares"
+        "Categorie": "guitares",
+        "quantityInBasket": 0
     },
     {
         "ID": 12,
@@ -493,7 +496,7 @@
     {
         "ID": 37,
         "Name": "Grande harpe",
-        "Description":  "Cette grande harpe à pédales Gear4music est une pièce majestueuse de plus d'1,70 m, conçue pour les musiciens avancés et les orchestres classiques. Avec ses 47 cordes, elle offre une étendue sonore complète et une résonance profonde idéale pour le répertoire symphonique. Son poids imposant garantit une stabilité parfaite durant le jeu. Disponible en beige naturel ou noir élégant, c'est l'instrument ultime pour franchir un cap professionnel.",
+        "Description": "Cette grande harpe à pédales Gear4music est une pièce majestueuse de plus d'1,70 m, conçue pour les musiciens avancés et les orchestres classiques. Avec ses 47 cordes, elle offre une étendue sonore complète et une résonance profonde idéale pour le répertoire symphonique. Son poids imposant garantit une stabilité parfaite durant le jeu. Disponible en beige naturel ou noir élégant, c'est l'instrument ultime pour franchir un cap professionnel.",
         "Quantity": 2,
         "Prix": 1039,
         "Devise": "EUR (€)",
@@ -987,7 +990,7 @@
     {
         "ID": 66,
         "Name": "Djembe moyen",
-        "Description":"Le djembé de taille moyenne est la configuration la plus courante, plébiscitée par les amateurs et les élèves en école de musique. Avec un diamètre de 28 à 32 cm, il offre un son parfaitement équilibré entre des basses rondes et des aigus précis. Sa hauteur ergonomique (~50-60 cm) assure un confort de jeu optimal. C'est le choix standard pour ceux qui recherchent un instrument polyvalent capable de s'adapter à tous les contextes rythmiques.",
+        "Description": "Le djembé de taille moyenne est la configuration la plus courante, plébiscitée par les amateurs et les élèves en école de musique. Avec un diamètre de 28 à 32 cm, il offre un son parfaitement équilibré entre des basses rondes et des aigus précis. Sa hauteur ergonomique (~50-60 cm) assure un confort de jeu optimal. C'est le choix standard pour ceux qui recherchent un instrument polyvalent capable de s'adapter à tous les contextes rythmiques.",
         "Quantity": 4,
         "Prix": 100,
         "Devise": "EUR (€)",
