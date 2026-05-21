@@ -46,7 +46,7 @@ function displayBasket() {
 
     const inBasket = getBasket()
 
-    if (!inBasket) {
+    if (!inBasket || inBasket.length <= 0) {
         const mess_vide = document.createElement('div')
         mess_vide.className = "mess_vide"
         mess_vide.textContent = "Aucun élément dans votre panier pour le moment."
@@ -63,7 +63,7 @@ function displayBasket() {
     mess_total.textContent = "Total de votre panier :"
     mess_total.className = "mess_total"
     const prix_total = document.createElement('div')
-    prix_total.textContent =`${getBasketPrice()} €`
+    prix_total.textContent =`${getBasketPrice()} €  `
     prix_total.className = "prix_total"
     const div_btn_total = document.createElement('div')
     div_btn_total.className = "div_btn_total"
@@ -144,14 +144,17 @@ function displayBasket() {
 
         const btn_moins = document.createElement('button')
         btn_moins.className = "btn_moins"
+        btn_moins.id =`rm${product.ID}`
         btn_moins.textContent = product.quantityInBasket > 1 ? "-" : "🗑️"
 
         const btn_chiffre = document.createElement('span')
         btn_chiffre.className = "btn_chiffre"
+        btn_chiffre.id = `curr${product.ID}`
         btn_chiffre.textContent = product.quantityInBasket
 
         const btn_plus = document.createElement('button')
         btn_plus.className = "btn_plus"
+        btn_plus.id = `add${product.ID}`
         btn_plus.textContent = "+"
 
         div_panier.append(div_ele, div_total)
@@ -195,7 +198,83 @@ function displayBasket() {
 
         // On met un eventListener pour faire basculer le favori en fonction de son état actuel.
         document.querySelector(`#fav${product.ID}`).addEventListener('click', () => toggleFavorite(product))
+        document.querySelector(`#rm${product.ID}`).addEventListener('click', () => removeOneFromBasket(product))
+        document.querySelector(`#add${product.ID}`).addEventListener('click', () => addOneToBasket(product))
     })
+}
+
+/**
+ * removeOneFromBasket est une fonction qui permet d'enlever une unité d'un instrument dans le panier.
+ * @param {Object} instrument 
+ */
+function removeOneFromBasket(instrument) {
+    // On récupère le panier,
+    let currentBasket = getBasket()
+    // On vérifie si il existe et si l'instrument y est, sinon on arrête la fonction.
+    if (!currentBasket || !currentBasket.some(elt => elt.ID === instrument.ID)) {
+        console.error('Erreur : Instrument pas dans le panier')
+        return
+    }
+
+    // Si il y a quelque chose,
+    if (currentBasket.length > 0) {
+        // On cherche l'instrument,
+        let product = currentBasket.find( elt => elt.ID === instrument.ID)
+        // On retire une unité du panier,
+        product.quantityInBasket--
+        // On vérifie si la quantité est nulle,
+        if (product.quantityInBasket <= 0) {
+            // Si oui, alors on enlève la div contenant l'instrument,
+            document.querySelector(`#product${instrument.ID}`).remove()
+            // On l'enlève du panier dans le localstorage,
+            removeFromBasket(instrument)
+            // Et on actualise le panier.
+            displayBasket()
+            return
+        }
+        // Sinon, on sauvegarde la nouvelle quantité dans le localstorage, 
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
+        // Puis on réactualise la page.
+        displayBasket()
+
+    } else {
+        alert('Rien dans le panier à supprimer')
+    }
+}
+
+/**
+ * addOneToBasket est une fonction qui permet d'ajouter une unité d'un instrument dans le panier.
+ * Même principe que removeOneFromBasket, mais en ajoutant au lieu de soustraire.
+ * @param {Object} instrument 
+ */
+function addOneToBasket(instrument) {
+    // On récupère le panier,
+    let currentBasket = getBasket()
+    // On vérifie si il existe et si l'instrument y est, sinon on arrête la fonction.
+    if (!currentBasket || !currentBasket.some(elt => elt.ID === instrument.ID)) {
+        console.error('Erreur : Instrument pas dans le panier')
+        return
+    }
+
+    // Si il y a quelque chose,
+    if (currentBasket.length > 0) {
+        // On cherche l'instrument,
+        let product = currentBasket.find( elt => elt.ID === instrument.ID)
+        
+        // On vérifie si la quantité est supérieure au stock,
+        if (product.quantityInBasket + 1 > instrument.Quantity) {
+            // Si oui, on alerte l'utilisateur et on arrête la fonction pour empêcher l'ajout.
+            alert('Limite de produits atteinte')
+            return
+        }
+        // Sinon on ajoute une unité du panier,
+        product.quantityInBasket++
+        // On sauvegarde la nouvelle quantité dans le localstorage, 
+        localStorage.setItem("basket", JSON.stringify(currentBasket))
+        // Puis on réactualise la page.
+        displayBasket()
+
+    } 
 }
 
 /**
@@ -303,6 +382,11 @@ function removeFavorite(instrument) {
 function getBasketPrice() {
     // On récupère le panier,
     const currentBasket = getBasket()
+
+    if (!currentBasket || currentBasket.length <= 0) {
+        displayBasket()
+        return
+    }
     // On initialise la variable qui contiendra le prix total,
     let fullPrice = 0
     // On boucle sur chaque élément du panier, sur lesquels on multiplie le prix avec la quantité dans le panier,
